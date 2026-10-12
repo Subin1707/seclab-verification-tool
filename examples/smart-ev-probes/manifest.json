@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "evidence_class": "TOOL_CAPABILITY_EVIDENCE",
+  "production_source_included": false,
+  "probes": [
+    {
+      "probe_id": "SMART-EV-PROBE-BO-001",
+      "name": "buffer_overflow",
+      "category": "buffer_overflow",
+      "language": "C",
+      "source_file": "buffer_overflow.c",
+      "expected_issue": "A heap write occurs one byte past the allocated 8-byte buffer.",
+      "expected_cwe": null,
+      "expected_tools": ["C compiler", "compiler-diagnostics", "cppcheck", "clang-tidy", "AddressSanitizer", "UndefinedBehaviorSanitizer", "LeakSanitizer"],
+      "scope": "BUG_INJECTED_PROBE"
+    },
+    {
+      "probe_id": "SMART-EV-PROBE-ML-001",
+      "name": "memory_leak",
+      "category": "memory_leak",
+      "language": "C",
+      "source_file": "memory_leak.c",
+      "expected_issue": "A 64-byte heap allocation becomes unreachable without being freed.",
+      "expected_cwe": null,
+      "expected_tools": ["C compiler", "compiler-diagnostics", "cppcheck", "clang-tidy", "AddressSanitizer", "UndefinedBehaviorSanitizer", "LeakSanitizer"],
+      "scope": "BUG_INJECTED_PROBE"
+    },
+    {
+      "probe_id": "SMART-EV-PROBE-DF-001",
+      "name": "double_free",
+      "category": "double_free",
+      "language": "C",
+      "source_file": "double_free.c",
+      "expected_issue": "The same heap allocation is passed to free twice.",
+      "expected_cwe": null,
+      "expected_tools": ["C compiler", "compiler-diagnostics", "cppcheck", "clang-tidy", "AddressSanitizer", "UndefinedBehaviorSanitizer", "LeakSanitizer"],
+      "scope": "BUG_INJECTED_PROBE"
+    },
+    {
+      "probe_id": "SMART-EV-PROBE-UAF-001",
+      "name": "use_after_free",
+      "category": "use_after_free",
+      "language": "C",
+      "source_file": "use_after_free.c",
+      "expected_issue": "A heap byte is written after its allocation has been freed.",
+      "expected_cwe": null,
+      "expected_tools": ["C compiler", "compiler-diagnostics", "cppcheck", "clang-tidy", "AddressSanitizer", "UndefinedBehaviorSanitizer", "LeakSanitizer"],
+      "scope": "BUG_INJECTED_PROBE"
+    }
+  ]
+}
