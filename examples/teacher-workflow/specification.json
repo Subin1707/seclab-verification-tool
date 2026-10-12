@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "id": "teacher-workflow-demo",
+  "name": "Teacher Workflow Demonstration",
+  "description": "Small deterministic state, arithmetic, function, and test fixture.",
+  "initial_state": "SAFE",
+  "requirements": [
+    {
+      "id": "REQ-SAFE-01",
+      "description": "The state machine remains in a safe state.",
+      "type": "safety",
+      "property_ids": ["PROP-CTL-SAFE", "PROP-BMC-ERROR-ABSENT"]
+    },
+    {
+      "id": "REQ-ADD-01",
+      "description": "Addition returns the arithmetic sum.",
+      "type": "functional",
+      "property_ids": ["PROP-SMT-NONNEGATIVE"]
+    },
+    {
+      "id": "REQ-ADD-TEST-01",
+      "description": "The add function returns the declared expected value.",
+      "type": "functional"
+    }
+  ],
+  "variables": [
+    {"id": "x", "domain": {"type": "integer", "minimum": 0, "maximum": 10}, "initial": 0}
+  ],
+  "constraints": [
+    {"id": "CONSTRAINT-X-NONNEGATIVE", "expression": "x >= 0", "requirement_ids": ["REQ-ADD-01"]}
+  ],
+  "states": [
+    {"id": "SAFE", "initial": true, "labels": ["safe"]}
+  ],
+  "transitions": [
+    {"id": "TRANSITION-SAFE-LOOP", "source": "SAFE", "target": "SAFE", "label": "remain-safe"}
+  ],
+  "properties": [
+    {"id": "PROP-CTL-SAFE", "logic": "CTL", "formula": "AG(safe)", "requirement_ids": ["REQ-SAFE-01"]},
+    {"id": "PROP-BMC-ERROR-ABSENT", "logic": "BMC", "formula": "error", "bound": 0, "requirement_ids": ["REQ-SAFE-01"]},
+    {"id": "PROP-SMT-NONNEGATIVE", "logic": "SMT", "formula": "x >= 0", "requirement_ids": ["REQ-ADD-01"]}
+  ],
+  "functions": [
+    {"id": "FUNC-ADD", "name": "add", "file": "src/math.c", "requirement_ids": ["REQ-ADD-01", "REQ-ADD-TEST-01"]}
+  ],
+  "tests": [
+    {"id": "TEST-ADD-2-3", "function_id": "FUNC-ADD", "requirement_ids": ["REQ-ADD-TEST-01"], "kind": "unit", "input": {"args": {"a": 2, "b": 3}}, "expected": {"return_value": 5}}
+  ]
+}
