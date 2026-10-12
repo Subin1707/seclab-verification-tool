@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "id": "generic-sequence-memory",
+  "name": "Generic Sequence Memory Example",
+  "description": "An allocation and branch example for generic C analysis.",
+  "requirements": [
+    {"id": "REQ-SEQUENCE-SUM", "description": "The sequence sum uses allocated storage safely.", "type": "functional"}
+  ],
+  "functions": [
+    {"id": "FUNC-SEQUENCE-SUM", "name": "sum_sequence", "file": "src/sequence.c", "requirement_ids": ["REQ-SEQUENCE-SUM"]}
+  ],
+  "tests": [
+    {"id": "TEST-SEQUENCE-SUM-5", "function_id": "FUNC-SEQUENCE-SUM", "requirement_ids": ["REQ-SEQUENCE-SUM"], "kind": "unit", "input": {"args": {"count": 5}}, "expected": {"return_value": 15}}
+  ]
+}

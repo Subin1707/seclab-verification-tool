@@ -1,0 +1,26 @@
+{
+  "static_analyzers": ["compiler", "cppcheck", "clang-tidy", "clang-static"],
+  "run_memory": true,
+  "run_coverage": true,
+  "coverage_backend": "auto",
+  "analysis_timeout": 30.0,
+  "execution_timeout": 3.0,
+  "build_timeout": 30.0,
+  "solver_timeout": 5.0,
+  "bmc_default_bound": 4,
+  "max_states": 1000,
+  "generate_c_model": true,
+  "generate_c_fuzz_harness": true,
+  "fuzz_config": {
+    "strategy": "BLACKBOX",
+    "max_iterations": 4,
+    "timeout_per_input": 2.0,
+    "random_seed": 20261007,
+    "max_input_size": 64,
+    "minimize_failures": false
+  },
+  "fuzz_seeds": [
+    {"id": "seed-zero", "data": {"argv": ["0"]}, "kind": "SCALARS", "origin": "SEED"},
+    {"id": "seed-three", "data": {"argv": ["3"]}, "kind": "SCALARS", "origin": "SEED"}
+  ]
+}

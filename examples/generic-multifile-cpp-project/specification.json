@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "id": "generic-multifile-cpp",
+  "name": "Generic multi-file C++ arithmetic",
+  "requirements": [
+    {"id": "REQ-ADD", "description": "Addition returns the sum of its inputs.", "type": "functional", "property_ids": ["PROP-READY"]},
+    {"id": "REQ-SCALE", "description": "Scaling multiplies value by factor.", "type": "functional"},
+    {"id": "REQ-CLAMP", "description": "Clamping maps negative input to zero.", "type": "functional"}
+  ],
+  "initial_state": "READY",
+  "states": [{"id": "READY", "initial": true, "labels": ["valid"]}],
+  "transitions": [{"id": "READY-LOOP", "source": "READY", "target": "READY"}],
+  "properties": [
+    {"id": "PROP-READY", "logic": "CTL", "formula": "AG(valid)", "requirement_ids": ["REQ-ADD"]}
+  ],
+  "functions": [
+    {"id": "FUNC-ADD", "name": "add_values", "file": "src/arithmetic.cpp", "requirement_ids": ["REQ-ADD"]},
+    {"id": "FUNC-SCALE", "name": "scale_value", "file": "src/arithmetic.cpp", "requirement_ids": ["REQ-SCALE"]},
+    {"id": "FUNC-CLAMP", "name": "clamp_nonnegative", "file": "src/limits.cpp", "requirement_ids": ["REQ-CLAMP"]}
+  ],
+  "tests": [
+    {"id": "TEST-ADD", "function_id": "FUNC-ADD", "requirement_ids": ["REQ-ADD"], "kind": "unit", "input": {"args": {"left": 17, "right": 25}}, "expected": {"return_value": 42}},
+    {"id": "TEST-SCALE", "function_id": "FUNC-SCALE", "requirement_ids": ["REQ-SCALE"], "kind": "unit", "input": {"args": {"value": 6, "factor": 7}}, "expected": {"return_value": 42}},
+    {"id": "TEST-CLAMP", "function_id": "FUNC-CLAMP", "requirement_ids": ["REQ-CLAMP"], "kind": "unit", "input": {"args": {"value": -5}}, "expected": {"return_value": 0}}
+  ]
+}

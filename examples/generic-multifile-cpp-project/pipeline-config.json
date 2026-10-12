@@ -1,0 +1,7 @@
+{
+  "static_analyzers": [],
+  "run_memory": false,
+  "run_coverage": false,
+  "execution_timeout": 2.0,
+  "build_timeout": 15.0
+}

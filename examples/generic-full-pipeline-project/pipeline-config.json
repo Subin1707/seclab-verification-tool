@@ -1,0 +1,1 @@
+{"static_analyzers":["compiler"],"run_memory":true,"run_coverage":true,"coverage_backend":"gcov","execution_timeout":2.0,"fuzz_config":{"strategy":"BLACKBOX","max_iterations":1,"timeout_per_input":1.0,"random_seed":17,"max_input_size":16,"minimize_failures":false},"fuzz_seeds":[{"id":"seed-small-value","data":{"value":0},"kind":"SCALARS","origin":"SEED"}]}

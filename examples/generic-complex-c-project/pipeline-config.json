@@ -1,0 +1,29 @@
+{
+  "static_analyzers": ["compiler"],
+  "run_memory": true,
+  "run_coverage": true,
+  "coverage_backend": "gcov",
+  "analysis_timeout": 30.0,
+  "execution_timeout": 3.0,
+  "build_timeout": 20.0,
+  "solver_timeout": 5.0,
+  "bmc_default_bound": 8,
+  "max_states": 1000,
+  "generate_c_model": true,
+  "generate_c_fuzz_harness": true,
+  "fuzz_config": {
+    "strategy": "BLACKBOX",
+    "max_iterations": 12,
+    "timeout_per_input": 1.0,
+    "random_seed": 20261006,
+    "max_input_size": 128,
+    "harness": "executable",
+    "target": "main",
+    "entry_point": "main",
+    "minimize_failures": false
+  },
+  "fuzz_seeds": [
+    {"id": "seed-valid-pair", "data": {"argv": ["7", "3"]}, "kind": "SCALARS", "origin": "SEED"},
+    {"id": "seed-negative-pair", "data": {"argv": ["-1", "3"]}, "kind": "SCALARS", "origin": "SEED"}
+  ]
+}

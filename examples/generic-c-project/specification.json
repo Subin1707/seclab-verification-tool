@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "id": "generic-counter-project",
+  "name": "Generic Counter",
+  "description": "A small standalone C project used to exercise the generic verification pipeline.",
+  "initial_state": "READY",
+  "requirements": [
+    {"id": "REQ-COUNTER-NONNEGATIVE", "description": "Counter values are nonnegative.", "type": "safety", "property_ids": ["PROP-COUNTER-NONNEGATIVE"]},
+    {"id": "REQ-COUNTER-INCREMENT", "description": "Incrementing a counter adds one.", "type": "functional", "property_ids": ["PROP-COUNTER-RANGE"]}
+  ],
+  "variables": [
+    {"id": "counter", "domain": {"type": "integer", "minimum": 0, "maximum": 100}, "initial": 0}
+  ],
+  "states": [
+    {"id": "READY", "initial": true, "labels": ["ready", "safe"]}
+  ],
+  "transitions": [
+    {"id": "READY-LOOP", "source": "READY", "target": "READY", "label": "remain-ready"}
+  ],
+  "properties": [
+    {"id": "PROP-COUNTER-NONNEGATIVE", "logic": "CTL", "formula": "AG(safe)", "requirement_ids": ["REQ-COUNTER-NONNEGATIVE"]},
+    {"id": "PROP-COUNTER-RANGE", "logic": "SMT", "formula": "counter >= 0 && counter <= 100", "requirement_ids": ["REQ-COUNTER-NONNEGATIVE"]}
+  ],
+  "functions": [
+    {"id": "FUNC-COUNTER-INCREMENT", "name": "counter_increment", "file": "src/counter.c", "requirement_ids": ["REQ-COUNTER-INCREMENT"]}
+  ],
+  "tests": [
+    {"id": "TEST-COUNTER-INCREMENT", "function_id": "FUNC-COUNTER-INCREMENT", "requirement_ids": ["REQ-COUNTER-INCREMENT"], "kind": "unit", "input": {"args": {"value": 9}}, "expected": {"return_value": 10}}
+  ]
+}

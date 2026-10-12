@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "id": "generic-complex-analyzer",
+  "name": "Generic Branching Analyzer",
+  "initial_state": "IDLE",
+  "project": {"kind": "c-application", "languages": ["C"], "source_roots": ["src"]},
+  "requirements": [
+    {"id": "REQ-VALIDATION-BRANCH", "description": "Invalid negative samples are rejected and valid bounded samples are accepted.", "type": "safety", "property_ids": ["PROP-SAFE-TERMINAL"]},
+    {"id": "REQ-BOUNDED-SCORE", "description": "Accepted scores stay within the finite state-machine bounds.", "type": "functional", "property_ids": ["PROP-SCORE-BOUNDED", "PROP-SMT-SCORE-BOUNDED"]},
+    {"id": "REQ-CLI-SCORE", "description": "The executable prints the expected weighted score for valid input.", "type": "functional", "test_ids": ["TEST-CLI-SCORE"]}
+  ],
+  "variables": [
+    {"id": "sample", "domain": {"type": "integer", "minimum": 0, "maximum": 10}, "initial": 0},
+    {"id": "score", "domain": {"type": "integer", "minimum": 0, "maximum": 100}, "initial": 0}
+  ],
+  "states": [
+    {"id": "IDLE", "initial": true, "labels": ["safe", "idle"]},
+    {"id": "VALIDATING", "labels": ["safe", "branch"]},
+    {"id": "ACCEPTED", "labels": ["safe", "accepted"]},
+    {"id": "REJECTED", "labels": ["safe", "rejected"]}
+  ],
+  "transitions": [
+    {"id": "START", "source": "IDLE", "target": "VALIDATING", "label": "start"},
+    {"id": "ACCEPT-VALID", "source": "VALIDATING", "target": "ACCEPTED", "label": "valid-and-bounded"},
+    {"id": "REJECT-NEGATIVE", "source": "VALIDATING", "target": "REJECTED", "label": "negative-input"},
+    {"id": "REJECT-OVERFLOW", "source": "VALIDATING", "target": "REJECTED", "label": "overflow-or-allocation-failure"},
+    {"id": "RETRY", "source": "REJECTED", "target": "IDLE", "label": "retry"},
+    {"id": "NEXT", "source": "ACCEPTED", "target": "IDLE", "label": "next-sample"}
+  ],
+  "properties": [
+    {"id": "PROP-SAFE-TERMINAL", "logic": "CTL", "formula": "AG(safe)", "requirement_ids": ["REQ-VALIDATION-BRANCH"]},
+    {"id": "PROP-SCORE-BOUNDED", "logic": "BMC", "formula": "accepted", "bound": 4, "requirement_ids": ["REQ-BOUNDED-SCORE"]},
+    {"id": "PROP-SMT-SCORE-BOUNDED", "logic": "SMT", "formula": "score >= 0 && score <= 100", "requirement_ids": ["REQ-BOUNDED-SCORE"]}
+  ],
+  "functions": [
+    {"id": "FUNC-ANALYZE-SAMPLE", "name": "analyze_sample", "file": "src/model_target.c", "requirement_ids": ["REQ-VALIDATION-BRANCH", "REQ-BOUNDED-SCORE"]},
+    {"id": "FUNC-SUM-SAMPLES", "name": "sum_samples", "file": "src/analyzer.c", "requirement_ids": ["REQ-VALIDATION-BRANCH"]}
+  ],
+  "tests": [
+    {"id": "TEST-CLI-SCORE", "requirement_ids": ["REQ-CLI-SCORE"], "kind": "integration", "input": {"target": "program", "argv": ["7", "3"]}, "expected": {"structured_output": 25, "exit_code": 0}, "description": "Run the CLI with a bounded pair and observe the computed arithmetic score."},
+    {"id": "TEST-CLI-NEGATIVE", "requirement_ids": ["REQ-VALIDATION-BRANCH"], "kind": "boundary", "input": {"target": "program", "argv": ["-1", "3"]}, "expected": {"structured_output": -1, "exit_code": 0}, "description": "Exercise the explicit negative-input rejection branch."}
+  ],
+  "fuzzing": {"enabled": true, "strategy": "black_box", "iterations": 12, "timeout_seconds": 1.0, "seed_ids": ["seed-valid-pair", "seed-negative-pair"], "metadata": {"target_function": "main", "input_kind": "argument-vector", "minimum": -20, "maximum": 20}}
+}
+
+

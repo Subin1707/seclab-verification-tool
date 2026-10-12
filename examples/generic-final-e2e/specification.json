@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "id": "GENERIC-FINAL-E2E",
+  "name": "Generic C state, memory and executable workflow",
+  "initial_state": "READY",
+  "requirements": [
+    {"id": "REQ-STATE-SAFE", "description": "The declared model remains in safe states.", "type": "safety", "property_ids": ["PROP-CTL-SAFE", "PROP-BMC-SAFE"]},
+    {"id": "REQ-ARITHMETIC", "description": "The program computes the bounded sum for nonnegative input.", "type": "functional", "test_ids": ["TEST-EXEC-ZERO", "TEST-EXEC-THREE"]}
+  ],
+  "variables": [
+    {"id": "mode", "domain": {"type": "integer", "minimum": -1, "maximum": 2}, "initial": 0},
+    {"id": "value", "domain": {"type": "integer", "minimum": 0, "maximum": 3}, "initial": 0}
+  ],
+  "states": [
+    {"id": "READY", "initial": true, "values": {"mode": 0}, "labels": ["safe", "ready"]},
+    {"id": "PROCESSING", "values": {"mode": 1}, "labels": ["safe", "processing"]},
+    {"id": "DONE", "values": {"mode": 2}, "labels": ["safe", "done"]},
+    {"id": "FAULT", "values": {"mode": -1}, "labels": ["unsafe"]}
+  ],
+  "transitions": [
+    {"id": "T-START", "source": "READY", "target": "PROCESSING", "guard": "mode == 0", "action": "mode = 1"},
+    {"id": "T-FINISH", "source": "PROCESSING", "target": "DONE", "guard": "mode == 1", "action": "mode = 2"},
+    {"id": "T-HOLD", "source": "DONE", "target": "DONE", "guard": "mode == 2", "action": "mode = 2"}
+  ],
+  "properties": [
+    {"id": "PROP-CTL-SAFE", "logic": "CTL", "formula": "AG(safe)", "requirement_ids": ["REQ-STATE-SAFE"]},
+    {"id": "PROP-BMC-SAFE", "logic": "BMC", "formula": "unsafe", "bound": 3, "requirement_ids": ["REQ-STATE-SAFE"]},
+    {"id": "PROP-SMT-BOUNDS", "logic": "SMT", "formula": "value >= 0 && value <= 3", "requirement_ids": ["REQ-ARITHMETIC"]}
+  ],
+  "functions": [
+    {"id": "FUNC-MODEL-STEP", "name": "model_step", "file": "src/model_step.c", "requirement_ids": ["REQ-STATE-SAFE"]}
+  ],
+  "tests": [
+    {"id": "TEST-EXEC-ZERO", "requirement_ids": ["REQ-ARITHMETIC"], "kind": "boundary", "input": {"target": "program", "argv": ["0"]}, "expected": {"structured_output": {"sum": 0}, "exit_code": 0}},
+    {"id": "TEST-EXEC-THREE", "requirement_ids": ["REQ-ARITHMETIC"], "kind": "integration", "input": {"target": "program", "argv": ["3"]}, "expected": {"structured_output": {"sum": 6}, "exit_code": 0}}
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "2.0",
+  "id": "elevator-controller",
+  "name": "Generic Elevator Controller",
+  "project": {"kind": "state-machine", "languages": []},
+  "requirements": [
+    {"id": "REQ-DOOR-SAFE", "description": "The door is never open while the elevator is moving.", "type": "safety", "property_ids": ["PROP-DOOR-SAFE"]}
+  ],
+  "variables": [
+    {"id": "moving", "domain": {"type": "boolean"}},
+    {"id": "door_open", "domain": {"type": "boolean"}}
+  ],
+  "state_machines": [
+    {
+      "id": "ELEVATOR",
+      "initial_state": "STOPPED_CLOSED",
+      "description": "Movement and door interlock state machine.",
+      "states": [
+        {"id": "STOPPED_CLOSED", "values": {"moving": false, "door_open": false}, "labels": ["safe"]},
+        {"id": "MOVING", "values": {"moving": true, "door_open": false}, "labels": ["safe"]},
+        {"id": "STOPPED_OPEN", "values": {"moving": false, "door_open": true}, "labels": ["safe"]}
+      ],
+      "transitions": [
+        {"id": "START", "source": "STOPPED_CLOSED", "target": "MOVING", "label": "start"},
+        {"id": "ARRIVE", "source": "MOVING", "target": "STOPPED_CLOSED", "label": "arrive"},
+        {"id": "OPEN", "source": "STOPPED_CLOSED", "target": "STOPPED_OPEN", "label": "open-door"},
+        {"id": "CLOSE", "source": "STOPPED_OPEN", "target": "STOPPED_CLOSED", "label": "close-door"}
+      ]
+    }
+  ],
+  "properties": [
+    {"id": "PROP-DOOR-SAFE", "logic": "CTL", "formula": "AG(safe)", "requirement_ids": ["REQ-DOOR-SAFE"]}
+  ],
+  "coverage": {"enabled": false},
+  "fuzzing": {"enabled": false}
+}

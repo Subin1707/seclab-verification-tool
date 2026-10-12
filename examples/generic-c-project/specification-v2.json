@@ -1,0 +1,28 @@
+{
+  "schema_version": "2.0",
+  "id": "c-buffer-project",
+  "name": "C Buffer Utility",
+  "project": {
+    "kind": "software",
+    "languages": ["C"],
+    "source_roots": ["src"],
+    "build": {"standard": "c11"}
+  },
+  "requirements": [
+    {"id": "REQ-COPY-LIMIT", "description": "Copy writes no more than the destination capacity.", "type": "safety", "property_ids": ["PROP-COPY-CAPACITY"]}
+  ],
+  "variables": [
+    {"id": "length", "domain": {"type": "integer", "minimum": 0, "maximum": 256}}
+  ],
+  "properties": [
+    {"id": "PROP-COPY-CAPACITY", "logic": "SMT", "formula": "length >= 0 && length <= 256", "requirement_ids": ["REQ-COPY-LIMIT"]}
+  ],
+  "functions": [
+    {"id": "FUNC-COPY", "name": "copy_bytes", "file": "src/copy.c", "requirement_ids": ["REQ-COPY-LIMIT"]}
+  ],
+  "tests": [
+    {"id": "TEST-COPY-EMPTY", "function_id": "FUNC-COPY", "kind": "unit", "input": {"args": {"length": 0}}, "expected": {"return_value": 0}, "requirement_ids": ["REQ-COPY-LIMIT"]}
+  ],
+  "coverage": {"enabled": true, "backend": "auto", "metrics": ["line", "branch"]},
+  "fuzzing": {"enabled": false}
+}

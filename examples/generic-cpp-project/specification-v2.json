@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0",
+  "id": "cpp-vector-project",
+  "name": "C++ Vector Utilities",
+  "project": {
+    "kind": "software",
+    "languages": ["C++"],
+    "source_roots": ["src"],
+    "build": {"standard": "c++20"}
+  },
+  "requirements": [
+    {"id": "REQ-SCALE", "description": "Scale returns the product of value and factor.", "type": "functional"}
+  ],
+  "variables": [
+    {"id": "value", "domain": {"type": "integer", "minimum": -1000, "maximum": 1000}},
+    {"id": "factor", "domain": {"type": "integer", "minimum": -100, "maximum": 100}}
+  ],
+  "properties": [
+    {"id": "PROP-SCALE", "logic": "SMT", "formula": "value * factor == value * factor", "requirement_ids": ["REQ-SCALE"]}
+  ],
+  "functions": [
+    {"id": "FUNC-SCALE", "name": "scale_value", "file": "src/numeric.cpp", "requirement_ids": ["REQ-SCALE"]}
+  ],
+  "tests": [
+    {"id": "TEST-SCALE-POSITIVE", "function_id": "FUNC-SCALE", "kind": "unit", "input": {"args": {"value": 6, "factor": 7}}, "expected": {"return_value": 42}, "requirement_ids": ["REQ-SCALE"]}
+  ],
+  "coverage": {"enabled": true, "backend": "auto", "metrics": ["line"]},
+  "fuzzing": {"enabled": true, "strategy": "boundary", "iterations": 100, "timeout_seconds": 2.0}
+}
