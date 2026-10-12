@@ -1,0 +1,13 @@
+{
+  "id": "generic-memory-fixture",
+  "name": "Generic allocation probe fixture",
+  "description": "Optional probe metadata for memory bug source generation.",
+  "requirements": [],
+  "state_machine": {"states": ["READY"], "initial": ["READY"], "transitions": []},
+  "functions": [
+    {"name": "allocate_and_release", "language": "c", "kind": "alloc_release", "params": [], "buffer_size": 8},
+    {"name": "retain_allocation", "language": "c", "kind": "alloc_release", "params": [], "buffer_size": 64, "bug": "memory-leak"},
+    {"name": "release_twice", "language": "c", "kind": "alloc_release", "params": [], "buffer_size": 32, "bug": "double-free"},
+    {"name": "write_after_release", "language": "c", "kind": "alloc_release", "params": [], "buffer_size": 48, "bug": "use-after-free"}
+  ]
+}

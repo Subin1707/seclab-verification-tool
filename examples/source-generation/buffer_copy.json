@@ -1,0 +1,11 @@
+{
+  "id": "generic-buffer-copy-fixture",
+  "name": "Generic buffer copy fixture",
+  "description": "Optional probe metadata for generic C source generation.",
+  "requirements": [],
+  "state_machine": {"states": ["READY"], "initial": ["READY"], "transitions": []},
+  "functions": [
+    {"name": "copy_bounded", "language": "c", "kind": "buffer_copy", "params": ["source"], "buffer_size": 20},
+    {"name": "copy_declared_overflow", "language": "c", "kind": "buffer_copy", "params": ["source"], "buffer_size": 16, "bug": "buffer-overflow"}
+  ]
+}

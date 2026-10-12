@@ -1,0 +1,11 @@
+{
+  "id": "generic-python-branch-fixture",
+  "name": "Generic Python arithmetic and branch fixture",
+  "description": "Optional probe metadata for generic Python source generation.",
+  "requirements": [],
+  "state_machine": {"states": ["READY"], "initial": ["READY"], "transitions": []},
+  "functions": [
+    {"name": "ratio", "language": "python", "kind": "divide", "params": ["numerator", "denominator"]},
+    {"name": "unlock_gate", "language": "python", "kind": "magic_value", "params": ["first", "second"], "magic_values": [17, 29]}
+  ]
+}
