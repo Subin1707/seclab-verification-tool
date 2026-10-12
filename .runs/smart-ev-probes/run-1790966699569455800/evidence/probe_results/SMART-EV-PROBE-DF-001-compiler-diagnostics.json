@@ -1,0 +1,63 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "The same heap allocation is passed to free twice."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-fsyntax-only",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\compiler-diagnostics",
+        "duration_ms": 62.999999994644895,
+        "executable_path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [],
+    "executed": true,
+    "findings": [],
+    "limitations": [],
+    "raw_output": "$ C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE -std=c11 -Wall -Wextra -Wpedantic -fsyntax-only E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c",
+    "reason_code": "NO_STATIC_FINDINGS",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 62.999999994644895,
+      "evidence_ids": [
+        "12be1d9d-46f6-491b-ba1c-3b72cf5dcaa5",
+        "dec1f345-f0b9-4e83-b116-33bef7668443",
+        "e7a6bd79-6384-4280-8693-c34115aa3a65",
+        "4178ac27-2d73-412d-ae71-97cc4d5bcca7",
+        "b37dfabe-ee4b-4d92-8d09-11a703bcb370"
+      ],
+      "id": "b67b87ed-7c0d-48fb-b668-b4625c9f7ab2",
+      "message": "compiler-diagnostics reported no findings for this configuration and source collection.",
+      "metadata": {
+        "finding_ids": [],
+        "limitations": []
+      },
+      "property_id": null,
+      "reason_code": "NO_STATIC_FINDINGS",
+      "requirement_id": null,
+      "scope": "Compiler warning/error diagnostics for collected translation units with -Wall -Wextra -Wpedantic and syntax-only mode; diagnostics are not security verdicts.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "COMPILER-DIAGNOSTICS"
+    }
+  },
+  "tool": "compiler-diagnostics"
+}

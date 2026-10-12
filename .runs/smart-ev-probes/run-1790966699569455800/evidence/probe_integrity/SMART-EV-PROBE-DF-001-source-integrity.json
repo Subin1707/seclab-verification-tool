@@ -1,0 +1,8 @@
+{
+  "equal": true,
+  "probe_id": "SMART-EV-PROBE-DF-001",
+  "sha256_after": "50a88fb1b1f0aa1a77ed9f43df7cbddab5c39ad8fbb6696b125a5578d050bbdf",
+  "sha256_before": "50a88fb1b1f0aa1a77ed9f43df7cbddab5c39ad8fbb6696b125a5578d050bbdf",
+  "sha256_manifest_baseline": "50a88fb1b1f0aa1a77ed9f43df7cbddab5c39ad8fbb6696b125a5578d050bbdf",
+  "source_file": "double_free.c"
+}

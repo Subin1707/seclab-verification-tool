@@ -1,0 +1,53 @@
+{
+  "counterexample": null,
+  "formula": "EF(start_blocked)",
+  "initial_state_ids": [
+    "DISCONNECTED"
+  ],
+  "property_id": "CTL-P-13",
+  "satisfied": true,
+  "witness": [
+    {
+      "id": "DISCONNECTED",
+      "labels": [
+        "auth_clear",
+        "disconnected",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "CONNECTED",
+      "labels": [
+        "connected",
+        "not_authenticated",
+        "port_occupied",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "AUTH_FAILED",
+      "labels": [
+        "auth_failed",
+        "connected",
+        "power_zero",
+        "safe",
+        "start_not_allowed"
+      ],
+      "values": {}
+    },
+    {
+      "id": "START_BLOCKED",
+      "labels": [
+        "connected",
+        "power_zero",
+        "safe",
+        "start_blocked"
+      ],
+      "values": {}
+    }
+  ]
+}

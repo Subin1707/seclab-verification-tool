@@ -1,0 +1,40 @@
+{
+  "allowed_exit_codes": [
+    0
+  ],
+  "argv": [
+    "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c",
+    "-o",
+    "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\compile\\build\\probe-program.exe"
+  ],
+  "completed": true,
+  "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\compile",
+  "duration_ms": 187.0000000053551,
+  "environment_override_keys": [],
+  "executable_path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+  "execution_error": null,
+  "exit_code": 0,
+  "finished_at": "2026-10-02T18:45:00.063258Z",
+  "started_at": "2026-10-02T18:44:59.878860Z",
+  "stderr_evidence": {
+    "id": "e6b0152d-4db0-4c5a-89c0-f39c997b9f0c",
+    "path": "evidence/build/build-3b8b3ef609854d95adbf52cd971dcd23-stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout_evidence": {
+    "id": "6e9c60ae-b7e2-481c-b9af-cc06693d4779",
+    "path": "evidence/build/build-3b8b3ef609854d95adbf52cd971dcd23-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "termination": {
+    "kind": "EXIT_CODE",
+    "return_code": 0,
+    "signal": null
+  },
+  "timed_out": false
+}

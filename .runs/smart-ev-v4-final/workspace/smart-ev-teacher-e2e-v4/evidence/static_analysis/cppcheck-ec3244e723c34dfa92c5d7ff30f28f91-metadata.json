@@ -1,0 +1,72 @@
+{
+  "allowed_exit_codes": [
+    0
+  ],
+  "argv": [
+    "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+    "--xml",
+    "--xml-version=2",
+    "--enable=warning,style,performance,portability,information",
+    "E:\\smart-ev-charging-safety\\src\\auth\\token.c",
+    "E:\\smart-ev-charging-safety\\src\\auth\\xac_thuc.c",
+    "E:\\smart-ev-charging-safety\\src\\charging\\che_do_sac.c",
+    "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c",
+    "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c",
+    "E:\\smart-ev-charging-safety\\src\\communication\\dieu_khien_tu_xa.c",
+    "E:\\smart-ev-charging-safety\\src\\communication\\message.c",
+    "E:\\smart-ev-charging-safety\\src\\communication\\protocol.c",
+    "E:\\smart-ev-charging-safety\\src\\core\\cau_hinh.c",
+    "E:\\smart-ev-charging-safety\\src\\core\\he_thong.c",
+    "E:\\smart-ev-charging-safety\\src\\logging\\logger.c",
+    "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c",
+    "E:\\smart-ev-charging-safety\\src\\main.c",
+    "E:\\smart-ev-charging-safety\\src\\monitoring\\chi_so.c",
+    "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c",
+    "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c",
+    "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c",
+    "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c",
+    "E:\\smart-ev-charging-safety\\src\\safety\\phat_hien_loi.c",
+    "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c",
+    "E:\\smart-ev-charging-safety\\src\\simulation\\kich_ban.c",
+    "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c",
+    "E:\\smart-ev-charging-safety\\src\\simulation\\ngau_nhien.c",
+    "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_kich_ban.c",
+    "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_su_kien.c",
+    "E:\\smart-ev-charging-safety\\src\\station\\cong_sac.c",
+    "E:\\smart-ev-charging-safety\\src\\station\\dieu_phoi.c",
+    "E:\\smart-ev-charging-safety\\src\\station\\hang_cho.c",
+    "E:\\smart-ev-charging-safety\\src\\station\\quan_ly_cong_suat.c",
+    "E:\\smart-ev-charging-safety\\src\\station\\tram_sac.c",
+    "E:\\smart-ev-charging-safety\\src\\utils\\input.c",
+    "E:\\smart-ev-charging-safety\\src\\utils\\kiem_tra_du_lieu.c",
+    "E:\\smart-ev-charging-safety\\src\\utils\\time_utils.c",
+    "E:\\smart-ev-charging-safety\\src\\vehicle\\pin.c",
+    "E:\\smart-ev-charging-safety\\src\\vehicle\\trang_thai_xe.c",
+    "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.c"
+  ],
+  "completed": true,
+  "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-v4-final\\workspace\\smart-ev-teacher-e2e-v4",
+  "duration_ms": 1328.0000000086147,
+  "environment_override_keys": [],
+  "executable_path": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+  "execution_error": null,
+  "exit_code": 0,
+  "finished_at": "2026-10-02T18:01:22.233680Z",
+  "started_at": "2026-10-02T18:01:20.919009Z",
+  "stderr_evidence": {
+    "id": "31b922c8-059b-47dc-aa9c-3b67b71b0519",
+    "path": "evidence/static_analysis/cppcheck-ec3244e723c34dfa92c5d7ff30f28f91-stderr.txt",
+    "sha256": "0e57b3e6bb6d052c831fd527be38f24ae28c12b67c1bb8a083614b2200c925c2"
+  },
+  "stdout_evidence": {
+    "id": "f6745ccd-150d-4385-a48a-66ed7516c3fe",
+    "path": "evidence/static_analysis/cppcheck-ec3244e723c34dfa92c5d7ff30f28f91-stdout.txt",
+    "sha256": "39aed2de5cf830b50d2666a421ef1a80c66ffbe639a01d2b6f8fbe12525473d6"
+  },
+  "termination": {
+    "kind": "EXIT_CODE",
+    "return_code": 0,
+    "signal": null
+  },
+  "timed_out": false
+}

@@ -1,0 +1,294 @@
+{
+  "all_unchanged": true,
+  "run_id": "smart-ev-teacher-e2e-v4",
+  "sources": [
+    {
+      "after_sha256": "b294c3ccfec00ee915e3550ebc8d3348c8fd19da8b3c17dc60ab1a997349aea7",
+      "before_sha256": "b294c3ccfec00ee915e3550ebc8d3348c8fd19da8b3c17dc60ab1a997349aea7",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/auth/token.c",
+      "source_id": "SRC-bb7aaf85c4fa22f0"
+    },
+    {
+      "after_sha256": "e577bb2d1404c205bd84873e3f929f8385df56fbf834dffe2255c3a3f3765d1c",
+      "before_sha256": "e577bb2d1404c205bd84873e3f929f8385df56fbf834dffe2255c3a3f3765d1c",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/auth/xac_thuc.c",
+      "source_id": "SRC-d2267d8729cc86fb"
+    },
+    {
+      "after_sha256": "ada996335ff39ec1eb3d6096933874cefebe630949c0fdcdb523ad96fc8a901c",
+      "before_sha256": "ada996335ff39ec1eb3d6096933874cefebe630949c0fdcdb523ad96fc8a901c",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/charging/che_do_sac.c",
+      "source_id": "SRC-e6b4bdddb95ce88d"
+    },
+    {
+      "after_sha256": "15003af8ea8c26079c252cbdd9ed1098d2eca4dfae0d47044c01e66cd2925fe9",
+      "before_sha256": "15003af8ea8c26079c252cbdd9ed1098d2eca4dfae0d47044c01e66cd2925fe9",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/charging/dieu_khien_sac.c",
+      "source_id": "SRC-6d2f1c05c1edeb50"
+    },
+    {
+      "after_sha256": "a54e4a59be49770bbd129c396d60b80c7de266da12f7db54ac2a362761d15c48",
+      "before_sha256": "a54e4a59be49770bbd129c396d60b80c7de266da12f7db54ac2a362761d15c48",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/charging/phien_sac.c",
+      "source_id": "SRC-f60d3b23654472b6"
+    },
+    {
+      "after_sha256": "5f1d026a7219b8ad185db33441984d971d60c8b9587019f560e8c4b3aeb937f5",
+      "before_sha256": "5f1d026a7219b8ad185db33441984d971d60c8b9587019f560e8c4b3aeb937f5",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/communication/dieu_khien_tu_xa.c",
+      "source_id": "SRC-d81a11ee0e26125c"
+    },
+    {
+      "after_sha256": "9a7a5b60e207c10982b3d33f915e85c6af7d934dfe78807e75dd48b7e634b9f8",
+      "before_sha256": "9a7a5b60e207c10982b3d33f915e85c6af7d934dfe78807e75dd48b7e634b9f8",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/communication/message.c",
+      "source_id": "SRC-3a833eceb1674c2d"
+    },
+    {
+      "after_sha256": "74677da9dd13fbf3409d6c40f4ca49b04f7b74810c4f4ca18fd2bbe716c45aca",
+      "before_sha256": "74677da9dd13fbf3409d6c40f4ca49b04f7b74810c4f4ca18fd2bbe716c45aca",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/communication/protocol.c",
+      "source_id": "SRC-f4ed33ee682f1bfc"
+    },
+    {
+      "after_sha256": "df0ca03bb945b058988df0ad17ebe00272a7654c84cd7853f26a0b7624c90519",
+      "before_sha256": "df0ca03bb945b058988df0ad17ebe00272a7654c84cd7853f26a0b7624c90519",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/core/cau_hinh.c",
+      "source_id": "SRC-80aa0fc29c8656d4"
+    },
+    {
+      "after_sha256": "a2220914e9e6d7b3426419cb7be4f69f84142228a16004c8165a7ab38f667fe4",
+      "before_sha256": "a2220914e9e6d7b3426419cb7be4f69f84142228a16004c8165a7ab38f667fe4",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/core/he_thong.c",
+      "source_id": "SRC-9c7c96dc2ad148bf"
+    },
+    {
+      "after_sha256": "06eac3806674160c459e36e69cc31cba2767b7e947b926ddf9798e0a8275a7cb",
+      "before_sha256": "06eac3806674160c459e36e69cc31cba2767b7e947b926ddf9798e0a8275a7cb",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/logging/logger.c",
+      "source_id": "SRC-a9621a80f691bfdb"
+    },
+    {
+      "after_sha256": "a528bcda3c827cafac3689b40a8651dde9f368d99f6cc3bdb5795c690fdc7cfe",
+      "before_sha256": "a528bcda3c827cafac3689b40a8651dde9f368d99f6cc3bdb5795c690fdc7cfe",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/logging/nhat_ky_su_kien.c",
+      "source_id": "SRC-1e497db30d3c9cae"
+    },
+    {
+      "after_sha256": "bf0af9758e4df351626f68370679c1236ede46619df39ec6d16b36c4d03c4185",
+      "before_sha256": "bf0af9758e4df351626f68370679c1236ede46619df39ec6d16b36c4d03c4185",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/main.c",
+      "source_id": "SRC-e0cf5b28d9b6b600"
+    },
+    {
+      "after_sha256": "1a179a0e284b51c7cfdb380573e0d24643cc503212740f772adb6b0cffea6e7f",
+      "before_sha256": "1a179a0e284b51c7cfdb380573e0d24643cc503212740f772adb6b0cffea6e7f",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/monitoring/chi_so.c",
+      "source_id": "SRC-afaa183b609f2cd0"
+    },
+    {
+      "after_sha256": "3c1730f43113fda8e9f0c7efabf8434faa206a6dd7f4404d80dc4e53a6e32791",
+      "before_sha256": "3c1730f43113fda8e9f0c7efabf8434faa206a6dd7f4404d80dc4e53a6e32791",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/monitoring/du_lieu_giam_sat.c",
+      "source_id": "SRC-27cb3ba250c0e809"
+    },
+    {
+      "after_sha256": "7d92ae87a5f88041f2746b3b08d56b52163c2ffff49d37a03c08d8b347de6df8",
+      "before_sha256": "7d92ae87a5f88041f2746b3b08d56b52163c2ffff49d37a03c08d8b347de6df8",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/monitoring/su_kien_he_thong.c",
+      "source_id": "SRC-5c0e601d0cd517c9"
+    },
+    {
+      "after_sha256": "6e388188f7381f3da37c0b5b462bf47849d9ce25e692d84348a1eecc609ffc0c",
+      "before_sha256": "6e388188f7381f3da37c0b5b462bf47849d9ce25e692d84348a1eecc609ffc0c",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/safety/dung_khan_cap.c",
+      "source_id": "SRC-2795817b221353f3"
+    },
+    {
+      "after_sha256": "e9c77d1ac6d3a1fda9043f88320607cdf79875f4ed45cce3a3f54ca9497f5ecc",
+      "before_sha256": "e9c77d1ac6d3a1fda9043f88320607cdf79875f4ed45cce3a3f54ca9497f5ecc",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/safety/giam_sat_an_toan.c",
+      "source_id": "SRC-633a1b65c1a3241a"
+    },
+    {
+      "after_sha256": "46ff88bcc12acccd85af6717f3a6cb7e47f7bc162a2ad7adc0388624b5c16c6c",
+      "before_sha256": "46ff88bcc12acccd85af6717f3a6cb7e47f7bc162a2ad7adc0388624b5c16c6c",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/safety/phat_hien_loi.c",
+      "source_id": "SRC-52ba46a10dbfb9e9"
+    },
+    {
+      "after_sha256": "ae327baea1a2efd0d7ad73240c84bac3e160a51ac25b61b5748a6d1e377c1f30",
+      "before_sha256": "ae327baea1a2efd0d7ad73240c84bac3e160a51ac25b61b5748a6d1e377c1f30",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/safety/quy_tac_an_toan.c",
+      "source_id": "SRC-38ef16eedc8c6d39"
+    },
+    {
+      "after_sha256": "3a9c83d790d1562a689b91ddb59f184f3d35cc1bce1e2016c657f6f55f7b6649",
+      "before_sha256": "3a9c83d790d1562a689b91ddb59f184f3d35cc1bce1e2016c657f6f55f7b6649",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/simulation/kich_ban.c",
+      "source_id": "SRC-278fed832fb0446b"
+    },
+    {
+      "after_sha256": "7d0d9069470dcbd48cc7c3319c3791c446b476f11287087d504526f9f9db3bf3",
+      "before_sha256": "7d0d9069470dcbd48cc7c3319c3791c446b476f11287087d504526f9f9db3bf3",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/simulation/mo_phong.c",
+      "source_id": "SRC-e367b6dc0f444143"
+    },
+    {
+      "after_sha256": "9477ed0c62f40da5e1a4737e82ddf8e2c3ad5527f3d8bcae8857dd3f262c716c",
+      "before_sha256": "9477ed0c62f40da5e1a4737e82ddf8e2c3ad5527f3d8bcae8857dd3f262c716c",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/simulation/ngau_nhien.c",
+      "source_id": "SRC-72f3d96f07ebd0ee"
+    },
+    {
+      "after_sha256": "f3978e45e7997cc891f29b66ffb359349ca1b3f7503d11648253299ee29acd9e",
+      "before_sha256": "f3978e45e7997cc891f29b66ffb359349ca1b3f7503d11648253299ee29acd9e",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/simulation/sinh_kich_ban.c",
+      "source_id": "SRC-c8f46d0c5b72a301"
+    },
+    {
+      "after_sha256": "5a131810a0aac360519cf5ee21e148f3aeb5817521c93ca84f17325c42b12560",
+      "before_sha256": "5a131810a0aac360519cf5ee21e148f3aeb5817521c93ca84f17325c42b12560",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/simulation/sinh_su_kien.c",
+      "source_id": "SRC-11749ba6f76120dd"
+    },
+    {
+      "after_sha256": "6109970fbb9aebe0539cc55a15c931a5cd84a862ecc38faf88d7424c02716a05",
+      "before_sha256": "6109970fbb9aebe0539cc55a15c931a5cd84a862ecc38faf88d7424c02716a05",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/station/cong_sac.c",
+      "source_id": "SRC-d4743a9d01342c83"
+    },
+    {
+      "after_sha256": "d8535691644b2517c14b9b053d48c0bbdfcb4e12465d6b624d33ebd52a25e73c",
+      "before_sha256": "d8535691644b2517c14b9b053d48c0bbdfcb4e12465d6b624d33ebd52a25e73c",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/station/dieu_phoi.c",
+      "source_id": "SRC-6a7de777d2ea7320"
+    },
+    {
+      "after_sha256": "753826fb7a535c96a97d21a3afef0186443200a845b5b8be3f8bb772c1c66fa9",
+      "before_sha256": "753826fb7a535c96a97d21a3afef0186443200a845b5b8be3f8bb772c1c66fa9",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/station/hang_cho.c",
+      "source_id": "SRC-fc43986f872b2193"
+    },
+    {
+      "after_sha256": "debfd0a5ea998206b283212881c9e4c22f25cc91e9719757382f2ce58a7cdd88",
+      "before_sha256": "debfd0a5ea998206b283212881c9e4c22f25cc91e9719757382f2ce58a7cdd88",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/station/quan_ly_cong_suat.c",
+      "source_id": "SRC-a8535012f3a3993f"
+    },
+    {
+      "after_sha256": "256ae26f8d9d900715bbb6efb94cb0b9defdc9399acdb82443bb97723846b3c6",
+      "before_sha256": "256ae26f8d9d900715bbb6efb94cb0b9defdc9399acdb82443bb97723846b3c6",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/station/tram_sac.c",
+      "source_id": "SRC-78bdad4696d09db8"
+    },
+    {
+      "after_sha256": "56953343d5014a9ae4155906421063638a8b3aa037a2344aa313a523510ff481",
+      "before_sha256": "56953343d5014a9ae4155906421063638a8b3aa037a2344aa313a523510ff481",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/utils/input.c",
+      "source_id": "SRC-ef505c02e2b1df19"
+    },
+    {
+      "after_sha256": "4738aaccb062b2e3fca92674b877971d665a06edd8025c02d4786f53bae146db",
+      "before_sha256": "4738aaccb062b2e3fca92674b877971d665a06edd8025c02d4786f53bae146db",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/utils/kiem_tra_du_lieu.c",
+      "source_id": "SRC-f9ef75cc0165c2ba"
+    },
+    {
+      "after_sha256": "1a221c669556088daa52e4ca29fe1b62a88a93c97a551bbe299f7848bf80b892",
+      "before_sha256": "1a221c669556088daa52e4ca29fe1b62a88a93c97a551bbe299f7848bf80b892",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/utils/time_utils.c",
+      "source_id": "SRC-f75cf607ee498997"
+    },
+    {
+      "after_sha256": "856b8d823fb3ed9fb3ca0950f3a814e261c73e0aab411f87f86df4ca893d1f64",
+      "before_sha256": "856b8d823fb3ed9fb3ca0950f3a814e261c73e0aab411f87f86df4ca893d1f64",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/vehicle/pin.c",
+      "source_id": "SRC-7212376b601b96e6"
+    },
+    {
+      "after_sha256": "5950babf5b9b1e1ad1322dd2f39751ec5d93922293863a1699f0ef5158331e84",
+      "before_sha256": "5950babf5b9b1e1ad1322dd2f39751ec5d93922293863a1699f0ef5158331e84",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/vehicle/trang_thai_xe.c",
+      "source_id": "SRC-9bdf9760ff19864a"
+    },
+    {
+      "after_sha256": "8096df6f9b7c5dd6282ea73fbf0bd396acc1e948bbc0f89348a7d17bc44c4b23",
+      "before_sha256": "8096df6f9b7c5dd6282ea73fbf0bd396acc1e948bbc0f89348a7d17bc44c4b23",
+      "changed_during_run": false,
+      "error": null,
+      "path": "src/vehicle/xe_dien.c",
+      "source_id": "SRC-1233cd7003106ded"
+    }
+  ]
+}

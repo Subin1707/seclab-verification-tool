@@ -1,0 +1,90 @@
+{
+  "expected": {
+    "category": "use_after_free",
+    "cwe": null,
+    "issue": "A heap byte is written after its allocation has been freed."
+  },
+  "observed": {
+    "build_error": null,
+    "build_succeeded": true,
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+          "-std=c11",
+          "-g",
+          "-fsanitize=address",
+          "-fno-omit-frame-pointer",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c",
+          "-o",
+          "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\addresssanitizer\\build\\addresssanitizer-354f9fa2078646f3bb3b78c419ef9d31.exe"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\addresssanitizer",
+        "duration_ms": 437.9999999946449,
+        "executable_path": "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "phase": "build",
+        "stderr": "",
+        "stdout": "",
+        "succeeded": true,
+        "timed_out": false
+      },
+      {
+        "argv": [
+          "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\addresssanitizer\\build\\addresssanitizer-354f9fa2078646f3bb3b78c419ef9d31.exe"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\addresssanitizer",
+        "duration_ms": 125.0,
+        "executable_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\addresssanitizer\\build\\addresssanitizer-354f9fa2078646f3bb3b78c419ef9d31.exe",
+        "execution_error": null,
+        "exit_code": 3221225781,
+        "phase": "runtime",
+        "stderr": "",
+        "stdout": "",
+        "succeeded": false,
+        "timed_out": false
+      }
+    ],
+    "cwe_mapping_note": "Existing CWEMapper maps static Finding records only; no mapping is inferred for MemoryFinding.",
+    "cwe_mappings": [],
+    "expected_issue_observed": false,
+    "findings": [],
+    "issue_categories": [],
+    "limitations": [
+      "Instrumentation compiled, but its runtime dependency was unavailable during execution."
+    ],
+    "raw_output": "$ C:\\Program Files\\LLVM\\bin\\clang.EXE -std=c11 -g -fsanitize=address -fno-omit-frame-pointer E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c -o E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\addresssanitizer\\build\\addresssanitizer-354f9fa2078646f3bb3b78c419ef9d31.exe\n\n\n$ E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\addresssanitizer\\build\\addresssanitizer-354f9fa2078646f3bb3b78c419ef9d31.exe",
+    "supported": false,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 125.0,
+      "evidence_ids": [
+        "9a0f04b9-e060-43e2-a7c9-ae7ae86df57d",
+        "29f98050-bdc9-4071-ba38-97559873226e",
+        "38932923-7bf5-4371-8b5b-0e5857f3224f",
+        "69338ecb-efd9-4d2a-b04b-d1ca7f7ca30a",
+        "9e0ffd40-cc76-4d3c-9fc5-347ade89004c",
+        "9bf6ab31-eb34-4cd9-a3ba-c3adf3261059",
+        "c9f9edca-7f9b-4734-87ec-d266abb76acc",
+        "98dc8a10-baa0-4eea-8689-0ee3436002d9"
+      ],
+      "id": "9db37d33-0f29-4d4c-89af-7b5f479c1bb9",
+      "message": "AddressSanitizer runtime could not be loaded on this platform.",
+      "metadata": {
+        "exit_code": 3221225781,
+        "finding_ids": [],
+        "timed_out": false
+      },
+      "property_id": null,
+      "reason_code": "SANITIZER_UNAVAILABLE",
+      "requirement_id": null,
+      "scope": "AddressSanitizer observations for binary addresssanitizer-354f9fa2078646f3bb3b78c419ef9d31.exe and this execution/input only; this is not a global memory-safety proof.",
+      "source": null,
+      "stage": "SANITIZER",
+      "status": "INCONCLUSIVE",
+      "technique": "ADDRESSSANITIZER"
+    }
+  },
+  "tool": "AddressSanitizer"
+}

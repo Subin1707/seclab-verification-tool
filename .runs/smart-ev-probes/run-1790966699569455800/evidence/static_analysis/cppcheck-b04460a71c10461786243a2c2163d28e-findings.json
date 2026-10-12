@@ -1,0 +1,43 @@
+{
+  "findings": [
+    {
+      "category": "error",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-401",
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "ea1b9da1-7bbd-4f6b-aa5b-0d51e2b90d25",
+      "line": 12,
+      "message": "Memory leak: buffer",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:/seclab-verification-tool/examples/smart-ev-probes/memory_leak.c"
+      },
+      "raw_evidence": "eff213a8-0fe5-466c-a2d5-e742d91daaf4",
+      "rule_id": "memleak",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "<unknown>",
+      "function": null,
+      "id": "cd86f047-4556-4914-9ebb-e973806f620d",
+      "line": null,
+      "message": "Active checkers: 112/186 (use --checkers-report=<filename> to see details)",
+      "metadata": {
+        "original_severity": "information"
+      },
+      "raw_evidence": "eff213a8-0fe5-466c-a2d5-e742d91daaf4",
+      "rule_id": "checkersReport",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    }
+  ],
+  "limitations": [],
+  "tool": "cppcheck"
+}

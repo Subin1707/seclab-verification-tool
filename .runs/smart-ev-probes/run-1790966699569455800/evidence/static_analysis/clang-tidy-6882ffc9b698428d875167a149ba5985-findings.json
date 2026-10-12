@@ -1,0 +1,160 @@
+{
+  "findings": [
+    {
+      "category": "warning",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "cfcb7dcd-ce10-4c1f-b428-7ef6c9ae2c6b",
+      "line": 10,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "1868c5ae-2985-40a8-b04f-ed7cd3a981ba",
+      "line": 10,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 1,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "82da5776-7558-4552-a458-3a51002e9a78",
+      "line": 12,
+      "message": "Potential leak of memory pointed to by 'buffer'",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": "clang-analyzer-unix.Malloc",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "d80fa812-cb5c-4b59-a775-d44311cb7d03",
+      "line": 15,
+      "message": "Calling 'lose_allocation'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 28,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "0aefc349-9987-4c51-9089-4825f2c8280d",
+      "line": 8,
+      "message": "Memory is allocated",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "a724e73a-e165-4312-920c-232f211e0130",
+      "line": 9,
+      "message": "Assuming 'buffer' is not equal to NULL",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "abd0b686-3aef-4448-8574-fd5816925a12",
+      "line": 9,
+      "message": "Taking true branch",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 1,
+      "confidence": null,
+      "cwe": null,
+      "file": "memory_leak.c",
+      "function": null,
+      "id": "8dbc11a5-1f5b-4c45-b39a-25393af7c41d",
+      "line": 12,
+      "message": "Potential leak of memory pointed to by 'buffer'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+      },
+      "raw_evidence": "d66035a9-b4cf-484b-adc1-49bd3dba1caa",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    }
+  ],
+  "limitations": [
+    "No compile_commands.json exists; analysis uses limited default compile flags."
+  ],
+  "tool": "clang-tidy"
+}

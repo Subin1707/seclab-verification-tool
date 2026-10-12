@@ -1,0 +1,741 @@
+{
+  "deadlock_state_ids": [],
+  "initial_states": [
+    "DISCONNECTED"
+  ],
+  "reachable_state_ids": [
+    "DISCONNECTED",
+    "CONNECTED",
+    "AUTHENTICATED",
+    "AUTH_FAILED",
+    "CHARGING",
+    "START_BLOCKED",
+    "DISCONNECTING",
+    "EMERGENCY",
+    "OVERHEAT",
+    "PORT_FAULT",
+    "SOC_FULL",
+    "STOPPED_DISCONNECT",
+    "STOPPED_EMERGENCY",
+    "STOPPED_OVERHEAT",
+    "STOPPED_PORT_FAULT",
+    "STOPPED_SOC_FULL",
+    "RECOVERED_SAFE"
+  ],
+  "states": [
+    {
+      "id": "AUTHENTICATED",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "port_ready",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "AUTH_FAILED",
+      "initial": false,
+      "labels": [
+        "auth_failed",
+        "connected",
+        "power_zero",
+        "safe",
+        "start_not_allowed"
+      ],
+      "values": {}
+    },
+    {
+      "id": "CHARGING",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "charging",
+        "connected",
+        "power_positive",
+        "safe",
+        "safety_gate_valid"
+      ],
+      "values": {}
+    },
+    {
+      "id": "CONNECTED",
+      "initial": false,
+      "labels": [
+        "connected",
+        "not_authenticated",
+        "port_occupied",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "DISCONNECTED",
+      "initial": true,
+      "labels": [
+        "auth_clear",
+        "disconnected",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "DISCONNECTING",
+      "initial": false,
+      "labels": [
+        "auth_clear_required",
+        "disconnecting",
+        "stop_required"
+      ],
+      "values": {}
+    },
+    {
+      "id": "EMERGENCY",
+      "initial": false,
+      "labels": [
+        "emergency",
+        "stop_required",
+        "unsafe_until_stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "OVERHEAT",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "overheat",
+        "stop_required",
+        "unsafe_until_stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "PORT_FAULT",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "fault",
+        "port_fault",
+        "stop_required",
+        "unsafe_until_stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "RECOVERED_SAFE",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "power_zero",
+        "recovered",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "SOC_FULL",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "soc_full",
+        "stop_required",
+        "unsafe_until_stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "START_BLOCKED",
+      "initial": false,
+      "labels": [
+        "connected",
+        "power_zero",
+        "safe",
+        "start_blocked"
+      ],
+      "values": {}
+    },
+    {
+      "id": "STOPPED_DISCONNECT",
+      "initial": false,
+      "labels": [
+        "auth_clear",
+        "disconnected",
+        "power_zero",
+        "safe",
+        "stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "STOPPED_EMERGENCY",
+      "initial": false,
+      "labels": [
+        "emergency",
+        "power_zero",
+        "safe",
+        "stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "STOPPED_OVERHEAT",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "overheat",
+        "power_zero",
+        "safe",
+        "stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "STOPPED_PORT_FAULT",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "fault",
+        "power_zero",
+        "safe",
+        "stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "STOPPED_SOC_FULL",
+      "initial": false,
+      "labels": [
+        "authenticated",
+        "connected",
+        "power_zero",
+        "safe",
+        "soc_full",
+        "stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_auth_01_violation",
+      "initial": false,
+      "labels": [
+        "req_auth_01",
+        "req_auth_01_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_auth_02_violation",
+      "initial": false,
+      "labels": [
+        "req_auth_02",
+        "req_auth_02_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_chg_01_violation",
+      "initial": false,
+      "labels": [
+        "req_chg_01",
+        "req_chg_01_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_chg_02_violation",
+      "initial": false,
+      "labels": [
+        "req_chg_02",
+        "req_chg_02_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_emg_01_violation",
+      "initial": false,
+      "labels": [
+        "req_emg_01",
+        "req_emg_01_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_port_01_violation",
+      "initial": false,
+      "labels": [
+        "req_port_01",
+        "req_port_01_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_port_02_violation",
+      "initial": false,
+      "labels": [
+        "req_port_02",
+        "req_port_02_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_port_03_violation",
+      "initial": false,
+      "labels": [
+        "req_port_03",
+        "req_port_03_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_soc_01_violation",
+      "initial": false,
+      "labels": [
+        "req_soc_01",
+        "req_soc_01_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_soc_02_violation",
+      "initial": false,
+      "labels": [
+        "req_soc_02",
+        "req_soc_02_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    },
+    {
+      "id": "unreachable_req_temp_01_violation",
+      "initial": false,
+      "labels": [
+        "req_temp_01",
+        "req_temp_01_violation",
+        "smart_ev_v2",
+        "unreachable_violation_witness"
+      ],
+      "values": {}
+    }
+  ],
+  "transitions": [
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-022",
+      "label": null,
+      "source": "AUTHENTICATED",
+      "target": "AUTHENTICATED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-003",
+      "label": null,
+      "source": "AUTHENTICATED",
+      "target": "CHARGING"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-023",
+      "label": null,
+      "source": "AUTH_FAILED",
+      "target": "AUTH_FAILED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-005",
+      "label": null,
+      "source": "AUTH_FAILED",
+      "target": "START_BLOCKED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-025",
+      "label": null,
+      "source": "CHARGING",
+      "target": "CHARGING"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-014",
+      "label": null,
+      "source": "CHARGING",
+      "target": "DISCONNECTING"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-012",
+      "label": null,
+      "source": "CHARGING",
+      "target": "EMERGENCY"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-008",
+      "label": null,
+      "source": "CHARGING",
+      "target": "OVERHEAT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-010",
+      "label": null,
+      "source": "CHARGING",
+      "target": "PORT_FAULT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-006",
+      "label": null,
+      "source": "CHARGING",
+      "target": "SOC_FULL"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-002",
+      "label": null,
+      "source": "CONNECTED",
+      "target": "AUTHENTICATED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-004",
+      "label": null,
+      "source": "CONNECTED",
+      "target": "AUTH_FAILED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-021",
+      "label": null,
+      "source": "CONNECTED",
+      "target": "CONNECTED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-001",
+      "label": null,
+      "source": "DISCONNECTED",
+      "target": "CONNECTED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-020",
+      "label": null,
+      "source": "DISCONNECTED",
+      "target": "DISCONNECTED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-030",
+      "label": null,
+      "source": "DISCONNECTING",
+      "target": "DISCONNECTING"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-015",
+      "label": null,
+      "source": "DISCONNECTING",
+      "target": "STOPPED_DISCONNECT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-029",
+      "label": null,
+      "source": "EMERGENCY",
+      "target": "EMERGENCY"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-013",
+      "label": null,
+      "source": "EMERGENCY",
+      "target": "STOPPED_EMERGENCY"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-027",
+      "label": null,
+      "source": "OVERHEAT",
+      "target": "OVERHEAT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-009",
+      "label": null,
+      "source": "OVERHEAT",
+      "target": "STOPPED_OVERHEAT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-028",
+      "label": null,
+      "source": "PORT_FAULT",
+      "target": "PORT_FAULT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-011",
+      "label": null,
+      "source": "PORT_FAULT",
+      "target": "STOPPED_PORT_FAULT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-019",
+      "label": null,
+      "source": "RECOVERED_SAFE",
+      "target": "CHARGING"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-036",
+      "label": null,
+      "source": "RECOVERED_SAFE",
+      "target": "RECOVERED_SAFE"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-026",
+      "label": null,
+      "source": "SOC_FULL",
+      "target": "SOC_FULL"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-007",
+      "label": null,
+      "source": "SOC_FULL",
+      "target": "STOPPED_SOC_FULL"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-024",
+      "label": null,
+      "source": "START_BLOCKED",
+      "target": "START_BLOCKED"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-035",
+      "label": null,
+      "source": "STOPPED_DISCONNECT",
+      "target": "STOPPED_DISCONNECT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-017",
+      "label": null,
+      "source": "STOPPED_EMERGENCY",
+      "target": "RECOVERED_SAFE"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-034",
+      "label": null,
+      "source": "STOPPED_EMERGENCY",
+      "target": "STOPPED_EMERGENCY"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-018",
+      "label": null,
+      "source": "STOPPED_OVERHEAT",
+      "target": "RECOVERED_SAFE"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-032",
+      "label": null,
+      "source": "STOPPED_OVERHEAT",
+      "target": "STOPPED_OVERHEAT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-016",
+      "label": null,
+      "source": "STOPPED_PORT_FAULT",
+      "target": "RECOVERED_SAFE"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-033",
+      "label": null,
+      "source": "STOPPED_PORT_FAULT",
+      "target": "STOPPED_PORT_FAULT"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-031",
+      "label": null,
+      "source": "STOPPED_SOC_FULL",
+      "target": "STOPPED_SOC_FULL"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-037",
+      "label": null,
+      "source": "unreachable_req_auth_01_violation",
+      "target": "unreachable_req_auth_01_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-038",
+      "label": null,
+      "source": "unreachable_req_auth_02_violation",
+      "target": "unreachable_req_auth_02_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-045",
+      "label": null,
+      "source": "unreachable_req_chg_01_violation",
+      "target": "unreachable_req_chg_01_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-046",
+      "label": null,
+      "source": "unreachable_req_chg_02_violation",
+      "target": "unreachable_req_chg_02_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-047",
+      "label": null,
+      "source": "unreachable_req_emg_01_violation",
+      "target": "unreachable_req_emg_01_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-042",
+      "label": null,
+      "source": "unreachable_req_port_01_violation",
+      "target": "unreachable_req_port_01_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-043",
+      "label": null,
+      "source": "unreachable_req_port_02_violation",
+      "target": "unreachable_req_port_02_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-044",
+      "label": null,
+      "source": "unreachable_req_port_03_violation",
+      "target": "unreachable_req_port_03_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-039",
+      "label": null,
+      "source": "unreachable_req_soc_01_violation",
+      "target": "unreachable_req_soc_01_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-040",
+      "label": null,
+      "source": "unreachable_req_soc_02_violation",
+      "target": "unreachable_req_soc_02_violation"
+    },
+    {
+      "action": null,
+      "guard": null,
+      "id": "T-041",
+      "label": null,
+      "source": "unreachable_req_temp_01_violation",
+      "target": "unreachable_req_temp_01_violation"
+    }
+  ],
+  "unreachable_state_ids": [
+    "unreachable_req_auth_01_violation",
+    "unreachable_req_auth_02_violation",
+    "unreachable_req_chg_01_violation",
+    "unreachable_req_chg_02_violation",
+    "unreachable_req_emg_01_violation",
+    "unreachable_req_port_01_violation",
+    "unreachable_req_port_02_violation",
+    "unreachable_req_port_03_violation",
+    "unreachable_req_soc_01_violation",
+    "unreachable_req_soc_02_violation",
+    "unreachable_req_temp_01_violation"
+  ]
+}

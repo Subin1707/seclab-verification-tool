@@ -1,0 +1,3276 @@
+{
+  "findings": [
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/auth/token.h",
+      "function": null,
+      "id": "de079e75-ddc8-4aa9-b464-0b5a4c3bb367",
+      "line": 4,
+      "message": "'hang_so.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\auth\\token.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/auth/xac_thuc.h",
+      "function": null,
+      "id": "081361f8-d121-4b22-be52-4544f536edbf",
+      "line": 4,
+      "message": "'xe_dien.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\auth\\xac_thuc.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 24,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "3f8535f9-8c64-4d51-b548-5994e69c5097",
+      "line": 8,
+      "message": "2 adjacent parameters of 'co_the_bat_dau_sac' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 38,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "eb96599d-5db0-4e3b-bf22-477f57fe1cd7",
+      "line": 8,
+      "message": "the first parameter in the range is 'xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 57,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "f750d271-ad89-456c-a9d3-2f112223d9e7",
+      "line": 8,
+      "message": "the last parameter in the range is 'cong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 17,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "756a5d92-df26-4d06-9550-146b1842049f",
+      "line": 57,
+      "message": "2 adjacent parameters of 'bat_dau_sac' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 25,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "33a6a1df-deab-453c-a0fe-df44b7734c80",
+      "line": 57,
+      "message": "the first parameter in the range is 'xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 38,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "62f7fd3c-2d84-4800-8d0f-bc2129443cc2",
+      "line": 57,
+      "message": "the last parameter in the range is 'cong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 14,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "99593917-b1f1-4d02-911f-e40e0c788bfe",
+      "line": 78,
+      "message": "2 adjacent parameters of 'dung_sac' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 22,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "7c59e2d1-961d-4fc1-8f69-c3c120b29435",
+      "line": 78,
+      "message": "the first parameter in the range is 'xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 35,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "8f5b1822-8944-442c-bfb1-bd7bb4b5b76f",
+      "line": 78,
+      "message": "the last parameter in the range is 'cong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.h",
+      "function": null,
+      "id": "c7c40c8d-7c10-4f24-8326-847bb90a11a7",
+      "line": 4,
+      "message": "'xe_dien.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 42,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/phien_sac.c",
+      "function": null,
+      "id": "700661fe-c00f-4ca0-8522-484e71bf86d7",
+      "line": 4,
+      "message": "4 adjacent parameters of 'khoi_tao_phien_sac' of convertible types are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 46,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/phien_sac.c",
+      "function": null,
+      "id": "c041781f-3a32-46a8-bdbd-e50ed9e3231d",
+      "line": 4,
+      "message": "the first parameter in the range is 'id'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 85,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/phien_sac.c",
+      "function": null,
+      "id": "b8c4998b-c9be-405d-831f-83567ab5bf90",
+      "line": 4,
+      "message": "the last parameter in the range is 'soc_bat_dau'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 79,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/phien_sac.c",
+      "function": null,
+      "id": "8af0f354-6a96-4cf6-95eb-4af9b0560185",
+      "line": 4,
+      "message": "'int' and 'float' may be implicitly converted",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 42,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/phien_sac.c",
+      "function": null,
+      "id": "9883bf85-0e6a-4dc1-b9f1-38436cb98695",
+      "line": 16,
+      "message": "2 adjacent parameters of 'ket_thuc_phien_sac' of similar type ('float') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 48,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/phien_sac.c",
+      "function": null,
+      "id": "8773ca6a-0600-425c-98aa-b3221d85ed53",
+      "line": 16,
+      "message": "the first parameter in the range is 'soc_ket_thuc'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 68,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/phien_sac.c",
+      "function": null,
+      "id": "4ee618d5-830b-432f-ae89-73ab463c29bd",
+      "line": 16,
+      "message": "the last parameter in the range is 'nang_luong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 28,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "function": null,
+      "id": "70a7339b-7d49-4841-a472-e58271f9c88e",
+      "line": 66,
+      "message": "2 adjacent parameters of 'xu_ly_lenh_dieu_khien' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\dieu_khien_tu_xa.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 37,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "function": null,
+      "id": "3c270a38-06c6-425e-8667-ab516953b33f",
+      "line": 66,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\dieu_khien_tu_xa.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 35,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "function": null,
+      "id": "5fd911ee-5939-4dd9-8227-15f4f4b7af61",
+      "line": 67,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\dieu_khien_tu_xa.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/dieu_khien_tu_xa.h",
+      "function": null,
+      "id": "bdfab2a3-017f-41d1-950d-1ee40a4af896",
+      "line": 4,
+      "message": "'tram_sac.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\dieu_khien_tu_xa.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 2,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/message.c",
+      "function": null,
+      "id": "f69ffcd3-48b4-4066-a601-dcf77da69759",
+      "line": 8,
+      "message": "Call to function 'memcpy' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memcpy_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\message.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 2,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/message.c",
+      "function": null,
+      "id": "3ae35d76-c8d9-4a62-ab96-9ed3c3e51297",
+      "line": 8,
+      "message": "Call to function 'memcpy' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memcpy_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\message.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 2,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/message.c",
+      "function": null,
+      "id": "333979e6-401d-46db-b1ab-9c425c4dde6c",
+      "line": 19,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\message.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 2,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/message.c",
+      "function": null,
+      "id": "5beec3a2-529a-449f-a3a1-856cbef16d20",
+      "line": 19,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\message.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 20,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/message.c",
+      "function": null,
+      "id": "ff77fd62-ddd3-41da-8d81-ed2c1f5c157c",
+      "line": 30,
+      "message": "'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\message.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-unchecked-string-to-number-conversion",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 31,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/message.c",
+      "function": null,
+      "id": "7be5cdb9-db19-401e-ab8b-fe0d9bf725d8",
+      "line": 35,
+      "message": "'atof' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtod' instead",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\message.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-unchecked-string-to-number-conversion",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 28,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/core/hang_so.h",
+      "function": null,
+      "id": "1a77ac2b-6f8c-4a1c-a793-dacd83091b97",
+      "line": 11,
+      "message": "macro replacement list should be enclosed in parentheses",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\core\\hang_so.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-macro-parentheses",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 22,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "ff9017b6-4b97-4372-89a4-295e750b644d",
+      "line": 27,
+      "message": "'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-deprecated-declarations",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 20,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt/stdio.h",
+      "function": null,
+      "id": "4c9ee02e-1c48-415f-a2d1-07fb3efd12df",
+      "line": 212,
+      "message": "'fopen' has been explicitly marked deprecated here",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt\\stdio.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 55,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/include/vcruntime.h",
+      "function": null,
+      "id": "f38e5249-4c83-4923-9c68-d72f3f3a59f4",
+      "line": 320,
+      "message": "expanded from macro '_CRT_INSECURE_DEPRECATE'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\include\\vcruntime.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 47,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/include/vcruntime.h",
+      "function": null,
+      "id": "4088f96a-ffc3-43b7-8393-634e201519fb",
+      "line": 310,
+      "message": "expanded from macro '_CRT_DEPRECATE_TEXT'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\include\\vcruntime.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 26,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "f062acff-9499-4115-85e9-0785cb2cdd3c",
+      "line": 46,
+      "message": "'localtime' is deprecated: This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-deprecated-declarations",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt/time.h",
+      "function": null,
+      "id": "2d7343b1-18d0-4cdf-a9f8-2bf2e2b95f34",
+      "line": 494,
+      "message": "'localtime' has been explicitly marked deprecated here",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt\\time.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 55,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/include/vcruntime.h",
+      "function": null,
+      "id": "21233fc3-420d-4c13-a3c7-33752e05bbcd",
+      "line": 320,
+      "message": "expanded from macro '_CRT_INSECURE_DEPRECATE'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\include\\vcruntime.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 47,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/include/vcruntime.h",
+      "function": null,
+      "id": "7351d493-7832-4e5d-8a08-afea6757c4b9",
+      "line": 310,
+      "message": "expanded from macro '_CRT_DEPRECATE_TEXT'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\include\\vcruntime.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "3a50f639-94de-4eae-aefd-dc1da9213151",
+      "line": 50,
+      "message": "'strcpy' is deprecated: This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-deprecated-declarations",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 1,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt/string.h",
+      "function": null,
+      "id": "2de4f7ee-a750-4fb4-b6dd-f14719d7816d",
+      "line": 130,
+      "message": "'strcpy' has been explicitly marked deprecated here",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt\\string.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt.h",
+      "function": null,
+      "id": "1b1adacf-af3d-4b6a-b336-354adf7512aa",
+      "line": 821,
+      "message": "expanded from macro '__DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt\\corecrt.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 17,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt/corecrt.h",
+      "function": null,
+      "id": "7978559d-566d-4c81-9398-7871f0d20e7e",
+      "line": 1880,
+      "message": "expanded from macro '__DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1_EX'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt\\corecrt.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 55,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/include/vcruntime.h",
+      "function": null,
+      "id": "22434419-75ae-4381-8313-dca2424190d4",
+      "line": 320,
+      "message": "expanded from macro '_CRT_INSECURE_DEPRECATE'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\include\\vcruntime.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 47,
+      "confidence": null,
+      "cwe": null,
+      "file": "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/include/vcruntime.h",
+      "function": null,
+      "id": "59fbd1b0-0c2e-436f-8647-41f413f52516",
+      "line": 310,
+      "message": "expanded from macro '_CRT_DEPRECATE_TEXT'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\include\\vcruntime.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "c890052d-1f37-4989-ae71-7bf1057a93d2",
+      "line": 64,
+      "message": "Call to function 'fprintf' is insecure as it does not provide bounding of the memory buffer or security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "878915ac-1ca0-4025-b81c-e995ccb1268e",
+      "line": 64,
+      "message": "Call to function 'fprintf' is insecure as it does not provide bounding of the memory buffer or security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "754affc5-b393-4cce-ae6b-a2da6c4140e4",
+      "line": 68,
+      "message": "Call to function 'fprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "d94c07be-9c94-4bd9-b169-f5482c99a7c7",
+      "line": 68,
+      "message": "Call to function 'fprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "function": null,
+      "id": "b3829088-405e-463e-86fd-dbda9fadefbc",
+      "line": 42,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "function": null,
+      "id": "18592e18-0b78-40be-85cb-b637513e5d48",
+      "line": 42,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "function": null,
+      "id": "6073ff07-ecc6-428f-9ddb-4815a7503853",
+      "line": 43,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "function": null,
+      "id": "8145c6d6-d537-4ccc-8a75-fd11b9ec64e4",
+      "line": 43,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "function": null,
+      "id": "3a80d1a1-c3e6-4ff2-a532-923ba91c919a",
+      "line": 45,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "function": null,
+      "id": "0209582a-2fd5-460b-95f0-0808251fbdb8",
+      "line": 45,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "17abeceb-11ea-4105-a920-41bcdd213dec",
+      "line": 3,
+      "message": "'hang_so.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 58,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "7dba89c2-f520-4999-9bc4-64619690ae3f",
+      "line": 34,
+      "message": "2 adjacent parameters of 'in_kich_ban_ngau_nhien' of convertible types are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 62,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "c9a04039-a0d1-488f-8de1-bc1594535d8a",
+      "line": 34,
+      "message": "the first parameter in the range is 'so_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 82,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "32cfba09-2859-48d5-8756-340c75143f4b",
+      "line": 34,
+      "message": "the last parameter in the range is 'seed'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 69,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "3a0e6559-43d9-4282-a878-7f57d2f5769e",
+      "line": 34,
+      "message": "'int' and 'unsigned int' may be implicitly converted",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "03737920-344b-46ec-83da-baca6e24a007",
+      "line": 78,
+      "message": "'scanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-unchecked-string-to-number-conversion",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 29,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "f479e540-eb98-4e78-acb7-61e9086450d0",
+      "line": 86,
+      "message": "2 adjacent parameters of 'tim_xe_tren_cong' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 44,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "f9635114-ffbf-4d44-b3c4-f991bfd2b731",
+      "line": 86,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 63,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "bbeb9589-f4ee-4682-8f73-9e0aecf759a6",
+      "line": 86,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 23,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "7891b140-3d41-45b2-9324-a8035400d1fa",
+      "line": 96,
+      "message": "narrowing conversion from 'size_t' (aka 'unsigned long long') to signed type 'int' is implementation-defined",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-narrowing-conversions",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 33,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "0889455f-e498-42a0-98fd-0ba21a8deb75",
+      "line": 103,
+      "message": "3 adjacent parameters of 'dieu_khien_thu_cong' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 42,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "081e73f6-7782-4594-bfa8-29f489d985c7",
+      "line": 103,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 73,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "4b0de1b9-81a5-40d6-b81c-a8261c307912",
+      "line": 103,
+      "message": "the last parameter in the range is 'ds_phien'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 13,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "7ca6d307-0061-4d01-9eac-8ae7d565b07f",
+      "line": 120,
+      "message": "'scanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-unchecked-string-to-number-conversion",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 13,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "280f8ff1-aa03-4211-b7ad-45ed472bd137",
+      "line": 256,
+      "message": "'scanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-unchecked-string-to-number-conversion",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 17,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "fe076b86-e0bd-4c48-b27c-f3be68e535d1",
+      "line": 269,
+      "message": "'scanf' used to convert a string to an unsigned integer value, but function will not report conversion errors; consider using 'strtoul' instead",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-unchecked-string-to-number-conversion",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 2,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/chi_so.c",
+      "function": null,
+      "id": "f94698df-7a74-4a72-a5a2-cf18cd5555a1",
+      "line": 8,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\chi_so.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 2,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/chi_so.c",
+      "function": null,
+      "id": "7103d8f5-fed3-4c01-bd8b-499c44720e58",
+      "line": 8,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\chi_so.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 59,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "fb495185-fed0-40b8-85ca-8b877bd8b971",
+      "line": 46,
+      "message": "2 adjacent parameters of 'tim_xe_theo_id' of similar type ('int') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 63,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "50114d3c-dd16-4cac-be35-7cb7e9ffb8d7",
+      "line": 46,
+      "message": "the first parameter in the range is 'so_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 74,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "ecedfc80-77e0-44dd-a1b4-63ac5b4d997b",
+      "line": 46,
+      "message": "the last parameter in the range is 'id'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 7,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "fbe545d7-6e82-4477-8d9f-103956bb9433",
+      "line": 75,
+      "message": "2 adjacent parameters of 'xuat_snapshot_json' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 22,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "a732c63f-d7a3-4b73-98e5-de9f0cf590bc",
+      "line": 75,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 20,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "b7fc7c1f-f949-476b-9a2a-6073362e39f9",
+      "line": 76,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 7,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "4062fbdb-7aaf-4e5e-8664-4b01131696dd",
+      "line": 78,
+      "message": "2 adjacent parameters of 'xuat_snapshot_json' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 25,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "257f08d9-c717-4062-a8c9-b7e36a9ff3a5",
+      "line": 78,
+      "message": "the first parameter in the range is 'queue'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 29,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "aadbe38b-6885-4e8c-affc-9995c4b1ef52",
+      "line": 79,
+      "message": "the last parameter in the range is 'kich_ban'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "8847c61f-b316-4419-8b40-b6a572120683",
+      "line": 86,
+      "message": "2 adjacent parameters of 'xuat_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 25,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "308e44c7-b695-4673-8e68-5fd2da73c0fd",
+      "line": 86,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 23,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "4b3c1c2a-4fb0-4fa7-b66b-7bb321f7d7ac",
+      "line": 87,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 17,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "6059f792-3128-4c53-90c3-5fe466324daf",
+      "line": 89,
+      "message": "2 adjacent parameters of 'xuat_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 35,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "409d5c0a-6d00-4a20-8ac6-b5015048fe03",
+      "line": 89,
+      "message": "the first parameter in the range is 'queue'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 39,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "4383c7d1-73e9-471c-a8ed-3f14d99ccb58",
+      "line": 90,
+      "message": "the last parameter in the range is 'kich_ban'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 8,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "313c0a0f-0d7b-4761-96a4-6d7d66393dac",
+      "line": 210,
+      "message": "2 adjacent parameters of 'ghi_snapshot_json' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 23,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "ff672ad3-f735-4c03-8695-3fbd1fb7b485",
+      "line": 210,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 21,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "1446e731-0d7b-461f-ad0b-2d7fa61d4acf",
+      "line": 211,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 8,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "ed860a10-9991-4011-bb20-99d6e5b2f79b",
+      "line": 213,
+      "message": "2 adjacent parameters of 'ghi_snapshot_json' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 26,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "c535886c-2c32-4e87-ab67-67d5fcf8fada",
+      "line": 213,
+      "message": "the first parameter in the range is 'queue'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 30,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "8a4520a5-fa1a-43eb-a5ad-447d2128d20d",
+      "line": 214,
+      "message": "the last parameter in the range is 'kich_ban'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 11,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "98606018-7b6d-4f44-a5f4-cbf6da557a39",
+      "line": 231,
+      "message": "2 adjacent parameters of 'ghi_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 26,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "b6367436-ef47-44f6-b736-bf099f5435d2",
+      "line": 231,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 24,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "38303783-b286-41a1-b525-5a4668bf086c",
+      "line": 232,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 11,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "5b9b49f6-f627-4898-a0b5-c5c8c1473840",
+      "line": 234,
+      "message": "2 adjacent parameters of 'ghi_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 29,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "e23c0206-3951-4b2a-b119-0db3656f506a",
+      "line": 234,
+      "message": "the first parameter in the range is 'queue'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 33,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "de4ca6d1-0ce1-4002-8b64-9634627635aa",
+      "line": 235,
+      "message": "the last parameter in the range is 'kich_ban'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.h",
+      "function": null,
+      "id": "523a7ad7-6273-4d8d-8a1f-eaba219b9ee9",
+      "line": 5,
+      "message": "'tram_sac.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "function": null,
+      "id": "a2b3fa37-0e89-4d5c-ac05-8c68268bbbca",
+      "line": 11,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "function": null,
+      "id": "9465318b-8d11-446a-8f6d-a03196fa70be",
+      "line": 11,
+      "message": "Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "function": null,
+      "id": "e7ef2dbb-2955-4c24-8b96-8307010349b8",
+      "line": 15,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "function": null,
+      "id": "ff18257a-1e80-4fa2-aa60-edb43b22fb03",
+      "line": 15,
+      "message": "Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "function": null,
+      "id": "8d107869-5e0d-4446-8555-9db5cdb06528",
+      "line": 26,
+      "message": "Call to function 'memmove' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memmove_s' in case of C11",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "function": null,
+      "id": "5189f144-cda6-4e42-adc7-4d2ae0b674ca",
+      "line": 26,
+      "message": "Call to function 'memmove' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memmove_s' in case of C11",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 34,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.c",
+      "function": null,
+      "id": "bb13d3cb-ec60-4e4f-8738-d6a7ca3207ed",
+      "line": 5,
+      "message": "2 adjacent parameters of 'kich_hoat_dung_khan_cap_cong' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 43,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.c",
+      "function": null,
+      "id": "61c50296-1ab6-406c-9130-2dbb528cfcc6",
+      "line": 5,
+      "message": "the first parameter in the range is 'cong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 57,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.c",
+      "function": null,
+      "id": "a97f2924-5bcc-4ec5-a9be-78392f4a51fa",
+      "line": 5,
+      "message": "the last parameter in the range is 'xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 34,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.c",
+      "function": null,
+      "id": "3dcbd2a7-8adb-43ce-b359-848593acad34",
+      "line": 22,
+      "message": "2 adjacent parameters of 'kich_hoat_dung_khan_cap_tram' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 43,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.c",
+      "function": null,
+      "id": "e5643f28-0a67-4b83-9132-1519d9af5ec5",
+      "line": 22,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 56,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.c",
+      "function": null,
+      "id": "fb4ab840-da17-431b-96bc-2f137aae2aa7",
+      "line": 22,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.h",
+      "function": null,
+      "id": "01dafdd8-7237-49c0-8db2-625dc83fdd69",
+      "line": 4,
+      "message": "'cong_sac.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 35,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "a703c71b-b3e2-4781-9497-3e569d820863",
+      "line": 5,
+      "message": "3 adjacent parameters of 'giam_sat_xe_va_cong' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 43,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "6204278e-26a9-42d3-a186-74d3203a9cbd",
+      "line": 5,
+      "message": "the first parameter in the range is 'xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 71,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "ac63732b-442e-4459-8ebf-d9fe41984cc1",
+      "line": 5,
+      "message": "the last parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 27,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "bb7cd08a-3ed6-4ab8-8b41-f283e79bdd87",
+      "line": 85,
+      "message": "2 adjacent parameters of 'kiem_tra_toan_bo_tram' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 36,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "0e612c1c-e3b6-4105-b434-b97206b810cf",
+      "line": 85,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 49,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "a60f15a2-5aad-4fb4-bba0-a48dbd6a6c68",
+      "line": 85,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.h",
+      "function": null,
+      "id": "6ae11c8b-659f-4a75-bc08-d03edb3546ea",
+      "line": 4,
+      "message": "'xe_dien.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 27,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "d6ef660f-7308-4dde-9103-8ea2dd518574",
+      "line": 6,
+      "message": "2 adjacent parameters of 'kiem_tra_sr01_ket_noi' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 41,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "ef71f399-c4f3-460d-b74a-0a18275499d0",
+      "line": 6,
+      "message": "the first parameter in the range is 'xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 60,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "8287c754-8201-4968-8a01-54f12b9c0e8d",
+      "line": 6,
+      "message": "the last parameter in the range is 'cong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 28,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "abfc979f-4918-4cc6-80b5-4714e6c3f957",
+      "line": 42,
+      "message": "2 adjacent parameters of 'kiem_tra_sr05_khan_cap' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 43,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "afda2ceb-1e8b-4f46-9ac4-a96703638a5d",
+      "line": 42,
+      "message": "the first parameter in the range is 'cong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 64,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "b448aeb8-db9e-481d-92b9-cfe7a333fd35",
+      "line": 42,
+      "message": "the last parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 32,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "f9bde837-e6cc-4373-8bdf-fb1bfcb7b65a",
+      "line": 77,
+      "message": "2 adjacent parameters of 'kiem_tra_sr09_ngat_ket_noi' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 46,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "97d9acb6-9bc4-4e74-b4ca-eba56ec50a98",
+      "line": 77,
+      "message": "the first parameter in the range is 'xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 65,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.c",
+      "function": null,
+      "id": "91cbe135-e4c2-46d2-9f9b-4833c9e9dccb",
+      "line": 77,
+      "message": "the last parameter in the range is 'cong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.h",
+      "function": null,
+      "id": "70945cf6-81c0-4817-abc6-6c307cee758d",
+      "line": 4,
+      "message": "'xe_dien.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 28,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/kich_ban.c",
+      "function": null,
+      "id": "71e6fcb2-02fd-4077-8180-6bc5f359dc7d",
+      "line": 64,
+      "message": "2 adjacent parameters of 'ap_dung_kich_ban_tick' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\kich_ban.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 37,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/kich_ban.c",
+      "function": null,
+      "id": "464afe2f-fc2b-424d-b953-1191b7a003ac",
+      "line": 64,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\kich_ban.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 35,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/kich_ban.c",
+      "function": null,
+      "id": "6564ef35-100e-4e6d-9306-181e4113bd57",
+      "line": 65,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\kich_ban.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/kich_ban.h",
+      "function": null,
+      "id": "6673e736-f372-4e75-9675-1ec47641e874",
+      "line": 4,
+      "message": "'xe_dien.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\kich_ban.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 34,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "e9f02112-02b9-434b-b4c4-1df47aef5150",
+      "line": 39,
+      "message": "2 adjacent parameters of 'in_dashboard_tick' of similar type ('const int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 49,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "57a8e151-50df-4993-a1ac-f14bf05b3236",
+      "line": 39,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 68,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "d81398d3-4dd3-436f-a061-4d53d7f07f0d",
+      "line": 39,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 25,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "c8a18e01-c6f0-430e-9aea-551a28d831b7",
+      "line": 74,
+      "message": "3 adjacent parameters of 'thuc_hien_mot_tick' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 30,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "2b3e0083-7e2a-4b45-9385-c835708734f1",
+      "line": 74,
+      "message": "the first parameter in the range is 'tick_hien_tai'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 32,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "199b3033-5df5-47dc-b9d9-5042be6db3b2",
+      "line": 76,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 25,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "007269ce-4484-4cab-8390-f4e0008e5981",
+      "line": 78,
+      "message": "2 adjacent parameters of 'thuc_hien_mot_tick' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 34,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "2938597b-04f6-4c19-a09f-0e6e3f2aad60",
+      "line": 78,
+      "message": "the first parameter in the range is 'ds_phien'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 39,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "4882a906-5708-406a-8f86-b350a54e0d3a",
+      "line": 79,
+      "message": "the last parameter in the range is 'chi_so'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 20,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "843ca90e-3de4-422b-a9c8-0862aa764637",
+      "line": 271,
+      "message": "2 adjacent parameters of 'chay_mo_phong' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 29,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "a912b9fd-1d4d-4885-ba0f-471e4d1847c8",
+      "line": 271,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 27,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "13de1f7c-6871-4c78-8ef3-8a99b78a16ec",
+      "line": 272,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 20,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "de1cc2e8-7fb9-40db-809c-937f3e848ba3",
+      "line": 273,
+      "message": "4 adjacent parameters of 'chay_mo_phong' of convertible types are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 24,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "01997853-a5ba-4587-abe9-b884f82cd957",
+      "line": 273,
+      "message": "the first parameter in the range is 'so_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 33,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "9f8453f6-8883-4756-902b-e42d636ce0b6",
+      "line": 276,
+      "message": "the last parameter in the range is 'seed'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 20,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "67e27285-705c-4e65-aab4-463f48732039",
+      "line": 276,
+      "message": "'int' and 'unsigned int' may be implicitly converted",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.h",
+      "function": null,
+      "id": "bf3655ff-d63c-4153-b965-752b1b4b4a6f",
+      "line": 4,
+      "message": "'tram_sac.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 19,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/ngau_nhien.c",
+      "function": null,
+      "id": "cd0d3280-388c-47a8-a75c-11b8ece2c1e8",
+      "line": 21,
+      "message": "narrowing conversion from 'int' to 'float'",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\ngau_nhien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-narrowing-conversions",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/sinh_kich_ban.h",
+      "function": null,
+      "id": "96dfb653-8f0b-4126-badd-cb542ac2ca0d",
+      "line": 4,
+      "message": "'xe_dien.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_kich_ban.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 35,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/sinh_su_kien.c",
+      "function": null,
+      "id": "f31fdb7d-2e54-4032-87fc-b9850f98bef5",
+      "line": 7,
+      "message": "2 adjacent parameters of 'xu_ly_su_kien_tick' of similar type ('int *') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 44,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/sinh_su_kien.c",
+      "function": null,
+      "id": "80f3e8e4-1fcc-4eaf-8b31-ca0ee39420b6",
+      "line": 7,
+      "message": "the first parameter in the range is 'tram'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 57,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/sinh_su_kien.c",
+      "function": null,
+      "id": "ed9c5bd1-5dcc-415d-8d40-b38acc5a873f",
+      "line": 7,
+      "message": "the last parameter in the range is 'ds_xe'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_su_kien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/sinh_su_kien.h",
+      "function": null,
+      "id": "de98136c-31bb-470e-83ee-5ad1ceb520ae",
+      "line": 4,
+      "message": "'tram_sac.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_su_kien.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/cong_sac.h",
+      "function": null,
+      "id": "fe43811d-248d-4caa-8deb-827e7a55670e",
+      "line": 4,
+      "message": "'kieu_du_lieu.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\station\\cong_sac.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/tram_sac.h",
+      "function": null,
+      "id": "8ef3a10c-cd18-43d6-b929-426dc01beb6f",
+      "line": 4,
+      "message": "'hang_so.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\station\\tram_sac.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 13,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/utils/input.c",
+      "function": null,
+      "id": "483e26a3-3094-4b40-887a-076264b1b135",
+      "line": 2,
+      "message": "declaration uses identifier '_placeholder_input', which is reserved in the global namespace",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\utils\\input.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-reserved-identifier",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 13,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/utils/kiem_tra_du_lieu.c",
+      "function": null,
+      "id": "ac7f491e-9489-4577-b74b-9e2e7e6692cf",
+      "line": 2,
+      "message": "declaration uses identifier '_placeholder_kiem_tra_du_lieu', which is reserved in the global namespace",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\utils\\kiem_tra_du_lieu.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-reserved-identifier",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 13,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/utils/time_utils.c",
+      "function": null,
+      "id": "dd923097-504a-4f35-bb11-4ad7d0601055",
+      "line": 2,
+      "message": "declaration uses identifier '_placeholder_time_utils', which is reserved in the global namespace",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\utils\\time_utils.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-reserved-identifier",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/pin.c",
+      "function": null,
+      "id": "befba60a-47d3-47ec-8777-e7f87a21f9de",
+      "line": 3,
+      "message": "'hang_so.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\pin.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 19,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/pin.c",
+      "function": null,
+      "id": "ee89b3e2-e175-4a4e-a07b-597b5c8db931",
+      "line": 6,
+      "message": "3 adjacent parameters of 'khoi_tao_pin' of similar type ('float') are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\pin.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 25,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/pin.c",
+      "function": null,
+      "id": "a354e7ef-ea6f-418d-9ebc-7ff04d277daf",
+      "line": 6,
+      "message": "the first parameter in the range is 'dung_luong'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\pin.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 25,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/pin.c",
+      "function": null,
+      "id": "8367ff8f-f11e-4825-818b-61374ac5d934",
+      "line": 8,
+      "message": "the last parameter in the range is 'nhiet_do'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\pin.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/trang_thai_xe.h",
+      "function": null,
+      "id": "d45bf963-7381-4198-b4ef-03914a9fb003",
+      "line": 4,
+      "message": "'kieu_du_lieu.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\trang_thai_xe.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "warning",
+      "column": 23,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/xe_dien.c",
+      "function": null,
+      "id": "ebbe6487-ad36-41fc-a10c-9374af2d8633",
+      "line": 11,
+      "message": "3 adjacent parameters of 'khoi_tao_xe_dien' of convertible types are easily swapped by mistake",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "bugprone-easily-swappable-parameters",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 29,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/xe_dien.c",
+      "function": null,
+      "id": "32b72e71-d1a3-4dd9-86c5-56a5309c19cd",
+      "line": 11,
+      "message": "the first parameter in the range is 'nhiet_do'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 35,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/xe_dien.c",
+      "function": null,
+      "id": "4048da53-165a-4055-a645-4677ad213fd1",
+      "line": 13,
+      "message": "the last parameter in the range is 'kich_ban'",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 23,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/xe_dien.c",
+      "function": null,
+      "id": "f4db81d3-820c-48fb-a93d-9fff3c5bac4a",
+      "line": 13,
+      "message": "'float' and 'int' may be implicitly converted",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.c"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/xe_dien.h",
+      "function": null,
+      "id": "fabca229-f0a1-4e53-8d6f-660480700c6c",
+      "line": 4,
+      "message": "'hang_so.h' file not found",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.h"
+      },
+      "raw_evidence": "0518c79f-cda7-45ac-9132-8d4bafcbed6e",
+      "rule_id": "clang-diagnostic-error",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    }
+  ],
+  "limitations": [
+    "No compile_commands.json exists; analysis uses limited default compile flags."
+  ],
+  "tool": "clang-tidy"
+}

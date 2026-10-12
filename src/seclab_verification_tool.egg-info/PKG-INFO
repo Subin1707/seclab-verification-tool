@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: seclab-verification-tool
+Version: 0.1.0
+Summary: Specification-driven software verification tool
+Requires-Python: >=3.11
+Requires-Dist: jsonschema<5,>=4.18
+Requires-Dist: z3-solver<6,>=4.12
+Provides-Extra: test
+Requires-Dist: pytest<9,>=8; extra == "test"
+Provides-Extra: gui
+Requires-Dist: PySide6<7,>=6.7; extra == "gui"
+Provides-Extra: xlsx
+Requires-Dist: openpyxl<4,>=3.1; extra == "xlsx"

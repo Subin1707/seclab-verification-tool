@@ -1,0 +1,43 @@
+{
+  "findings": [
+    {
+      "category": "error",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-415",
+      "file": "double_free.c",
+      "function": null,
+      "id": "68f2786b-106d-477e-a90a-0d14aa78a1e9",
+      "line": 9,
+      "message": "Memory pointed to by 'allocation' is freed twice.",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c"
+      },
+      "raw_evidence": "d5e0512e-4fe1-46ee-a23d-08827c73211d",
+      "rule_id": "doubleFree",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "<unknown>",
+      "function": null,
+      "id": "cc4fa566-4d27-4ccb-87a3-87725731442e",
+      "line": null,
+      "message": "Active checkers: 112/186 (use --checkers-report=<filename> to see details)",
+      "metadata": {
+        "original_severity": "information"
+      },
+      "raw_evidence": "d5e0512e-4fe1-46ee-a23d-08827c73211d",
+      "rule_id": "checkersReport",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    }
+  ],
+  "limitations": [],
+  "tool": "cppcheck"
+}

@@ -1,0 +1,196 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "A heap byte is written after its allocation has been freed."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+          "-checks=clang-analyzer-*,bugprone-*,performance-*,portability-*",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c",
+          "--",
+          "-x",
+          "c",
+          "-std=c11"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\clang-tidy",
+        "duration_ms": 108.99999999674037,
+        "executable_path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "64 warnings generated.\r\nSuppressed 63 warnings (63 in non-user code).\r\nUse -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.\r\n",
+        "stdout": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:10:19: warning: Use of memory after it is released [clang-analyzer-unix.Malloc]\n   10 |     allocation[0] = 'B';\n      |     ~~~~~~~~~~~~~ ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:4:50: note: Memory is allocated\n    4 |     volatile char *allocation = (volatile char *)malloc(16);\n      |                                                  ^~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:5:9: note: Assuming 'allocation' is not equal to NULL\n    5 |     if (allocation == NULL) {\n      |         ^~~~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:5:5: note: Taking false branch\n    5 |     if (allocation == NULL) {\n      |     ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:9:5: note: Memory is released\n    9 |     free((void *)allocation);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:10:19: note: Use of memory after it is released\n   10 |     allocation[0] = 'B';\n      |     ~~~~~~~~~~~~~ ^\n",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "executed": true,
+    "findings": [
+      {
+        "category": "warning",
+        "column": 19,
+        "confidence": null,
+        "cwe": null,
+        "file": "use_after_free.c",
+        "function": null,
+        "id": "57c1632e-7ae9-4255-9e92-7a16ed22b811",
+        "line": 10,
+        "message": "Use of memory after it is released",
+        "metadata": {
+          "original_severity": "warning",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+        },
+        "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+        "rule_id": "clang-analyzer-unix.Malloc",
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 50,
+        "confidence": null,
+        "cwe": null,
+        "file": "use_after_free.c",
+        "function": null,
+        "id": "993f3243-9c55-4da6-a1a1-5d7f00a4b2f0",
+        "line": 4,
+        "message": "Memory is allocated",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+        },
+        "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 9,
+        "confidence": null,
+        "cwe": null,
+        "file": "use_after_free.c",
+        "function": null,
+        "id": "ade785ff-6769-4751-8d7c-2cbb5a8cf8a2",
+        "line": 5,
+        "message": "Assuming 'allocation' is not equal to NULL",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+        },
+        "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "use_after_free.c",
+        "function": null,
+        "id": "4278f96d-5e1f-492e-876d-922fd599e66c",
+        "line": 5,
+        "message": "Taking false branch",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+        },
+        "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "use_after_free.c",
+        "function": null,
+        "id": "1b5842c2-b060-410b-9f09-eca3d2497e83",
+        "line": 9,
+        "message": "Memory is released",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+        },
+        "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 19,
+        "confidence": null,
+        "cwe": null,
+        "file": "use_after_free.c",
+        "function": null,
+        "id": "abe8cfe1-a9fb-4081-8c98-d078dde799ae",
+        "line": 10,
+        "message": "Use of memory after it is released",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+        },
+        "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      }
+    ],
+    "limitations": [
+      "No compile_commands.json exists; analysis uses limited default compile flags."
+    ],
+    "raw_output": "$ C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE -checks=clang-analyzer-*,bugprone-*,performance-*,portability-* E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c -- -x c -std=c11\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:10:19: warning: Use of memory after it is released [clang-analyzer-unix.Malloc]\n   10 |     allocation[0] = 'B';\n      |     ~~~~~~~~~~~~~ ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:4:50: note: Memory is allocated\n    4 |     volatile char *allocation = (volatile char *)malloc(16);\n      |                                                  ^~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:5:9: note: Assuming 'allocation' is not equal to NULL\n    5 |     if (allocation == NULL) {\n      |         ^~~~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:5:5: note: Taking false branch\n    5 |     if (allocation == NULL) {\n      |     ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:9:5: note: Memory is released\n    9 |     free((void *)allocation);\n      |     ^~~~~~~~~~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c:10:19: note: Use of memory after it is released\n   10 |     allocation[0] = 'B';\n      |     ~~~~~~~~~~~~~ ^\n\n64 warnings generated.\r\nSuppressed 63 warnings (63 in non-user code).\r\nUse -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.",
+    "reason_code": "STATIC_FINDINGS_DETECTED",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 108.99999999674037,
+      "evidence_ids": [
+        "e2d6f3af-1ee0-4dd4-9113-527fc91a4325",
+        "7f02873e-98db-4826-9903-9e089c85dce1",
+        "3c9d5e61-07fa-42c5-85db-c4caafa8c9b8",
+        "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+        "f18da9d8-3e19-4503-afe4-e25c6c253f37"
+      ],
+      "id": "d7ae6471-2878-4752-956f-e64cd7ff4ad8",
+      "message": "6 finding(s) reported by clang-tidy; these are not confirmed property violations.",
+      "metadata": {
+        "finding_ids": [
+          "57c1632e-7ae9-4255-9e92-7a16ed22b811",
+          "993f3243-9c55-4da6-a1a1-5d7f00a4b2f0",
+          "ade785ff-6769-4751-8d7c-2cbb5a8cf8a2",
+          "4278f96d-5e1f-492e-876d-922fd599e66c",
+          "1b5842c2-b060-410b-9f09-eca3d2497e83",
+          "abe8cfe1-a9fb-4081-8c98-d078dde799ae"
+        ],
+        "limitations": [
+          "No compile_commands.json exists; analysis uses limited default compile flags."
+        ]
+      },
+      "property_id": null,
+      "reason_code": "STATIC_FINDINGS_DETECTED",
+      "requirement_id": null,
+      "scope": "Clang-Tidy checks for collected translation units; analyzer diagnostics are reports, not confirmed property violations.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "CLANG-TIDY"
+    }
+  },
+  "tool": "clang-tidy"
+}

@@ -1,0 +1,19 @@
+{
+  "category": "buffer_overflow",
+  "expected_cwe": null,
+  "expected_issue": "A heap write occurs one byte past the allocated 8-byte buffer.",
+  "expected_tools": [
+    "C compiler",
+    "compiler-diagnostics",
+    "cppcheck",
+    "clang-tidy",
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer",
+    "LeakSanitizer"
+  ],
+  "language": "C",
+  "name": "buffer_overflow",
+  "probe_id": "SMART-EV-PROBE-BO-001",
+  "scope": "BUG_INJECTED_PROBE",
+  "source_file": "buffer_overflow.c"
+}

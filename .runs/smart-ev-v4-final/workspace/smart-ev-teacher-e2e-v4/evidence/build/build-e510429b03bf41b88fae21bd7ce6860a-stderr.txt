@@ -1,0 +1,143 @@
+In file included from E:\smart-ev-charging-safety\src\auth\token.c:3:
+E:\smart-ev-charging-safety\src\auth\token.h:4:10: fatal error: 'hang_so.h' file not found
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\auth\xac_thuc.c:2:
+E:\smart-ev-charging-safety\src\auth\xac_thuc.h:4:10: fatal error: 'xe_dien.h' file not found
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:2:
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.h:4:10: fatal error: 'xe_dien.h' file not found
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.c:6:
+E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.h:4:10: fatal error: 'tram_sac.h' file not found
+    4 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+E:\smart-ev-charging-safety\src\logging\logger.c:27:22: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+   27 |         g_log_file = fopen(duong_dan_file, "w");
+      |                      ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:320:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  320 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:310:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  310 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+E:\smart-ev-charging-safety\src\logging\logger.c:46:26: warning: 'localtime' is deprecated: This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+   46 |     struct tm *tm_info = localtime(&now);
+      |                          ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\time.h:494:9: note: 'localtime' has been explicitly marked deprecated here
+  494 |         _CRT_INSECURE_DEPRECATE(localtime_s)
+      |         ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:320:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  320 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:310:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  310 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+E:\smart-ev-charging-safety\src\logging\logger.c:50:9: warning: 'strcpy' is deprecated: This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+   50 |         strcpy(thoi_gian_str, "00:00:00");
+      |         ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\string.h:130:1: note: 'strcpy' has been explicitly marked deprecated here
+  130 | __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(
+      | ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt.h:821:5: note: expanded from macro '__DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1'
+  821 |     __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1_EX(_ReturnType, _ReturnPolicy, _DeclSpec, _FuncName, _FuncName##_s, _DstType, _SalAttributeDst, _DstType, _Dst, _TType1, _TArg1)
+      |     ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt.h:1880:17: note: expanded from macro '__DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1_EX'
+ 1880 |                 _CRT_INSECURE_DEPRECATE(_SecureFuncName) _DeclSpec _ReturnType __cdecl _FuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1);
+      |                 ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:320:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  320 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:310:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  310 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+3 warnings generated.
+E:\smart-ev-charging-safety\src\main.c:3:10: fatal error: 'hang_so.h' file not found
+    3 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:1:
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.h:5:10: fatal error: 'tram_sac.h' file not found
+    5 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:2:
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.h:4:10: fatal error: 'cong_sac.h' file not found
+    4 | #include "cong_sac.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:2:
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.h:4:10: fatal error: 'xe_dien.h' file not found
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:2:
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.h:4:10: fatal error: 'xe_dien.h' file not found
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\simulation\kich_ban.c:3:
+E:\smart-ev-charging-safety\src\simulation\kich_ban.h:4:10: fatal error: 'xe_dien.h' file not found
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\simulation\mo_phong.c:13:
+E:\smart-ev-charging-safety\src\simulation\mo_phong.h:4:10: fatal error: 'tram_sac.h' file not found
+    4 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\simulation\sinh_kich_ban.c:2:
+E:\smart-ev-charging-safety\src\simulation\sinh_kich_ban.h:4:10: fatal error: 'xe_dien.h' file not found
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.c:2:
+E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.h:4:10: fatal error: 'tram_sac.h' file not found
+    4 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\station\cong_sac.c:2:
+E:\smart-ev-charging-safety\src\station\cong_sac.h:4:10: fatal error: 'kieu_du_lieu.h' file not found
+    4 | #include "kieu_du_lieu.h"
+      |          ^~~~~~~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\station\dieu_phoi.c:1:
+In file included from E:\smart-ev-charging-safety\src\station\dieu_phoi.h:4:
+E:\smart-ev-charging-safety\src\station\tram_sac.h:4:10: fatal error: 'hang_so.h' file not found
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\station\quan_ly_cong_suat.c:2:
+In file included from E:\smart-ev-charging-safety\src\station\quan_ly_cong_suat.h:4:
+E:\smart-ev-charging-safety\src\station\tram_sac.h:4:10: fatal error: 'hang_so.h' file not found
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\station\tram_sac.c:3:
+E:\smart-ev-charging-safety\src\station\tram_sac.h:4:10: fatal error: 'hang_so.h' file not found
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+E:\smart-ev-charging-safety\src\vehicle\pin.c:3:10: fatal error: 'hang_so.h' file not found
+    3 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\vehicle\trang_thai_xe.c:1:
+E:\smart-ev-charging-safety\src\vehicle\trang_thai_xe.h:4:10: fatal error: 'kieu_du_lieu.h' file not found
+    4 | #include "kieu_du_lieu.h"
+      |          ^~~~~~~~~~~~~~~~
+1 error generated.
+In file included from E:\smart-ev-charging-safety\src\vehicle\xe_dien.c:3:
+E:\smart-ev-charging-safety\src\vehicle\xe_dien.h:4:10: fatal error: 'hang_so.h' file not found
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+1 error generated.

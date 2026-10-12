@@ -1,0 +1,110 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "The same heap allocation is passed to free twice."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+          "--xml",
+          "--xml-version=2",
+          "--enable=warning,style,performance,portability,information",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\cppcheck",
+        "duration_ms": 15.000000013969839,
+        "executable_path": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.21.0\"/>\r\n    <errors>\r\n        <error id=\"doubleFree\" severity=\"error\" msg=\"Memory pointed to by &apos;allocation&apos; is freed twice.\" verbose=\"Memory pointed to by &apos;allocation&apos; is freed twice.\" cwe=\"415\" file0=\"E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c\">\r\n            <location file=\"E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c\" line=\"9\" column=\"5\"/>\r\n            <location file=\"E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c\" line=\"8\" column=\"5\"/>\r\n            <symbol>allocation</symbol>\r\n        </error>\r\n        <error id=\"checkersReport\" severity=\"information\" msg=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\" verbose=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\"/>\r\n    </errors>\r\n</results>\r\n",
+        "stdout": "Checking E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c ...\r\n",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [
+      {
+        "confidence": "tool-provided",
+        "cwe_id": "CWE-415",
+        "reason": "The analyzer supplied an explicit CWE identifier.",
+        "source": "tool"
+      },
+      null
+    ],
+    "executed": true,
+    "findings": [
+      {
+        "category": "error",
+        "column": null,
+        "confidence": null,
+        "cwe": "CWE-415",
+        "file": "double_free.c",
+        "function": null,
+        "id": "68f2786b-106d-477e-a90a-0d14aa78a1e9",
+        "line": 9,
+        "message": "Memory pointed to by 'allocation' is freed twice.",
+        "metadata": {
+          "original_severity": "error",
+          "raw_file_path": "E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c"
+        },
+        "raw_evidence": "d5e0512e-4fe1-46ee-a23d-08827c73211d",
+        "rule_id": "doubleFree",
+        "severity": "UNKNOWN",
+        "tool": "cppcheck"
+      },
+      {
+        "category": "information",
+        "column": null,
+        "confidence": null,
+        "cwe": null,
+        "file": "<unknown>",
+        "function": null,
+        "id": "cc4fa566-4d27-4ccb-87a3-87725731442e",
+        "line": null,
+        "message": "Active checkers: 112/186 (use --checkers-report=<filename> to see details)",
+        "metadata": {
+          "original_severity": "information"
+        },
+        "raw_evidence": "d5e0512e-4fe1-46ee-a23d-08827c73211d",
+        "rule_id": "checkersReport",
+        "severity": "UNKNOWN",
+        "tool": "cppcheck"
+      }
+    ],
+    "limitations": [],
+    "raw_output": "$ C:\\Program Files\\Cppcheck\\cppcheck.EXE --xml --xml-version=2 --enable=warning,style,performance,portability,information E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c\nChecking E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c ...\r\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.21.0\"/>\r\n    <errors>\r\n        <error id=\"doubleFree\" severity=\"error\" msg=\"Memory pointed to by &apos;allocation&apos; is freed twice.\" verbose=\"Memory pointed to by &apos;allocation&apos; is freed twice.\" cwe=\"415\" file0=\"E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c\">\r\n            <location file=\"E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c\" line=\"9\" column=\"5\"/>\r\n            <location file=\"E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c\" line=\"8\" column=\"5\"/>\r\n            <symbol>allocation</symbol>\r\n        </error>\r\n        <error id=\"checkersReport\" severity=\"information\" msg=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\" verbose=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\"/>\r\n    </errors>\r\n</results>",
+    "reason_code": "STATIC_FINDINGS_DETECTED",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 15.000000013969839,
+      "evidence_ids": [
+        "a6e8b5d8-8191-487f-ab68-9d6a59e75a38",
+        "d40da77a-afe9-472f-a3f9-f3d57ece2059",
+        "35f01c37-a721-42cc-ac3c-0a8f021b2aaf",
+        "d5e0512e-4fe1-46ee-a23d-08827c73211d",
+        "f457d9f6-1f26-4caf-b8c6-8cbbe956b332"
+      ],
+      "id": "4a5929cb-b045-4355-bbaf-b3b0b0ac6b10",
+      "message": "2 finding(s) reported by cppcheck; these are not confirmed property violations.",
+      "metadata": {
+        "finding_ids": [
+          "68f2786b-106d-477e-a90a-0d14aa78a1e9",
+          "cc4fa566-4d27-4ccb-87a3-87725731442e"
+        ],
+        "limitations": []
+      },
+      "property_id": null,
+      "reason_code": "STATIC_FINDINGS_DETECTED",
+      "requirement_id": null,
+      "scope": "Cppcheck reports for the collected C/C++ files under the requested enable configuration; reports are not confirmed vulnerabilities.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "CPPCHECK"
+    }
+  },
+  "tool": "cppcheck"
+}

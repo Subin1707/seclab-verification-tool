@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.21.0"/>
+    <errors>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/charging/dieu_khien_sac.c">
+            <location file="E:/smart-ev-charging-safety/src/charging/dieu_khien_sac.c" line="0" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/communication/dieu_khien_tu_xa.c">
+            <location file="E:/smart-ev-charging-safety/src/communication/dieu_khien_tu_xa.c" line="0" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/communication/message.c">
+            <location file="E:/smart-ev-charging-safety/src/communication/message.c" line="0" column="0"/>
+        </error>
+        <error id="constVariablePointer" severity="style" msg="Variable &apos;tm_info&apos; can be declared as pointer to const" verbose="Variable &apos;tm_info&apos; can be declared as pointer to const" cwe="398" file0="E:/smart-ev-charging-safety/src/logging/logger.c">
+            <location file="E:/smart-ev-charging-safety/src/logging/logger.c" line="46" column="16" info="Variable &apos;tm_info&apos; can be declared as pointer to const"/>
+            <symbol>tm_info</symbol>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/main.c">
+            <location file="E:/smart-ev-charging-safety/src/main.c" line="0" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/monitoring/du_lieu_giam_sat.c">
+            <location file="E:/smart-ev-charging-safety/src/monitoring/du_lieu_giam_sat.c" line="0" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/safety/giam_sat_an_toan.c">
+            <location file="E:/smart-ev-charging-safety/src/safety/giam_sat_an_toan.c" line="0" column="0"/>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;tram&apos; can be declared as pointer to const" verbose="Parameter &apos;tram&apos; can be declared as pointer to const" cwe="398" file0="E:/smart-ev-charging-safety/src/safety/giam_sat_an_toan.c">
+            <location file="E:/smart-ev-charging-safety/src/safety/giam_sat_an_toan.c" line="5" column="71" info="Parameter &apos;tram&apos; can be declared as pointer to const"/>
+            <symbol>tram</symbol>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/simulation/kich_ban.c">
+            <location file="E:/smart-ev-charging-safety/src/simulation/kich_ban.c" line="0" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/simulation/mo_phong.c">
+            <location file="E:/smart-ev-charging-safety/src/simulation/mo_phong.c" line="0" column="0"/>
+        </error>
+        <error id="duplicateCondition" severity="style" msg="The if condition is the same as the previous if condition" verbose="The if condition is the same as the previous if condition" cwe="398" file0="E:/smart-ev-charging-safety/src/simulation/mo_phong.c">
+            <location file="E:/smart-ev-charging-safety/src/simulation/mo_phong.c" line="201" column="25" info="Second condition"/>
+            <location file="E:/smart-ev-charging-safety/src/simulation/mo_phong.c" line="191" column="25" info="First condition"/>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;cac_kb&apos; can be declared as const array" verbose="Variable &apos;cac_kb&apos; can be declared as const array" cwe="398" file0="E:/smart-ev-charging-safety/src/simulation/sinh_kich_ban.c">
+            <location file="E:/smart-ev-charging-safety/src/simulation/sinh_kich_ban.c" line="41" column="17" info="Variable &apos;cac_kb&apos; can be declared as const array"/>
+            <symbol>cac_kb</symbol>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/station/dieu_phoi.c">
+            <location file="E:/smart-ev-charging-safety/src/station/dieu_phoi.c" line="0" column="0"/>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/station/quan_ly_cong_suat.c">
+            <location file="E:/smart-ev-charging-safety/src/station/quan_ly_cong_suat.c" line="0" column="0"/>
+        </error>
+        <error id="constVariablePointer" severity="style" msg="Variable &apos;cong&apos; can be declared as pointer to const" verbose="Variable &apos;cong&apos; can be declared as pointer to const" cwe="398" file0="E:/smart-ev-charging-safety/src/station/quan_ly_cong_suat.c">
+            <location file="E:/smart-ev-charging-safety/src/station/quan_ly_cong_suat.c" line="99" column="18" info="Variable &apos;cong&apos; can be declared as pointer to const"/>
+            <symbol>cong</symbol>
+        </error>
+        <error id="normalCheckLevelMaxBranches" severity="information" msg="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." verbose="Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches." file0="E:/smart-ev-charging-safety/src/station/tram_sac.c">
+            <location file="E:/smart-ev-charging-safety/src/station/tram_sac.c" line="0" column="0"/>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>

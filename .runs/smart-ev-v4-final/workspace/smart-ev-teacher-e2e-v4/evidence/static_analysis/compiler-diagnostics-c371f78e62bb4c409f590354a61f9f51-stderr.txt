@@ -1,0 +1,100 @@
+In file included from E:\smart-ev-charging-safety\src\auth\token.c:3:
+E:\smart-ev-charging-safety\src\auth\token.h:4:10: fatal error: hang_so.h: No such file or directory
+ #include "hang_so.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\auth\xac_thuc.c:2:
+E:\smart-ev-charging-safety\src\auth\xac_thuc.h:4:10: fatal error: xe_dien.h: No such file or directory
+ #include "xe_dien.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:2:
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.h:4:10: fatal error: xe_dien.h: No such file or directory
+ #include "xe_dien.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.c:6:
+E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.h:4:10: fatal error: tram_sac.h: No such file or directory
+ #include "tram_sac.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+E:\smart-ev-charging-safety\src\main.c:3:10: fatal error: hang_so.h: No such file or directory
+ #include "hang_so.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:1:
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.h:5:10: fatal error: tram_sac.h: No such file or directory
+ #include "tram_sac.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:2:
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.h:4:10: fatal error: cong_sac.h: No such file or directory
+ #include "cong_sac.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:2:
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.h:4:10: fatal error: xe_dien.h: No such file or directory
+ #include "xe_dien.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:2:
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.h:4:10: fatal error: xe_dien.h: No such file or directory
+ #include "xe_dien.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\simulation\kich_ban.c:3:
+E:\smart-ev-charging-safety\src\simulation\kich_ban.h:4:10: fatal error: xe_dien.h: No such file or directory
+ #include "xe_dien.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\simulation\mo_phong.c:13:
+E:\smart-ev-charging-safety\src\simulation\mo_phong.h:4:10: fatal error: tram_sac.h: No such file or directory
+ #include "tram_sac.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\simulation\sinh_kich_ban.c:2:
+E:\smart-ev-charging-safety\src\simulation\sinh_kich_ban.h:4:10: fatal error: xe_dien.h: No such file or directory
+ #include "xe_dien.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.c:2:
+E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.h:4:10: fatal error: tram_sac.h: No such file or directory
+ #include "tram_sac.h"
+          ^~~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\station\cong_sac.c:2:
+E:\smart-ev-charging-safety\src\station\cong_sac.h:4:10: fatal error: kieu_du_lieu.h: No such file or directory
+ #include "kieu_du_lieu.h"
+          ^~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\station\dieu_phoi.h:4,
+                 from E:\smart-ev-charging-safety\src\station\dieu_phoi.c:1:
+E:\smart-ev-charging-safety\src\station\tram_sac.h:4:10: fatal error: hang_so.h: No such file or directory
+ #include "hang_so.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\station\quan_ly_cong_suat.h:4,
+                 from E:\smart-ev-charging-safety\src\station\quan_ly_cong_suat.c:2:
+E:\smart-ev-charging-safety\src\station\tram_sac.h:4:10: fatal error: hang_so.h: No such file or directory
+ #include "hang_so.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\station\tram_sac.c:3:
+E:\smart-ev-charging-safety\src\station\tram_sac.h:4:10: fatal error: hang_so.h: No such file or directory
+ #include "hang_so.h"
+          ^~~~~~~~~~~
+compilation terminated.
+E:\smart-ev-charging-safety\src\vehicle\pin.c:3:10: fatal error: hang_so.h: No such file or directory
+ #include "hang_so.h"
+          ^~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\vehicle\trang_thai_xe.c:1:
+E:\smart-ev-charging-safety\src\vehicle\trang_thai_xe.h:4:10: fatal error: kieu_du_lieu.h: No such file or directory
+ #include "kieu_du_lieu.h"
+          ^~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from E:\smart-ev-charging-safety\src\vehicle\xe_dien.c:3:
+E:\smart-ev-charging-safety\src\vehicle\xe_dien.h:4:10: fatal error: hang_so.h: No such file or directory
+ #include "hang_so.h"
+          ^~~~~~~~~~~
+compilation terminated.

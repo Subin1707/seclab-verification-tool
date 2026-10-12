@@ -1,0 +1,33 @@
+{
+  "allowed_exit_codes": [
+    0
+  ],
+  "argv": [
+    "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-e37af74c6ce64b2888b3e701c0bbdb61.exe"
+  ],
+  "completed": true,
+  "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\undefinedbehaviorsanitizer",
+  "duration_ms": 203.99999999790452,
+  "environment_override_keys": [],
+  "executable_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-e37af74c6ce64b2888b3e701c0bbdb61.exe",
+  "execution_error": null,
+  "exit_code": 0,
+  "finished_at": "2026-10-02T18:45:01.556568Z",
+  "started_at": "2026-10-02T18:45:01.347294Z",
+  "stderr_evidence": {
+    "id": "26039b17-399d-4dd8-abda-6aac16fa37f2",
+    "path": "evidence/sanitizer/undefinedbehaviorsanitizer-aca4ed4e10e640be89c468c68575423a-stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout_evidence": {
+    "id": "e4fc779a-2cde-47bc-8565-cf196981bf91",
+    "path": "evidence/sanitizer/undefinedbehaviorsanitizer-aca4ed4e10e640be89c468c68575423a-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "termination": {
+    "kind": "EXIT_CODE",
+    "return_code": 0,
+    "signal": null
+  },
+  "timed_out": false
+}

@@ -1,0 +1,90 @@
+{
+  "backend": "z3-python",
+  "backend_version": "5.1.0",
+  "duration_ms": 0.0,
+  "model": {
+    "assignments": [
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "charging"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "emergency"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "energy_wh"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "offset"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "power_port1"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "power_port2"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "power_port3"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "power_port4"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "power_port5"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "soc"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "soc_current"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "soc_delta"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "temperature"
+      },
+      {
+        "type": "integer",
+        "value": 2147483648,
+        "variable": "time_seconds"
+      },
+      {
+        "type": "integer",
+        "value": 0,
+        "variable": "total_power"
+      }
+    ],
+    "format": "seclab-smt-counterexample-v1"
+  },
+  "query_evidence_id": "2c9dc087-19ed-4be9-9e83-1182e2126830",
+  "query_intent": "SATISFIABILITY",
+  "query_sha256": "849bf478acb1fd1fa6bd75fc9cbc1bb58dbae89f32188d1d33d783ad3773a3b2",
+  "reason": null,
+  "solver_outcome": "SAT"
+}

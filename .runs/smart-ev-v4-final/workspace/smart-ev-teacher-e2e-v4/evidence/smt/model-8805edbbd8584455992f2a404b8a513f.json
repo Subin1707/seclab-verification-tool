@@ -1,0 +1,80 @@
+{
+  "assignments": [
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "charging"
+    },
+    {
+      "type": "integer",
+      "value": 1,
+      "variable": "emergency"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "energy_wh"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "offset"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "power_port1"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "power_port2"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "power_port3"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "power_port4"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "power_port5"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "soc"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "soc_current"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "soc_delta"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "temperature"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "time_seconds"
+    },
+    {
+      "type": "integer",
+      "value": 0,
+      "variable": "total_power"
+    }
+  ],
+  "format": "seclab-smt-counterexample-v1"
+}

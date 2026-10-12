@@ -1,0 +1,386 @@
+{
+  "findings": [
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/auth/token.h",
+      "function": null,
+      "id": "ee301246-d005-47c5-bb17-49c6bc307b79",
+      "line": 4,
+      "message": "hang_so.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\auth\\token.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/auth/xac_thuc.h",
+      "function": null,
+      "id": "52f8506f-c8bd-4f82-955d-a749570515b7",
+      "line": 4,
+      "message": "xe_dien.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\auth\\xac_thuc.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.h",
+      "function": null,
+      "id": "6a4692e8-184c-4b92-b4b0-06033f10fa9a",
+      "line": 4,
+      "message": "xe_dien.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/dieu_khien_tu_xa.h",
+      "function": null,
+      "id": "2bb43d6d-1e77-40b2-87ae-dc56894ee57f",
+      "line": 4,
+      "message": "tram_sac.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\communication\\dieu_khien_tu_xa.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "7383b85c-305d-4a58-af8e-a845fb7a3212",
+      "line": 3,
+      "message": "hang_so.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\main.c"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.h",
+      "function": null,
+      "id": "7b4bc40f-0d37-421b-b12e-2d9688e30487",
+      "line": 5,
+      "message": "tram_sac.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/dung_khan_cap.h",
+      "function": null,
+      "id": "9a63e266-5cea-45a4-a2c9-1b5ff27ab0fc",
+      "line": 4,
+      "message": "cong_sac.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.h",
+      "function": null,
+      "id": "273fc13c-c3ec-4bd3-b5c5-bbb8bfb1de65",
+      "line": 4,
+      "message": "xe_dien.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/quy_tac_an_toan.h",
+      "function": null,
+      "id": "fc70491a-7965-4b08-9399-0b7244be3131",
+      "line": 4,
+      "message": "xe_dien.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/kich_ban.h",
+      "function": null,
+      "id": "4f703ed1-4c07-43b2-b923-f05559ad924c",
+      "line": 4,
+      "message": "xe_dien.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\kich_ban.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.h",
+      "function": null,
+      "id": "dd8e05e4-8c1a-44cc-ae29-dc0ffc3f7d56",
+      "line": 4,
+      "message": "tram_sac.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/sinh_kich_ban.h",
+      "function": null,
+      "id": "13b90a10-5b18-40f3-8a9b-99c518796717",
+      "line": 4,
+      "message": "xe_dien.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_kich_ban.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/sinh_su_kien.h",
+      "function": null,
+      "id": "2f8bb369-14c4-4f69-b534-2fda4280640a",
+      "line": 4,
+      "message": "tram_sac.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_su_kien.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/cong_sac.h",
+      "function": null,
+      "id": "a0ab1b3b-2f7c-4c53-afd5-2c4c920a58c8",
+      "line": 4,
+      "message": "kieu_du_lieu.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\station\\cong_sac.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/tram_sac.h",
+      "function": null,
+      "id": "913e9738-0454-489d-b39c-3fb95aedf4c4",
+      "line": 4,
+      "message": "hang_so.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\station\\tram_sac.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/tram_sac.h",
+      "function": null,
+      "id": "363eb066-7fce-4cd3-860d-6ee803ad77d1",
+      "line": 4,
+      "message": "hang_so.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\station\\tram_sac.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/tram_sac.h",
+      "function": null,
+      "id": "dd411dc2-429b-4c35-b03e-cd19f435c669",
+      "line": 4,
+      "message": "hang_so.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\station\\tram_sac.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/pin.c",
+      "function": null,
+      "id": "44547e21-9c68-49a9-8cf9-3f923887dd73",
+      "line": 3,
+      "message": "hang_so.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\pin.c"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/trang_thai_xe.h",
+      "function": null,
+      "id": "14907ee9-1e16-47ef-9928-f64689fb140a",
+      "line": 4,
+      "message": "kieu_du_lieu.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\trang_thai_xe.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    },
+    {
+      "category": "fatal error",
+      "column": 10,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/vehicle/xe_dien.h",
+      "function": null,
+      "id": "4a28d152-26d8-46d5-bae2-c082fa08466e",
+      "line": 4,
+      "message": "hang_so.h: No such file or directory",
+      "metadata": {
+        "original_severity": "fatal error",
+        "raw_file_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.h"
+      },
+      "raw_evidence": "9dbf0b76-4aad-4d0c-837a-da9dec6d7356",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "gcc"
+    }
+  ],
+  "limitations": [],
+  "tool": "compiler-diagnostics"
+}

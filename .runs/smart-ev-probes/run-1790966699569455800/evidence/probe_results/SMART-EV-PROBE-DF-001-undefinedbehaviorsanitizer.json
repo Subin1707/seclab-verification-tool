@@ -1,0 +1,89 @@
+{
+  "expected": {
+    "category": "double_free",
+    "cwe": null,
+    "issue": "The same heap allocation is passed to free twice."
+  },
+  "observed": {
+    "build_error": null,
+    "build_succeeded": true,
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+          "-std=c11",
+          "-g",
+          "-fsanitize=undefined",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c",
+          "-o",
+          "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-9ac9e02768b344a48cdf77ee307e4620.exe"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\undefinedbehaviorsanitizer",
+        "duration_ms": 437.9999999946449,
+        "executable_path": "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "phase": "build",
+        "stderr": "",
+        "stdout": "",
+        "succeeded": true,
+        "timed_out": false
+      },
+      {
+        "argv": [
+          "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-9ac9e02768b344a48cdf77ee307e4620.exe"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\undefinedbehaviorsanitizer",
+        "duration_ms": 342.99999999348074,
+        "executable_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-9ac9e02768b344a48cdf77ee307e4620.exe",
+        "execution_error": null,
+        "exit_code": 3221226356,
+        "phase": "runtime",
+        "stderr": "",
+        "stdout": "",
+        "succeeded": false,
+        "timed_out": false
+      }
+    ],
+    "cwe_mapping_note": "Existing CWEMapper maps static Finding records only; no mapping is inferred for MemoryFinding.",
+    "cwe_mappings": [],
+    "expected_issue_observed": false,
+    "findings": [],
+    "issue_categories": [],
+    "limitations": [
+      "A crash or non-zero exit without a recognized report is not classified as a memory defect."
+    ],
+    "raw_output": "$ C:\\Program Files\\LLVM\\bin\\clang.EXE -std=c11 -g -fsanitize=undefined E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c -o E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-9ac9e02768b344a48cdf77ee307e4620.exe\n\n\n$ E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-9ac9e02768b344a48cdf77ee307e4620.exe",
+    "supported": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 342.99999999348074,
+      "evidence_ids": [
+        "ab95d177-57a9-4c5f-b624-add2b853d7d7",
+        "a8bed069-0146-44d6-99f7-8a7732ea7fd5",
+        "69772052-3a69-4984-a641-fdd93e036f76",
+        "22da617c-271b-4418-8778-04a04a08cda2",
+        "bbd98492-9491-4768-8219-f41c41fc1318",
+        "6326f956-f388-4470-93c7-42a9e52419dd",
+        "6752202f-e70c-409e-967f-4f7f5ac6e16a",
+        "f4eb38cc-0191-459d-892b-db4f73feb8d3"
+      ],
+      "id": "cc0c7310-c4da-4489-b286-632fe6050eee",
+      "message": "The instrumented process exited unsuccessfully without a recognized sanitizer report.",
+      "metadata": {
+        "exit_code": 3221226356,
+        "finding_ids": [],
+        "timed_out": false
+      },
+      "property_id": null,
+      "reason_code": "SANITIZER_RUN_FAILED",
+      "requirement_id": null,
+      "scope": "UndefinedBehaviorSanitizer observations for binary undefinedbehaviorsanitizer-9ac9e02768b344a48cdf77ee307e4620.exe and this execution/input only; this is not a global memory-safety proof.",
+      "source": null,
+      "stage": "SANITIZER",
+      "status": "INCONCLUSIVE",
+      "technique": "UNDEFINEDBEHAVIORSANITIZER"
+    }
+  },
+  "tool": "UndefinedBehaviorSanitizer"
+}

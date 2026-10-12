@@ -1,0 +1,10 @@
+{
+  "counterexample": null,
+  "formula": "AG(!req_chg_02_violation)",
+  "initial_state_ids": [
+    "DISCONNECTED"
+  ],
+  "property_id": "CTL-P-10",
+  "satisfied": true,
+  "witness": null
+}

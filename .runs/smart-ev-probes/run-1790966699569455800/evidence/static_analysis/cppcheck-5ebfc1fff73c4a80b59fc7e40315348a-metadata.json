@@ -1,0 +1,37 @@
+{
+  "allowed_exit_codes": [
+    0
+  ],
+  "argv": [
+    "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+    "--xml",
+    "--xml-version=2",
+    "--enable=warning,style,performance,portability,information",
+    "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+  ],
+  "completed": true,
+  "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\cppcheck",
+  "duration_ms": 15.000000013969839,
+  "environment_override_keys": [],
+  "executable_path": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+  "execution_error": null,
+  "exit_code": 0,
+  "finished_at": "2026-10-02T18:45:03.447463Z",
+  "started_at": "2026-10-02T18:45:03.422433Z",
+  "stderr_evidence": {
+    "id": "35f01c37-a721-42cc-ac3c-0a8f021b2aaf",
+    "path": "evidence/static_analysis/cppcheck-5ebfc1fff73c4a80b59fc7e40315348a-stderr.txt",
+    "sha256": "4c4620d22d51c1779267c124f37d515e2053874297d4ddd1440b40c70e68f8c2"
+  },
+  "stdout_evidence": {
+    "id": "d40da77a-afe9-472f-a3f9-f3d57ece2059",
+    "path": "evidence/static_analysis/cppcheck-5ebfc1fff73c4a80b59fc7e40315348a-stdout.txt",
+    "sha256": "f6604f7a42215e91ecc4aee8f4d72974c9f2cf119dab2fc2038f984c23274bcb"
+  },
+  "termination": {
+    "kind": "EXIT_CODE",
+    "return_code": 0,
+    "signal": null
+  },
+  "timed_out": false
+}

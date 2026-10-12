@@ -1,0 +1,84 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "A heap write occurs one byte past the allocated 8-byte buffer."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+          "--xml",
+          "--xml-version=2",
+          "--enable=warning,style,performance,portability,information",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\cppcheck",
+        "duration_ms": 16.00000000325963,
+        "executable_path": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.21.0\"/>\r\n    <errors>\r\n        <error id=\"checkersReport\" severity=\"information\" msg=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\" verbose=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\"/>\r\n    </errors>\r\n</results>\r\n",
+        "stdout": "Checking E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c ...\r\n",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [
+      null
+    ],
+    "executed": true,
+    "findings": [
+      {
+        "category": "information",
+        "column": null,
+        "confidence": null,
+        "cwe": null,
+        "file": "<unknown>",
+        "function": null,
+        "id": "2a624059-129c-456e-8765-1f9442fcba60",
+        "line": null,
+        "message": "Active checkers: 112/186 (use --checkers-report=<filename> to see details)",
+        "metadata": {
+          "original_severity": "information"
+        },
+        "raw_evidence": "7327f0ea-6d0f-4558-80a1-77efa372f7b0",
+        "rule_id": "checkersReport",
+        "severity": "UNKNOWN",
+        "tool": "cppcheck"
+      }
+    ],
+    "limitations": [],
+    "raw_output": "$ C:\\Program Files\\Cppcheck\\cppcheck.EXE --xml --xml-version=2 --enable=warning,style,performance,portability,information E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c\nChecking E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c ...\r\n\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.21.0\"/>\r\n    <errors>\r\n        <error id=\"checkersReport\" severity=\"information\" msg=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\" verbose=\"Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)\"/>\r\n    </errors>\r\n</results>",
+    "reason_code": "STATIC_FINDINGS_DETECTED",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 16.00000000325963,
+      "evidence_ids": [
+        "d3ec0004-dc89-496f-b66d-55a722c583a0",
+        "b9cde382-7668-4e35-9ec4-3f0b04831339",
+        "779f6f6b-ec96-49ca-afe4-df32a12801ee",
+        "7327f0ea-6d0f-4558-80a1-77efa372f7b0",
+        "dd6bc6eb-1969-4f87-b2cf-29e6ad02b5d2"
+      ],
+      "id": "0390909a-fc3a-4380-9a52-6b96f08c7f4e",
+      "message": "1 finding(s) reported by cppcheck; these are not confirmed property violations.",
+      "metadata": {
+        "finding_ids": [
+          "2a624059-129c-456e-8765-1f9442fcba60"
+        ],
+        "limitations": []
+      },
+      "property_id": null,
+      "reason_code": "STATIC_FINDINGS_DETECTED",
+      "requirement_id": null,
+      "scope": "Cppcheck reports for the collected C/C++ files under the requested enable configuration; reports are not confirmed vulnerabilities.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "CPPCHECK"
+    }
+  },
+  "tool": "cppcheck"
+}

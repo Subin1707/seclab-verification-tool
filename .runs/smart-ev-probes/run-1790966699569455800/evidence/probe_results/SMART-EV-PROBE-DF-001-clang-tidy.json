@@ -1,0 +1,196 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "The same heap allocation is passed to free twice."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+          "-checks=clang-analyzer-*,bugprone-*,performance-*,portability-*",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c",
+          "--",
+          "-x",
+          "c",
+          "-std=c11"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\clang-tidy",
+        "duration_ms": 125.0,
+        "executable_path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "64 warnings generated.\r\nSuppressed 63 warnings (63 in non-user code).\r\nUse -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.\r\n",
+        "stdout": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:9:5: warning: Attempt to release already released memory [clang-analyzer-unix.Malloc]\n    9 |     free(allocation);\n      |     ^~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:4:24: note: Memory is allocated\n    4 |     void *allocation = malloc(32);\n      |                        ^~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:5:9: note: Assuming 'allocation' is not equal to NULL\n    5 |     if (allocation == NULL) {\n      |         ^~~~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:5:5: note: Taking false branch\n    5 |     if (allocation == NULL) {\n      |     ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:8:5: note: Memory is released\n    8 |     free(allocation);\n      |     ^~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:9:5: note: Attempt to release already released memory\n    9 |     free(allocation);\n      |     ^~~~~~~~~~~~~~~~\n",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "executed": true,
+    "findings": [
+      {
+        "category": "warning",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "double_free.c",
+        "function": null,
+        "id": "21191fd0-4e51-455f-bfae-1c10f799f44c",
+        "line": 9,
+        "message": "Attempt to release already released memory",
+        "metadata": {
+          "original_severity": "warning",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        },
+        "raw_evidence": "b71ba3a6-cb11-4b3f-930d-c7645d293973",
+        "rule_id": "clang-analyzer-unix.Malloc",
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 24,
+        "confidence": null,
+        "cwe": null,
+        "file": "double_free.c",
+        "function": null,
+        "id": "a3a1016f-e009-4f2d-be3c-7ca4777aa0ba",
+        "line": 4,
+        "message": "Memory is allocated",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        },
+        "raw_evidence": "b71ba3a6-cb11-4b3f-930d-c7645d293973",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 9,
+        "confidence": null,
+        "cwe": null,
+        "file": "double_free.c",
+        "function": null,
+        "id": "9dbbbd12-d621-43d1-af30-40eaee05e2fa",
+        "line": 5,
+        "message": "Assuming 'allocation' is not equal to NULL",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        },
+        "raw_evidence": "b71ba3a6-cb11-4b3f-930d-c7645d293973",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "double_free.c",
+        "function": null,
+        "id": "7b55a6db-5932-4ece-aec0-2f07da6f8ea6",
+        "line": 5,
+        "message": "Taking false branch",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        },
+        "raw_evidence": "b71ba3a6-cb11-4b3f-930d-c7645d293973",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "double_free.c",
+        "function": null,
+        "id": "635b4497-eb70-4c3c-9ef1-1fad168ca572",
+        "line": 8,
+        "message": "Memory is released",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        },
+        "raw_evidence": "b71ba3a6-cb11-4b3f-930d-c7645d293973",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "double_free.c",
+        "function": null,
+        "id": "84af8d57-25f9-41c4-b684-63ec61a48f60",
+        "line": 9,
+        "message": "Attempt to release already released memory",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+        },
+        "raw_evidence": "b71ba3a6-cb11-4b3f-930d-c7645d293973",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      }
+    ],
+    "limitations": [
+      "No compile_commands.json exists; analysis uses limited default compile flags."
+    ],
+    "raw_output": "$ C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE -checks=clang-analyzer-*,bugprone-*,performance-*,portability-* E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c -- -x c -std=c11\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:9:5: warning: Attempt to release already released memory [clang-analyzer-unix.Malloc]\n    9 |     free(allocation);\n      |     ^~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:4:24: note: Memory is allocated\n    4 |     void *allocation = malloc(32);\n      |                        ^~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:5:9: note: Assuming 'allocation' is not equal to NULL\n    5 |     if (allocation == NULL) {\n      |         ^~~~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:5:5: note: Taking false branch\n    5 |     if (allocation == NULL) {\n      |     ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:8:5: note: Memory is released\n    8 |     free(allocation);\n      |     ^~~~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c:9:5: note: Attempt to release already released memory\n    9 |     free(allocation);\n      |     ^~~~~~~~~~~~~~~~\n\n64 warnings generated.\r\nSuppressed 63 warnings (63 in non-user code).\r\nUse -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.",
+    "reason_code": "STATIC_FINDINGS_DETECTED",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 125.0,
+      "evidence_ids": [
+        "e51a2f8f-1468-415c-ab26-1d9fae9089ff",
+        "9a82324a-02a8-485e-8f64-d49f3089f054",
+        "d74dbb42-eb36-4d86-9a12-75e74cf0c600",
+        "b71ba3a6-cb11-4b3f-930d-c7645d293973",
+        "1e2b8140-b2f6-4dfc-a0b5-61c43e2975b6"
+      ],
+      "id": "a919b914-469f-4b28-98c9-1d20f53bb6d3",
+      "message": "6 finding(s) reported by clang-tidy; these are not confirmed property violations.",
+      "metadata": {
+        "finding_ids": [
+          "21191fd0-4e51-455f-bfae-1c10f799f44c",
+          "a3a1016f-e009-4f2d-be3c-7ca4777aa0ba",
+          "9dbbbd12-d621-43d1-af30-40eaee05e2fa",
+          "7b55a6db-5932-4ece-aec0-2f07da6f8ea6",
+          "635b4497-eb70-4c3c-9ef1-1fad168ca572",
+          "84af8d57-25f9-41c4-b684-63ec61a48f60"
+        ],
+        "limitations": [
+          "No compile_commands.json exists; analysis uses limited default compile flags."
+        ]
+      },
+      "property_id": null,
+      "reason_code": "STATIC_FINDINGS_DETECTED",
+      "requirement_id": null,
+      "scope": "Clang-Tidy checks for collected translation units; analyzer diagnostics are reports, not confirmed property violations.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "CLANG-TIDY"
+    }
+  },
+  "tool": "clang-tidy"
+}

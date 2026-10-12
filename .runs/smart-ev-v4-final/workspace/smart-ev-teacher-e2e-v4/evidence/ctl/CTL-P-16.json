@@ -1,0 +1,10 @@
+{
+  "counterexample": null,
+  "formula": "AF(safe)",
+  "initial_state_ids": [
+    "DISCONNECTED"
+  ],
+  "property_id": "CTL-P-16",
+  "satisfied": true,
+  "witness": null
+}

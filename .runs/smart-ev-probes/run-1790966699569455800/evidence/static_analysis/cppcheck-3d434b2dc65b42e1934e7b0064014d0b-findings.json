@@ -1,0 +1,24 @@
+{
+  "findings": [
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "<unknown>",
+      "function": null,
+      "id": "2a624059-129c-456e-8765-1f9442fcba60",
+      "line": null,
+      "message": "Active checkers: 112/186 (use --checkers-report=<filename> to see details)",
+      "metadata": {
+        "original_severity": "information"
+      },
+      "raw_evidence": "7327f0ea-6d0f-4558-80a1-77efa372f7b0",
+      "rule_id": "checkersReport",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    }
+  ],
+  "limitations": [],
+  "tool": "cppcheck"
+}

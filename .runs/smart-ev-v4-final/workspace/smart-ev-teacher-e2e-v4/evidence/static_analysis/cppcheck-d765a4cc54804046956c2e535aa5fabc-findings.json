@@ -1,0 +1,328 @@
+{
+  "findings": [
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/charging/dieu_khien_sac.c",
+      "function": null,
+      "id": "3ae7ad2e-d914-439e-b6fe-4d52e15c620f",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/charging/dieu_khien_sac.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "function": null,
+      "id": "44430814-445e-4a9b-8405-067e57a2bd48",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/communication/dieu_khien_tu_xa.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/communication/message.c",
+      "function": null,
+      "id": "c3aaaafd-febe-49a1-8d28-fd0de98aae97",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/communication/message.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "style",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-398",
+      "file": "src/logging/logger.c",
+      "function": null,
+      "id": "417a5993-27fa-43f8-bd06-6cdddf356187",
+      "line": 46,
+      "message": "Variable 'tm_info' can be declared as pointer to const",
+      "metadata": {
+        "original_severity": "style",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/logging/logger.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "constVariablePointer",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/main.c",
+      "function": null,
+      "id": "8f180a47-9f6b-4aed-9535-3fc31065268d",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/main.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "function": null,
+      "id": "a72c3b43-1515-4d5c-825a-55f2152ca2db",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/monitoring/du_lieu_giam_sat.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "7b899257-0ac8-45c2-805b-92da7d077cc0",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/safety/giam_sat_an_toan.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "style",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-398",
+      "file": "src/safety/giam_sat_an_toan.c",
+      "function": null,
+      "id": "84c8af1d-0ac2-4c81-85b0-ac5206efa4f3",
+      "line": 5,
+      "message": "Parameter 'tram' can be declared as pointer to const",
+      "metadata": {
+        "original_severity": "style",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/safety/giam_sat_an_toan.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "constParameterPointer",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/kich_ban.c",
+      "function": null,
+      "id": "04a63e8d-8823-4c9b-8b82-9f3a6b18fe40",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/simulation/kich_ban.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "3456fb74-7fdc-4e8f-af07-12eedc2eb8df",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/simulation/mo_phong.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "style",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-398",
+      "file": "src/simulation/mo_phong.c",
+      "function": null,
+      "id": "6b11e849-4555-4120-adc1-e4142805c2ed",
+      "line": 201,
+      "message": "The if condition is the same as the previous if condition",
+      "metadata": {
+        "original_severity": "style",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/simulation/mo_phong.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "duplicateCondition",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "style",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-398",
+      "file": "src/simulation/sinh_kich_ban.c",
+      "function": null,
+      "id": "044b5568-e8db-4f59-957c-872495dcf299",
+      "line": 41,
+      "message": "Variable 'cac_kb' can be declared as const array",
+      "metadata": {
+        "original_severity": "style",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/simulation/sinh_kich_ban.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "constVariable",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/dieu_phoi.c",
+      "function": null,
+      "id": "9e52c150-b0d9-4a59-ac34-e333e13eee77",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/station/dieu_phoi.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/quan_ly_cong_suat.c",
+      "function": null,
+      "id": "d0de507a-be4c-49eb-9839-76eb1098cc21",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/station/quan_ly_cong_suat.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "style",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-398",
+      "file": "src/station/quan_ly_cong_suat.c",
+      "function": null,
+      "id": "dd4e807f-49c1-4d2b-853d-c4020206129f",
+      "line": 99,
+      "message": "Variable 'cong' can be declared as pointer to const",
+      "metadata": {
+        "original_severity": "style",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/station/quan_ly_cong_suat.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "constVariablePointer",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "src/station/tram_sac.c",
+      "function": null,
+      "id": "b5dabcd6-0dee-4451-98e2-e8c978681385",
+      "line": null,
+      "message": "Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.",
+      "metadata": {
+        "original_severity": "information",
+        "raw_file_path": "E:/smart-ev-charging-safety/src/station/tram_sac.c"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "normalCheckLevelMaxBranches",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "<unknown>",
+      "function": null,
+      "id": "f8a76b30-1995-46cc-9a09-840891820bfb",
+      "line": null,
+      "message": "Active checkers: 112/186 (use --checkers-report=<filename> to see details)",
+      "metadata": {
+        "original_severity": "information"
+      },
+      "raw_evidence": "7d0c21b6-7452-41c3-99c7-e3e472942526",
+      "rule_id": "checkersReport",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    }
+  ],
+  "limitations": [],
+  "tool": "cppcheck"
+}

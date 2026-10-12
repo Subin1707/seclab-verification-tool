@@ -1,0 +1,85 @@
+{
+  "counterexample": null,
+  "formula": "EF(recovered)",
+  "initial_state_ids": [
+    "DISCONNECTED"
+  ],
+  "property_id": "CTL-P-15",
+  "satisfied": true,
+  "witness": [
+    {
+      "id": "DISCONNECTED",
+      "labels": [
+        "auth_clear",
+        "disconnected",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "CONNECTED",
+      "labels": [
+        "connected",
+        "not_authenticated",
+        "port_occupied",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "AUTHENTICATED",
+      "labels": [
+        "authenticated",
+        "connected",
+        "port_ready",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "CHARGING",
+      "labels": [
+        "authenticated",
+        "charging",
+        "connected",
+        "power_positive",
+        "safe",
+        "safety_gate_valid"
+      ],
+      "values": {}
+    },
+    {
+      "id": "EMERGENCY",
+      "labels": [
+        "emergency",
+        "stop_required",
+        "unsafe_until_stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "STOPPED_EMERGENCY",
+      "labels": [
+        "emergency",
+        "power_zero",
+        "safe",
+        "stopped"
+      ],
+      "values": {}
+    },
+    {
+      "id": "RECOVERED_SAFE",
+      "labels": [
+        "authenticated",
+        "connected",
+        "power_zero",
+        "recovered",
+        "safe"
+      ],
+      "values": {}
+    }
+  ]
+}

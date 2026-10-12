@@ -1,0 +1,63 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "A 64-byte heap allocation becomes unreachable without being freed."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-fsyntax-only",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-ML-001\\compiler-diagnostics",
+        "duration_ms": 46.999999991385266,
+        "executable_path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [],
+    "executed": true,
+    "findings": [],
+    "limitations": [],
+    "raw_output": "$ C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE -std=c11 -Wall -Wextra -Wpedantic -fsyntax-only E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c",
+    "reason_code": "NO_STATIC_FINDINGS",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 46.999999991385266,
+      "evidence_ids": [
+        "0b565280-28a8-4ca1-ac9b-d9fa26645a48",
+        "b6ae2e2a-e354-4e28-8afa-81e4baf065be",
+        "bd4f8201-80f7-4fb5-84e4-4d67bc23b4b3",
+        "6ec4d5e6-7cb9-47f4-b7c0-9eee64d55994",
+        "3b009177-64bc-4e92-bfb6-579cfc2f4b4c"
+      ],
+      "id": "43367dad-dcc5-493b-ac65-2429fafc2b27",
+      "message": "compiler-diagnostics reported no findings for this configuration and source collection.",
+      "metadata": {
+        "finding_ids": [],
+        "limitations": []
+      },
+      "property_id": null,
+      "reason_code": "NO_STATIC_FINDINGS",
+      "requirement_id": null,
+      "scope": "Compiler warning/error diagnostics for collected translation units with -Wall -Wextra -Wpedantic and syntax-only mode; diagnostics are not security verdicts.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "COMPILER-DIAGNOSTICS"
+    }
+  },
+  "tool": "compiler-diagnostics"
+}

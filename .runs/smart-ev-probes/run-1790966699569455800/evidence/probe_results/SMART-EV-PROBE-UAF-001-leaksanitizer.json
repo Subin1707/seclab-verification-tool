@@ -1,0 +1,39 @@
+{
+  "expected": {
+    "category": "use_after_free",
+    "cwe": null,
+    "issue": "A heap byte is written after its allocation has been freed."
+  },
+  "observed": {
+    "build_error": null,
+    "build_succeeded": null,
+    "commands": [],
+    "cwe_mapping_note": "Existing CWEMapper maps static Finding records only; no mapping is inferred for MemoryFinding.",
+    "cwe_mappings": [],
+    "expected_issue_observed": false,
+    "findings": [],
+    "issue_categories": [],
+    "limitations": [
+      "LeakSanitizer is not declared supported on win32."
+    ],
+    "raw_output": "",
+    "supported": false,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": null,
+      "evidence_ids": [],
+      "id": "f6c49b90-8b7a-4a83-8a80-e91614fd5c8c",
+      "message": "Leak detection is unavailable on this platform.",
+      "metadata": {},
+      "property_id": null,
+      "reason_code": "LEAK_DETECTION_UNAVAILABLE",
+      "requirement_id": null,
+      "scope": "Leak detection was not run because this platform's support was not established.",
+      "source": null,
+      "stage": "SANITIZER",
+      "status": "INCONCLUSIVE",
+      "technique": "LEAK_CHECKER"
+    }
+  },
+  "tool": "LeakSanitizer"
+}

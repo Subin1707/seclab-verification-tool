@@ -1,0 +1,44 @@
+{
+  "binary_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\compile\\build\\probe-program.exe",
+  "build_evidence_ids": [
+    "d9ce497e-f46c-40c4-8bd3-eb439a827035",
+    "6e9c60ae-b7e2-481c-b9af-cc06693d4779",
+    "e6b0152d-4db0-4c5a-89c0-f39c997b9f0c"
+  ],
+  "command": {
+    "argv": [
+      "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c",
+      "-o",
+      "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\compile\\build\\probe-program.exe"
+    ],
+    "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\compile",
+    "duration_ms": 187.0000000053551,
+    "executable_path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+    "execution_error": null,
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "",
+    "succeeded": true,
+    "timed_out": false
+  },
+  "compiler": {
+    "capabilities": [
+      "compile_c"
+    ],
+    "installed": true,
+    "name": "gcc",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+    "version": "gcc.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+  },
+  "error_code": null,
+  "language": "C",
+  "source_files": [
+    "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+  ],
+  "success": true
+}

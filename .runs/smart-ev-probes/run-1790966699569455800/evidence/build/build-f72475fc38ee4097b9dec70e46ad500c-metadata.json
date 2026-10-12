@@ -1,0 +1,40 @@
+{
+  "allowed_exit_codes": [
+    0
+  ],
+  "argv": [
+    "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+    "-std=c11",
+    "-g",
+    "-fsanitize=address",
+    "-fno-omit-frame-pointer",
+    "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c",
+    "-o",
+    "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-ML-001\\addresssanitizer\\build\\addresssanitizer-16a6984673ae41978d226365d0d2c457.exe"
+  ],
+  "completed": true,
+  "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-ML-001\\addresssanitizer",
+  "duration_ms": 375.0,
+  "environment_override_keys": [],
+  "executable_path": "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+  "execution_error": null,
+  "exit_code": 0,
+  "finished_at": "2026-10-02T18:45:02.415986Z",
+  "started_at": "2026-10-02T18:45:02.029691Z",
+  "stderr_evidence": {
+    "id": "f51f188b-ee1b-4b04-a919-7dafc56ff23f",
+    "path": "evidence/build/build-f72475fc38ee4097b9dec70e46ad500c-stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout_evidence": {
+    "id": "b6761e0d-edc3-4e0a-b6f4-e60e7739d0ee",
+    "path": "evidence/build/build-f72475fc38ee4097b9dec70e46ad500c-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "termination": {
+    "kind": "EXIT_CODE",
+    "return_code": 0,
+    "signal": null
+  },
+  "timed_out": false
+}

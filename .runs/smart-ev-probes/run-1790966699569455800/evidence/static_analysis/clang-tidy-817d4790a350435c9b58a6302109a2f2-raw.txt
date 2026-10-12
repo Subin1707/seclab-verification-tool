@@ -1,0 +1,22 @@
+E:\seclab-verification-tool\examples\smart-ev-probes\double_free.c:9:5: warning: Attempt to release already released memory [clang-analyzer-unix.Malloc]
+    9 |     free(allocation);
+      |     ^~~~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\double_free.c:4:24: note: Memory is allocated
+    4 |     void *allocation = malloc(32);
+      |                        ^~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\double_free.c:5:9: note: Assuming 'allocation' is not equal to NULL
+    5 |     if (allocation == NULL) {
+      |         ^~~~~~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\double_free.c:5:5: note: Taking false branch
+    5 |     if (allocation == NULL) {
+      |     ^
+E:\seclab-verification-tool\examples\smart-ev-probes\double_free.c:8:5: note: Memory is released
+    8 |     free(allocation);
+      |     ^~~~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\double_free.c:9:5: note: Attempt to release already released memory
+    9 |     free(allocation);
+      |     ^~~~~~~~~~~~~~~~
+
+64 warnings generated.
+Suppressed 63 warnings (63 in non-user code).
+Use -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

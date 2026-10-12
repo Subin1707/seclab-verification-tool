@@ -1,0 +1,16 @@
+{
+  "counterexample": null,
+  "duration_ms": null,
+  "evidence_ids": [],
+  "id": "74f2e094-32df-470d-b047-7b1816e8fadf",
+  "message": "Leak detection is unavailable on this platform.",
+  "metadata": {},
+  "property_id": null,
+  "reason_code": "LEAK_DETECTION_UNAVAILABLE",
+  "requirement_id": null,
+  "scope": "Leak detection was not run because this platform's support was not established.",
+  "source": null,
+  "stage": "SANITIZER",
+  "status": "INCONCLUSIVE",
+  "technique": "LEAK_CHECKER"
+}

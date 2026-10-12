@@ -1,0 +1,84 @@
+{
+  "architecture": "AMD64",
+  "os": "Windows",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "production_source_included": false,
+  "python_version": "3.12.5",
+  "scope": "BUG_INJECTED_PROBE / TOOL_CAPABILITY_EVIDENCE",
+  "toolchain": {
+    "clang": {
+      "capabilities": [
+        "compile_c"
+      ],
+      "installed": true,
+      "name": "clang",
+      "path": "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+      "version": "clang version 22.1.7 (https://github.com/llvm/llvm-project a255c1ed36a1d06f79bd2633ba9f8d900153007c)"
+    },
+    "clang-tidy": {
+      "capabilities": [
+        "static_analysis"
+      ],
+      "installed": true,
+      "name": "clang-tidy",
+      "path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+      "version": "LLVM (http://llvm.org/):"
+    },
+    "cppcheck": {
+      "capabilities": [
+        "static_analysis"
+      ],
+      "installed": true,
+      "name": "cppcheck",
+      "path": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+      "version": "Cppcheck 2.21.0"
+    },
+    "gcc": {
+      "capabilities": [
+        "compile_c"
+      ],
+      "installed": true,
+      "name": "gcc",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+      "version": "gcc.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+    }
+  },
+  "tools": {
+    "clang": {
+      "capabilities": [
+        "compile_c"
+      ],
+      "installed": true,
+      "name": "clang",
+      "path": "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+      "version": "clang version 22.1.7 (https://github.com/llvm/llvm-project a255c1ed36a1d06f79bd2633ba9f8d900153007c)"
+    },
+    "clang-tidy": {
+      "capabilities": [
+        "static_analysis"
+      ],
+      "installed": true,
+      "name": "clang-tidy",
+      "path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+      "version": "LLVM (http://llvm.org/):"
+    },
+    "cppcheck": {
+      "capabilities": [
+        "static_analysis"
+      ],
+      "installed": true,
+      "name": "cppcheck",
+      "path": "C:\\Program Files\\Cppcheck\\cppcheck.EXE",
+      "version": "Cppcheck 2.21.0"
+    },
+    "gcc": {
+      "capabilities": [
+        "compile_c"
+      ],
+      "installed": true,
+      "name": "gcc",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+      "version": "gcc.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+    }
+  }
+}

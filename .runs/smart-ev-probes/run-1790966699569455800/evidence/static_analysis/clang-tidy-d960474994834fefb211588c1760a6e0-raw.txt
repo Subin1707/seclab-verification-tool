@@ -1,0 +1,28 @@
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:10:9: warning: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   10 |         memset(buffer, 'L', 64);
+      |         ^~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:10:9: note: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11
+   10 |         memset(buffer, 'L', 64);
+      |         ^~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:12:1: warning: Potential leak of memory pointed to by 'buffer' [clang-analyzer-unix.Malloc]
+   12 | }
+      | ^
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:15:5: note: Calling 'lose_allocation'
+   15 |     lose_allocation();
+      |     ^~~~~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:8:28: note: Memory is allocated
+    8 |     char *buffer = (char *)malloc(64);
+      |                            ^~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:9:9: note: Assuming 'buffer' is not equal to NULL
+    9 |     if (buffer != NULL) {
+      |         ^~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:9:5: note: Taking true branch
+    9 |     if (buffer != NULL) {
+      |     ^
+E:\seclab-verification-tool\examples\smart-ev-probes\memory_leak.c:12:1: note: Potential leak of memory pointed to by 'buffer'
+   12 | }
+      | ^
+
+71 warnings generated.
+Suppressed 69 warnings (69 in non-user code).
+Use -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

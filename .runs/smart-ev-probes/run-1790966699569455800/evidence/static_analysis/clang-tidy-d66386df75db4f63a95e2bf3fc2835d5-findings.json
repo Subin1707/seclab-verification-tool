@@ -1,0 +1,84 @@
+{
+  "findings": [
+    {
+      "category": "warning",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "buffer_overflow.c",
+      "function": null,
+      "id": "76d043cb-5b67-44d3-85a8-28f46cc03c73",
+      "line": 9,
+      "message": "Out of bound access to memory after the end of the heap area",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+      },
+      "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+      "rule_id": "clang-analyzer-security.ArrayBound",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "buffer_overflow.c",
+      "function": null,
+      "id": "0b3b7cd1-a333-459d-9dbd-9319f5ee95e5",
+      "line": 6,
+      "message": "Assuming 'buffer' is not equal to NULL",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+      },
+      "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "buffer_overflow.c",
+      "function": null,
+      "id": "f9a0ffe1-637b-484a-998f-1413bb5b1955",
+      "line": 6,
+      "message": "Taking false branch",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+      },
+      "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "buffer_overflow.c",
+      "function": null,
+      "id": "7e4402b9-3034-4231-a00c-80ac38028687",
+      "line": 9,
+      "message": "Access of the heap area at index 8, while it holds only 8 'char' elements",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+      },
+      "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    }
+  ],
+  "limitations": [
+    "No compile_commands.json exists; analysis uses limited default compile flags."
+  ],
+  "tool": "clang-tidy"
+}

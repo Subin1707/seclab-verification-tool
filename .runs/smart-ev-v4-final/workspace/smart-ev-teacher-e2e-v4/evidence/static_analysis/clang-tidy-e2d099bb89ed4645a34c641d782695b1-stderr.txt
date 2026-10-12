@@ -1,0 +1,111 @@
+[1/36] Processing file E:\smart-ev-charging-safety\src\auth\token.c.
+67 warnings and 1 error generated.
+Error while processing E:\smart-ev-charging-safety\src\auth\token.c.
+[2/36] Processing file E:\smart-ev-charging-safety\src\auth\xac_thuc.c.
+128 warnings and 2 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\auth\xac_thuc.c.
+[3/36] Processing file E:\smart-ev-charging-safety\src\charging\che_do_sac.c.
+128 warnings and 2 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\charging\che_do_sac.c.
+[4/36] Processing file E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c.
+193 warnings and 3 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c.
+[5/36] Processing file E:\smart-ev-charging-safety\src\charging\phien_sac.c.
+256 warnings and 3 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\charging\phien_sac.c.
+[6/36] Processing file E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.c.
+331 warnings and 4 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.c.
+[7/36] Processing file E:\smart-ev-charging-safety\src\communication\message.c.
+404 warnings and 4 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\communication\message.c.
+[8/36] Processing file E:\smart-ev-charging-safety\src\communication\protocol.c.
+468 warnings and 4 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\communication\protocol.c.
+[9/36] Processing file E:\smart-ev-charging-safety\src\core\cau_hinh.c.
+530 warnings and 4 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\core\cau_hinh.c.
+[10/36] Processing file E:\smart-ev-charging-safety\src\core\he_thong.c.
+591 warnings and 4 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\core\he_thong.c.
+[11/36] Processing file E:\smart-ev-charging-safety\src\logging\logger.c.
+665 warnings and 4 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\logging\logger.c.
+[12/36] Processing file E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c.
+735 warnings and 4 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c.
+[13/36] Processing file E:\smart-ev-charging-safety\src\main.c.
+810 warnings and 5 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\main.c.
+[14/36] Processing file E:\smart-ev-charging-safety\src\monitoring\chi_so.c.
+878 warnings and 5 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\monitoring\chi_so.c.
+[15/36] Processing file E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c.
+1334 warnings and 6 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c.
+[16/36] Processing file E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c.
+1404 warnings and 6 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c.
+[17/36] Processing file E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c.
+1467 warnings and 7 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c.
+[18/36] Processing file E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c.
+1530 warnings and 8 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c.
+[19/36] Processing file E:\smart-ev-charging-safety\src\safety\phat_hien_loi.c.
+1530 warnings and 8 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\safety\phat_hien_loi.c.
+[20/36] Processing file E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c.
+1594 warnings and 9 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c.
+[21/36] Processing file E:\smart-ev-charging-safety\src\simulation\kich_ban.c.
+1659 warnings and 10 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\simulation\kich_ban.c.
+[22/36] Processing file E:\smart-ev-charging-safety\src\simulation\mo_phong.c.
+2111 warnings and 11 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\simulation\mo_phong.c.
+[23/36] Processing file E:\smart-ev-charging-safety\src\simulation\ngau_nhien.c.
+2177 warnings and 11 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\simulation\ngau_nhien.c.
+[24/36] Processing file E:\smart-ev-charging-safety\src\simulation\sinh_kich_ban.c.
+2249 warnings and 12 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\simulation\sinh_kich_ban.c.
+[25/36] Processing file E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.c.
+2311 warnings and 13 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.c.
+[26/36] Processing file E:\smart-ev-charging-safety\src\station\cong_sac.c.
+2372 warnings and 14 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\station\cong_sac.c.
+[27/36] Processing file E:\smart-ev-charging-safety\src\station\dieu_phoi.c.
+2372 warnings and 15 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\station\dieu_phoi.c.
+[28/36] Processing file E:\smart-ev-charging-safety\src\station\hang_cho.c.
+2372 warnings and 15 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\station\hang_cho.c.
+[29/36] Processing file E:\smart-ev-charging-safety\src\station\quan_ly_cong_suat.c.
+2433 warnings and 16 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\station\quan_ly_cong_suat.c.
+[30/36] Processing file E:\smart-ev-charging-safety\src\station\tram_sac.c.
+2500 warnings and 17 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\station\tram_sac.c.
+[31/36] Processing file E:\smart-ev-charging-safety\src\utils\input.c.
+2501 warnings and 17 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\utils\input.c.
+[32/36] Processing file E:\smart-ev-charging-safety\src\utils\kiem_tra_du_lieu.c.
+2502 warnings and 17 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\utils\kiem_tra_du_lieu.c.
+[33/36] Processing file E:\smart-ev-charging-safety\src\utils\time_utils.c.
+2503 warnings and 17 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\utils\time_utils.c.
+[34/36] Processing file E:\smart-ev-charging-safety\src\vehicle\pin.c.
+2565 warnings and 18 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\vehicle\pin.c.
+[35/36] Processing file E:\smart-ev-charging-safety\src\vehicle\trang_thai_xe.c.
+2565 warnings and 19 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\vehicle\trang_thai_xe.c.
+[36/36] Processing file E:\smart-ev-charging-safety\src\vehicle\xe_dien.c.
+2633 warnings and 20 errors generated.
+Error while processing E:\smart-ev-charging-safety\src\vehicle\xe_dien.c.
+Suppressed 2573 warnings (2573 in non-user code).
+Use -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+Found compiler error(s).

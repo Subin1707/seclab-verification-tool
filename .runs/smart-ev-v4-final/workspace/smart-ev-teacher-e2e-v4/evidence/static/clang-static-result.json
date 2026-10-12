@@ -1,0 +1,22 @@
+{
+  "counterexample": null,
+  "duration_ms": null,
+  "evidence_ids": [],
+  "id": "dda60bfb-2aa6-4b4d-a289-d96cbaf0e5ad",
+  "message": "clang-static-analyzer reported no findings for this configuration and source collection.",
+  "metadata": {
+    "analyzer": "clang-static",
+    "finding_ids": [],
+    "limitations": [
+      "No standalone Clang Static Analyzer driver is implemented in this milestone."
+    ]
+  },
+  "property_id": null,
+  "reason_code": "STATIC_ANALYZER_UNAVAILABLE",
+  "requirement_id": null,
+  "scope": "Clang Static Analyzer is distinct from Clang-Tidy and is not invoked by this runner.",
+  "source": null,
+  "stage": "STATIC_ANALYSIS",
+  "status": "TOOL_ERROR",
+  "technique": "CLANG-STATIC-ANALYZER"
+}

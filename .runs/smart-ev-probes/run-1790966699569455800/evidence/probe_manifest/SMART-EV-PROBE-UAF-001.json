@@ -1,0 +1,19 @@
+{
+  "category": "use_after_free",
+  "expected_cwe": null,
+  "expected_issue": "A heap byte is written after its allocation has been freed.",
+  "expected_tools": [
+    "C compiler",
+    "compiler-diagnostics",
+    "cppcheck",
+    "clang-tidy",
+    "AddressSanitizer",
+    "UndefinedBehaviorSanitizer",
+    "LeakSanitizer"
+  ],
+  "language": "C",
+  "name": "use_after_free",
+  "probe_id": "SMART-EV-PROBE-UAF-001",
+  "scope": "BUG_INJECTED_PROBE",
+  "source_file": "use_after_free.c"
+}

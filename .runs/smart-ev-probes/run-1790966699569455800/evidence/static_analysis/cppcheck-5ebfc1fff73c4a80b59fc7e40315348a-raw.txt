@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.21.0"/>
+    <errors>
+        <error id="doubleFree" severity="error" msg="Memory pointed to by &apos;allocation&apos; is freed twice." verbose="Memory pointed to by &apos;allocation&apos; is freed twice." cwe="415" file0="E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c">
+            <location file="E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c" line="9" column="5"/>
+            <location file="E:/seclab-verification-tool/examples/smart-ev-probes/double_free.c" line="8" column="5"/>
+            <symbol>allocation</symbol>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 112/186 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>

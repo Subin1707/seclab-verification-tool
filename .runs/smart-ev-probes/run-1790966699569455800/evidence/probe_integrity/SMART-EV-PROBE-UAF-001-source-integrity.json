@@ -1,0 +1,8 @@
+{
+  "equal": true,
+  "probe_id": "SMART-EV-PROBE-UAF-001",
+  "sha256_after": "9e65f5f71b857011fdc993e12c546b474d6f7516e53b944c8956fc24722e6864",
+  "sha256_before": "9e65f5f71b857011fdc993e12c546b474d6f7516e53b944c8956fc24722e6864",
+  "sha256_manifest_baseline": "9e65f5f71b857011fdc993e12c546b474d6f7516e53b944c8956fc24722e6864",
+  "source_file": "use_after_free.c"
+}

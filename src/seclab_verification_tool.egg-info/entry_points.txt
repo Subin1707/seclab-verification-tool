@@ -1,0 +1,3 @@
+[console_scripts]
+seclab = seclab.cli:main
+seclab-workbench = seclab.gui.app:main

@@ -1,0 +1,489 @@
+{
+  "assumptions": [],
+  "declarations": [
+    {
+      "sort": "integer",
+      "symbol": "v0"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v1"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v2"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v3"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v4"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v5"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v6"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v7"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v8"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v9"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v10"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v11"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v12"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v13"
+    },
+    {
+      "sort": "integer",
+      "symbol": "v14"
+    }
+  ],
+  "domain_constraints": [],
+  "format": "seclab-smt-query-v1",
+  "property_ast": {
+    "left": {
+      "left": {
+        "left": {
+          "left": {
+            "left": {
+              "left": {
+                "left": {
+                  "left": {
+                    "left": {
+                      "left": {
+                        "name": "power_port1",
+                        "op": "VARIABLE"
+                      },
+                      "op": ">=",
+                      "right": {
+                        "op": "LITERAL",
+                        "type": "integer",
+                        "value": 0
+                      }
+                    },
+                    "op": "&&",
+                    "right": {
+                      "left": {
+                        "name": "power_port1",
+                        "op": "VARIABLE"
+                      },
+                      "op": "<=",
+                      "right": {
+                        "op": "LITERAL",
+                        "type": "integer",
+                        "value": 22
+                      }
+                    }
+                  },
+                  "op": "&&",
+                  "right": {
+                    "left": {
+                      "name": "power_port2",
+                      "op": "VARIABLE"
+                    },
+                    "op": ">=",
+                    "right": {
+                      "op": "LITERAL",
+                      "type": "integer",
+                      "value": 0
+                    }
+                  }
+                },
+                "op": "&&",
+                "right": {
+                  "left": {
+                    "name": "power_port2",
+                    "op": "VARIABLE"
+                  },
+                  "op": "<=",
+                  "right": {
+                    "op": "LITERAL",
+                    "type": "integer",
+                    "value": 22
+                  }
+                }
+              },
+              "op": "&&",
+              "right": {
+                "left": {
+                  "name": "power_port3",
+                  "op": "VARIABLE"
+                },
+                "op": ">=",
+                "right": {
+                  "op": "LITERAL",
+                  "type": "integer",
+                  "value": 0
+                }
+              }
+            },
+            "op": "&&",
+            "right": {
+              "left": {
+                "name": "power_port3",
+                "op": "VARIABLE"
+              },
+              "op": "<=",
+              "right": {
+                "op": "LITERAL",
+                "type": "integer",
+                "value": 22
+              }
+            }
+          },
+          "op": "&&",
+          "right": {
+            "left": {
+              "name": "power_port4",
+              "op": "VARIABLE"
+            },
+            "op": ">=",
+            "right": {
+              "op": "LITERAL",
+              "type": "integer",
+              "value": 0
+            }
+          }
+        },
+        "op": "&&",
+        "right": {
+          "left": {
+            "name": "power_port4",
+            "op": "VARIABLE"
+          },
+          "op": "<=",
+          "right": {
+            "op": "LITERAL",
+            "type": "integer",
+            "value": 22
+          }
+        }
+      },
+      "op": "&&",
+      "right": {
+        "left": {
+          "name": "power_port5",
+          "op": "VARIABLE"
+        },
+        "op": ">=",
+        "right": {
+          "op": "LITERAL",
+          "type": "integer",
+          "value": 0
+        }
+      }
+    },
+    "op": "&&",
+    "right": {
+      "left": {
+        "name": "power_port5",
+        "op": "VARIABLE"
+      },
+      "op": "<=",
+      "right": {
+        "op": "LITERAL",
+        "type": "integer",
+        "value": 22
+      }
+    }
+  },
+  "property_source": "power_port1 >= 0 && power_port1 <= 22 && power_port2 >= 0 && power_port2 <= 22 && power_port3 >= 0 && power_port3 <= 22 && power_port4 >= 0 && power_port4 <= 22 && power_port5 >= 0 && power_port5 <= 22",
+  "query_ast": {
+    "left": {
+      "left": {
+        "left": {
+          "left": {
+            "left": {
+              "left": {
+                "left": {
+                  "left": {
+                    "left": {
+                      "left": {
+                        "name": "power_port1",
+                        "op": "VARIABLE"
+                      },
+                      "op": ">=",
+                      "right": {
+                        "op": "LITERAL",
+                        "type": "integer",
+                        "value": 0
+                      }
+                    },
+                    "op": "&&",
+                    "right": {
+                      "left": {
+                        "name": "power_port1",
+                        "op": "VARIABLE"
+                      },
+                      "op": "<=",
+                      "right": {
+                        "op": "LITERAL",
+                        "type": "integer",
+                        "value": 22
+                      }
+                    }
+                  },
+                  "op": "&&",
+                  "right": {
+                    "left": {
+                      "name": "power_port2",
+                      "op": "VARIABLE"
+                    },
+                    "op": ">=",
+                    "right": {
+                      "op": "LITERAL",
+                      "type": "integer",
+                      "value": 0
+                    }
+                  }
+                },
+                "op": "&&",
+                "right": {
+                  "left": {
+                    "name": "power_port2",
+                    "op": "VARIABLE"
+                  },
+                  "op": "<=",
+                  "right": {
+                    "op": "LITERAL",
+                    "type": "integer",
+                    "value": 22
+                  }
+                }
+              },
+              "op": "&&",
+              "right": {
+                "left": {
+                  "name": "power_port3",
+                  "op": "VARIABLE"
+                },
+                "op": ">=",
+                "right": {
+                  "op": "LITERAL",
+                  "type": "integer",
+                  "value": 0
+                }
+              }
+            },
+            "op": "&&",
+            "right": {
+              "left": {
+                "name": "power_port3",
+                "op": "VARIABLE"
+              },
+              "op": "<=",
+              "right": {
+                "op": "LITERAL",
+                "type": "integer",
+                "value": 22
+              }
+            }
+          },
+          "op": "&&",
+          "right": {
+            "left": {
+              "name": "power_port4",
+              "op": "VARIABLE"
+            },
+            "op": ">=",
+            "right": {
+              "op": "LITERAL",
+              "type": "integer",
+              "value": 0
+            }
+          }
+        },
+        "op": "&&",
+        "right": {
+          "left": {
+            "name": "power_port4",
+            "op": "VARIABLE"
+          },
+          "op": "<=",
+          "right": {
+            "op": "LITERAL",
+            "type": "integer",
+            "value": 22
+          }
+        }
+      },
+      "op": "&&",
+      "right": {
+        "left": {
+          "name": "power_port5",
+          "op": "VARIABLE"
+        },
+        "op": ">=",
+        "right": {
+          "op": "LITERAL",
+          "type": "integer",
+          "value": 0
+        }
+      }
+    },
+    "op": "&&",
+    "right": {
+      "left": {
+        "name": "power_port5",
+        "op": "VARIABLE"
+      },
+      "op": "<=",
+      "right": {
+        "op": "LITERAL",
+        "type": "integer",
+        "value": 22
+      }
+    }
+  },
+  "query_intent": "SATISFIABILITY",
+  "scope": "One valuation satisfying all specification constraints and the query; no transition or temporal semantics are inferred.",
+  "specification_id": "smart_ev_teacher_e2e_v4",
+  "variable_mapping": [
+    {
+      "id": "charging",
+      "symbol": "v0"
+    },
+    {
+      "id": "emergency",
+      "symbol": "v1"
+    },
+    {
+      "id": "energy_wh",
+      "symbol": "v2"
+    },
+    {
+      "id": "offset",
+      "symbol": "v3"
+    },
+    {
+      "id": "power_port1",
+      "symbol": "v4"
+    },
+    {
+      "id": "power_port2",
+      "symbol": "v5"
+    },
+    {
+      "id": "power_port3",
+      "symbol": "v6"
+    },
+    {
+      "id": "power_port4",
+      "symbol": "v7"
+    },
+    {
+      "id": "power_port5",
+      "symbol": "v8"
+    },
+    {
+      "id": "soc",
+      "symbol": "v9"
+    },
+    {
+      "id": "soc_current",
+      "symbol": "v10"
+    },
+    {
+      "id": "soc_delta",
+      "symbol": "v11"
+    },
+    {
+      "id": "temperature",
+      "symbol": "v12"
+    },
+    {
+      "id": "time_seconds",
+      "symbol": "v13"
+    },
+    {
+      "id": "total_power",
+      "symbol": "v14"
+    }
+  ],
+  "variables": [
+    {
+      "id": "charging",
+      "type": "integer"
+    },
+    {
+      "id": "emergency",
+      "type": "integer"
+    },
+    {
+      "id": "energy_wh",
+      "type": "integer"
+    },
+    {
+      "id": "offset",
+      "type": "integer"
+    },
+    {
+      "id": "power_port1",
+      "type": "integer"
+    },
+    {
+      "id": "power_port2",
+      "type": "integer"
+    },
+    {
+      "id": "power_port3",
+      "type": "integer"
+    },
+    {
+      "id": "power_port4",
+      "type": "integer"
+    },
+    {
+      "id": "power_port5",
+      "type": "integer"
+    },
+    {
+      "id": "soc",
+      "type": "integer"
+    },
+    {
+      "id": "soc_current",
+      "type": "integer"
+    },
+    {
+      "id": "soc_delta",
+      "type": "integer"
+    },
+    {
+      "id": "temperature",
+      "type": "integer"
+    },
+    {
+      "id": "time_seconds",
+      "type": "integer"
+    },
+    {
+      "id": "total_power",
+      "type": "integer"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "equal": true,
+  "probe_id": "SMART-EV-PROBE-BO-001",
+  "sha256_after": "3244c52618494e1989cb363a7477f5476a1ad3988549b24b8ea4e51254034700",
+  "sha256_before": "3244c52618494e1989cb363a7477f5476a1ad3988549b24b8ea4e51254034700",
+  "sha256_manifest_baseline": "3244c52618494e1989cb363a7477f5476a1ad3988549b24b8ea4e51254034700",
+  "source_file": "buffer_overflow.c"
+}

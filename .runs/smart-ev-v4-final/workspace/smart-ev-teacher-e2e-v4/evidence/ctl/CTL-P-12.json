@@ -1,0 +1,55 @@
+{
+  "counterexample": null,
+  "formula": "EF(charging)",
+  "initial_state_ids": [
+    "DISCONNECTED"
+  ],
+  "property_id": "CTL-P-12",
+  "satisfied": true,
+  "witness": [
+    {
+      "id": "DISCONNECTED",
+      "labels": [
+        "auth_clear",
+        "disconnected",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "CONNECTED",
+      "labels": [
+        "connected",
+        "not_authenticated",
+        "port_occupied",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "AUTHENTICATED",
+      "labels": [
+        "authenticated",
+        "connected",
+        "port_ready",
+        "power_zero",
+        "safe"
+      ],
+      "values": {}
+    },
+    {
+      "id": "CHARGING",
+      "labels": [
+        "authenticated",
+        "charging",
+        "connected",
+        "power_positive",
+        "safe",
+        "safety_gate_valid"
+      ],
+      "values": {}
+    }
+  ]
+}

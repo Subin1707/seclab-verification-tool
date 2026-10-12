@@ -1,0 +1,44 @@
+{
+  "binary_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\compile\\build\\probe-program.exe",
+  "build_evidence_ids": [
+    "6e1fbfab-c266-4c8e-b133-7387cf2a1403",
+    "afe31b6a-83cc-42f4-be38-3007848ef3de",
+    "fff996f1-b461-4083-b507-fcb4d0567963"
+  ],
+  "command": {
+    "argv": [
+      "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c",
+      "-o",
+      "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\compile\\build\\probe-program.exe"
+    ],
+    "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\compile",
+    "duration_ms": 202.9999999795109,
+    "executable_path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+    "execution_error": null,
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "",
+    "succeeded": true,
+    "timed_out": false
+  },
+  "compiler": {
+    "capabilities": [
+      "compile_c"
+    ],
+    "installed": true,
+    "name": "gcc",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+    "version": "gcc.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+  },
+  "error_code": null,
+  "language": "C",
+  "source_files": [
+    "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\double_free.c"
+  ],
+  "success": true
+}

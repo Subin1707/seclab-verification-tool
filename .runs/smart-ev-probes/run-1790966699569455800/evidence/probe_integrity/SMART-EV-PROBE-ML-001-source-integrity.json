@@ -1,0 +1,8 @@
+{
+  "equal": true,
+  "probe_id": "SMART-EV-PROBE-ML-001",
+  "sha256_after": "788237cca376d6595a2c91923e036b6b1a0b1e78fff488090d5a7d864ac96884",
+  "sha256_before": "788237cca376d6595a2c91923e036b6b1a0b1e78fff488090d5a7d864ac96884",
+  "sha256_manifest_baseline": "788237cca376d6595a2c91923e036b6b1a0b1e78fff488090d5a7d864ac96884",
+  "source_file": "memory_leak.c"
+}

@@ -1,0 +1,39 @@
+{
+  "allowed_exit_codes": [
+    0
+  ],
+  "argv": [
+    "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+    "-checks=clang-analyzer-*,bugprone-*,performance-*,portability-*",
+    "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c",
+    "--",
+    "-x",
+    "c",
+    "-std=c11"
+  ],
+  "completed": true,
+  "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\clang-tidy",
+  "duration_ms": 108.99999999674037,
+  "environment_override_keys": [],
+  "executable_path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+  "execution_error": null,
+  "exit_code": 0,
+  "finished_at": "2026-10-02T18:45:05.485699Z",
+  "started_at": "2026-10-02T18:45:05.380600Z",
+  "stderr_evidence": {
+    "id": "3c9d5e61-07fa-42c5-85db-c4caafa8c9b8",
+    "path": "evidence/static_analysis/clang-tidy-eb2c3e34c6de413fb910561e46e0dc62-stderr.txt",
+    "sha256": "d60603c40ef102afaaad0a352621bbbae8361bd81011c8daab643c4236f9b892"
+  },
+  "stdout_evidence": {
+    "id": "7f02873e-98db-4826-9903-9e089c85dce1",
+    "path": "evidence/static_analysis/clang-tidy-eb2c3e34c6de413fb910561e46e0dc62-stdout.txt",
+    "sha256": "ccef66534f44d280d00d14357f68da0bfdd9d7527eadea85d14f744413ac896d"
+  },
+  "termination": {
+    "kind": "EXIT_CODE",
+    "return_code": 0,
+    "signal": null
+  },
+  "timed_out": false
+}

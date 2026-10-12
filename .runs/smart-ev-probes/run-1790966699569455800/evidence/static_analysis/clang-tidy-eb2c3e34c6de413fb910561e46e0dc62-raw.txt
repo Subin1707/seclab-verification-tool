@@ -1,0 +1,22 @@
+E:\seclab-verification-tool\examples\smart-ev-probes\use_after_free.c:10:19: warning: Use of memory after it is released [clang-analyzer-unix.Malloc]
+   10 |     allocation[0] = 'B';
+      |     ~~~~~~~~~~~~~ ^
+E:\seclab-verification-tool\examples\smart-ev-probes\use_after_free.c:4:50: note: Memory is allocated
+    4 |     volatile char *allocation = (volatile char *)malloc(16);
+      |                                                  ^~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\use_after_free.c:5:9: note: Assuming 'allocation' is not equal to NULL
+    5 |     if (allocation == NULL) {
+      |         ^~~~~~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\use_after_free.c:5:5: note: Taking false branch
+    5 |     if (allocation == NULL) {
+      |     ^
+E:\seclab-verification-tool\examples\smart-ev-probes\use_after_free.c:9:5: note: Memory is released
+    9 |     free((void *)allocation);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\use_after_free.c:10:19: note: Use of memory after it is released
+   10 |     allocation[0] = 'B';
+      |     ~~~~~~~~~~~~~ ^
+
+64 warnings generated.
+Suppressed 63 warnings (63 in non-user code).
+Use -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

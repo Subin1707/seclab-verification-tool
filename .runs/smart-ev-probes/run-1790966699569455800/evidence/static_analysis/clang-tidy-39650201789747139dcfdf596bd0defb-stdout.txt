@@ -1,0 +1,12 @@
+E:\seclab-verification-tool\examples\smart-ev-probes\buffer_overflow.c:9:5: warning: Out of bound access to memory after the end of the heap area [clang-analyzer-security.ArrayBound]
+    9 |     buffer[index] = 'X';
+      |     ^~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\buffer_overflow.c:6:9: note: Assuming 'buffer' is not equal to NULL
+    6 |     if (buffer == NULL) {
+      |         ^~~~~~~~~~~~~~
+E:\seclab-verification-tool\examples\smart-ev-probes\buffer_overflow.c:6:5: note: Taking false branch
+    6 |     if (buffer == NULL) {
+      |     ^
+E:\seclab-verification-tool\examples\smart-ev-probes\buffer_overflow.c:9:5: note: Access of the heap area at index 8, while it holds only 8 'char' elements
+    9 |     buffer[index] = 'X';
+      |     ^~~~~~~~~~~~~

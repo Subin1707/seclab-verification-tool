@@ -1,0 +1,33 @@
+{
+  "allowed_exit_codes": [
+    0
+  ],
+  "argv": [
+    "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\addresssanitizer\\build\\addresssanitizer-dd32051d1edd43899afa4f94aeed493f.exe"
+  ],
+  "completed": true,
+  "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\addresssanitizer",
+  "duration_ms": 155.99999998812564,
+  "environment_override_keys": [],
+  "executable_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-DF-001\\addresssanitizer\\build\\addresssanitizer-dd32051d1edd43899afa4f94aeed493f.exe",
+  "execution_error": null,
+  "exit_code": 3221225781,
+  "finished_at": "2026-10-02T18:45:04.160563Z",
+  "started_at": "2026-10-02T18:45:04.008499Z",
+  "stderr_evidence": {
+    "id": "7bf4d269-29ce-4bfe-8759-9e80ca529bcc",
+    "path": "evidence/sanitizer/addresssanitizer-d154a128476940398cb3ec18f4d35dc1-stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout_evidence": {
+    "id": "7d59cd72-aa09-47d0-a951-215042b0b905",
+    "path": "evidence/sanitizer/addresssanitizer-d154a128476940398cb3ec18f4d35dc1-stdout.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "termination": {
+    "kind": "EXIT_CODE",
+    "return_code": 3221225781,
+    "signal": null
+  },
+  "timed_out": false
+}

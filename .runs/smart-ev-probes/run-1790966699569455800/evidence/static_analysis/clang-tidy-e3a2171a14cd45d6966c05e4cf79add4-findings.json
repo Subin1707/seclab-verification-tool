@@ -1,0 +1,122 @@
+{
+  "findings": [
+    {
+      "category": "warning",
+      "column": 19,
+      "confidence": null,
+      "cwe": null,
+      "file": "use_after_free.c",
+      "function": null,
+      "id": "57c1632e-7ae9-4255-9e92-7a16ed22b811",
+      "line": 10,
+      "message": "Use of memory after it is released",
+      "metadata": {
+        "original_severity": "warning",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+      },
+      "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+      "rule_id": "clang-analyzer-unix.Malloc",
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 50,
+      "confidence": null,
+      "cwe": null,
+      "file": "use_after_free.c",
+      "function": null,
+      "id": "993f3243-9c55-4da6-a1a1-5d7f00a4b2f0",
+      "line": 4,
+      "message": "Memory is allocated",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+      },
+      "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 9,
+      "confidence": null,
+      "cwe": null,
+      "file": "use_after_free.c",
+      "function": null,
+      "id": "ade785ff-6769-4751-8d7c-2cbb5a8cf8a2",
+      "line": 5,
+      "message": "Assuming 'allocation' is not equal to NULL",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+      },
+      "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "use_after_free.c",
+      "function": null,
+      "id": "4278f96d-5e1f-492e-876d-922fd599e66c",
+      "line": 5,
+      "message": "Taking false branch",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+      },
+      "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 5,
+      "confidence": null,
+      "cwe": null,
+      "file": "use_after_free.c",
+      "function": null,
+      "id": "1b5842c2-b060-410b-9f09-eca3d2497e83",
+      "line": 9,
+      "message": "Memory is released",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+      },
+      "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    },
+    {
+      "category": "note",
+      "column": 19,
+      "confidence": null,
+      "cwe": null,
+      "file": "use_after_free.c",
+      "function": null,
+      "id": "abe8cfe1-a9fb-4081-8c98-d078dde799ae",
+      "line": 10,
+      "message": "Use of memory after it is released",
+      "metadata": {
+        "original_severity": "note",
+        "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+      },
+      "raw_evidence": "1b75f2cb-9dfd-42af-b17b-db3792986ff5",
+      "rule_id": null,
+      "severity": "UNKNOWN",
+      "tool": "clang-tidy"
+    }
+  ],
+  "limitations": [
+    "No compile_commands.json exists; analysis uses limited default compile flags."
+  ],
+  "tool": "clang-tidy"
+}

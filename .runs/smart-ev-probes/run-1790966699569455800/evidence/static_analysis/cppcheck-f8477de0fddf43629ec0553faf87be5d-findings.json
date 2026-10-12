@@ -1,0 +1,43 @@
+{
+  "findings": [
+    {
+      "category": "error",
+      "column": null,
+      "confidence": null,
+      "cwe": "CWE-416",
+      "file": "use_after_free.c",
+      "function": null,
+      "id": "b0f3c630-e995-4178-8df7-3ef95259fe67",
+      "line": 10,
+      "message": "Dereferencing 'allocation' after it is deallocated / released",
+      "metadata": {
+        "original_severity": "error",
+        "raw_file_path": "E:/seclab-verification-tool/examples/smart-ev-probes/use_after_free.c"
+      },
+      "raw_evidence": "9ed77650-5db4-4af4-91e0-113186aa4928",
+      "rule_id": "deallocuse",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    },
+    {
+      "category": "information",
+      "column": null,
+      "confidence": null,
+      "cwe": null,
+      "file": "<unknown>",
+      "function": null,
+      "id": "a2098a83-07f6-4468-90f6-8625fd325441",
+      "line": null,
+      "message": "Active checkers: 112/186 (use --checkers-report=<filename> to see details)",
+      "metadata": {
+        "original_severity": "information"
+      },
+      "raw_evidence": "9ed77650-5db4-4af4-91e0-113186aa4928",
+      "rule_id": "checkersReport",
+      "severity": "UNKNOWN",
+      "tool": "cppcheck"
+    }
+  ],
+  "limitations": [],
+  "tool": "cppcheck"
+}

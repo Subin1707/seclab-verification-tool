@@ -1,0 +1,10 @@
+{
+  "counterexample": null,
+  "formula": "AG(!req_port_01_violation)",
+  "initial_state_ids": [
+    "DISCONNECTED"
+  ],
+  "property_id": "CTL-P-06",
+  "satisfied": true,
+  "witness": null
+}

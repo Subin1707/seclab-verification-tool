@@ -1,0 +1,63 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "A heap byte is written after its allocation has been freed."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-fsyntax-only",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\compiler-diagnostics",
+        "duration_ms": 78.99999999790452,
+        "executable_path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [],
+    "executed": true,
+    "findings": [],
+    "limitations": [],
+    "raw_output": "$ C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE -std=c11 -Wall -Wextra -Wpedantic -fsyntax-only E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c",
+    "reason_code": "NO_STATIC_FINDINGS",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 78.99999999790452,
+      "evidence_ids": [
+        "f8780adf-0b40-4f95-ac5b-fd5e548bbda4",
+        "2acd10b9-c879-484a-91eb-8ec0f51eb18c",
+        "0c824350-b3e9-4df5-b5c4-b42509f27a8b",
+        "312a2ca4-b0fc-4539-9976-dd9dc50cf3eb",
+        "12776cf8-62e3-4219-9734-3f670ae53dc1"
+      ],
+      "id": "763207f1-c31c-4715-9ea5-e151232aec70",
+      "message": "compiler-diagnostics reported no findings for this configuration and source collection.",
+      "metadata": {
+        "finding_ids": [],
+        "limitations": []
+      },
+      "property_id": null,
+      "reason_code": "NO_STATIC_FINDINGS",
+      "requirement_id": null,
+      "scope": "Compiler warning/error diagnostics for collected translation units with -Wall -Wextra -Wpedantic and syntax-only mode; diagnostics are not security verdicts.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "COMPILER-DIAGNOSTICS"
+    }
+  },
+  "tool": "compiler-diagnostics"
+}

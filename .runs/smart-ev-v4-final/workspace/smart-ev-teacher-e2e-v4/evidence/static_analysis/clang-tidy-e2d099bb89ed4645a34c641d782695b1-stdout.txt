@@ -1,0 +1,562 @@
+E:\smart-ev-charging-safety\src\auth\token.h:4:10: error: 'hang_so.h' file not found [clang-diagnostic-error]
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\auth\xac_thuc.h:4:10: error: 'xe_dien.h' file not found [clang-diagnostic-error]
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:8:24: warning: 2 adjacent parameters of 'co_the_bat_dau_sac' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+    8 | int co_the_bat_dau_sac(const XeDien *xe, const CongSac *cong) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:8:38: note: the first parameter in the range is 'xe'
+    8 | int co_the_bat_dau_sac(const XeDien *xe, const CongSac *cong) {
+      |                                      ^~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:8:57: note: the last parameter in the range is 'cong'
+    8 | int co_the_bat_dau_sac(const XeDien *xe, const CongSac *cong) {
+      |                                                         ^~~~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:57:17: warning: 2 adjacent parameters of 'bat_dau_sac' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   57 | int bat_dau_sac(XeDien *xe, CongSac *cong, PhienSac *phien, float cong_suat_kw) {
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:57:25: note: the first parameter in the range is 'xe'
+   57 | int bat_dau_sac(XeDien *xe, CongSac *cong, PhienSac *phien, float cong_suat_kw) {
+      |                         ^~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:57:38: note: the last parameter in the range is 'cong'
+   57 | int bat_dau_sac(XeDien *xe, CongSac *cong, PhienSac *phien, float cong_suat_kw) {
+      |                                      ^~~~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:78:14: warning: 2 adjacent parameters of 'dung_sac' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   78 | int dung_sac(XeDien *xe, CongSac *cong, PhienSac *phien) {
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:78:22: note: the first parameter in the range is 'xe'
+   78 | int dung_sac(XeDien *xe, CongSac *cong, PhienSac *phien) {
+      |                      ^~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.c:78:35: note: the last parameter in the range is 'cong'
+   78 | int dung_sac(XeDien *xe, CongSac *cong, PhienSac *phien) {
+      |                                   ^~~~
+E:\smart-ev-charging-safety\src\charging\dieu_khien_sac.h:4:10: error: 'xe_dien.h' file not found [clang-diagnostic-error]
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\phien_sac.c:4:42: warning: 4 adjacent parameters of 'khoi_tao_phien_sac' of convertible types are easily swapped by mistake [bugprone-easily-swappable-parameters]
+    4 | void khoi_tao_phien_sac(PhienSac *phien, int id, int vehicle_id, int port_id, float soc_bat_dau) {
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\phien_sac.c:4:46: note: the first parameter in the range is 'id'
+    4 | void khoi_tao_phien_sac(PhienSac *phien, int id, int vehicle_id, int port_id, float soc_bat_dau) {
+      |                                              ^~
+E:\smart-ev-charging-safety\src\charging\phien_sac.c:4:85: note: the last parameter in the range is 'soc_bat_dau'
+    4 | void khoi_tao_phien_sac(PhienSac *phien, int id, int vehicle_id, int port_id, float soc_bat_dau) {
+      |                                                                                     ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\phien_sac.c:4:79: note: 'int' and 'float' may be implicitly converted
+    4 | void khoi_tao_phien_sac(PhienSac *phien, int id, int vehicle_id, int port_id, float soc_bat_dau) {
+      |                                                                               ^
+E:\smart-ev-charging-safety\src\charging\phien_sac.c:16:42: warning: 2 adjacent parameters of 'ket_thuc_phien_sac' of similar type ('float') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   16 | void ket_thuc_phien_sac(PhienSac *phien, float soc_ket_thuc, float nang_luong) {
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\phien_sac.c:16:48: note: the first parameter in the range is 'soc_ket_thuc'
+   16 | void ket_thuc_phien_sac(PhienSac *phien, float soc_ket_thuc, float nang_luong) {
+      |                                                ^~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\charging\phien_sac.c:16:68: note: the last parameter in the range is 'nang_luong'
+   16 | void ket_thuc_phien_sac(PhienSac *phien, float soc_ket_thuc, float nang_luong) {
+      |                                                                    ^~~~~~~~~~
+E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.c:66:28: warning: 2 adjacent parameters of 'xu_ly_lenh_dieu_khien' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   66 |                            TramSac *tram,
+      |                            ^~~~~~~~~~~~~~
+   67 |                            XeDien ds_xe[],
+      |                            ~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.c:66:37: note: the first parameter in the range is 'tram'
+   66 |                            TramSac *tram,
+      |                                     ^~~~
+E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.c:67:35: note: the last parameter in the range is 'ds_xe'
+   67 |                            XeDien ds_xe[],
+      |                                   ^~~~~
+E:\smart-ev-charging-safety\src\communication\dieu_khien_tu_xa.h:4:10: error: 'tram_sac.h' file not found [clang-diagnostic-error]
+    4 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\communication\message.c:8:2: warning: Call to function 'memcpy' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memcpy_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+    8 |         memcpy(destination, start, length);
+      |         ^~~~~~
+E:\smart-ev-charging-safety\src\communication\message.c:8:2: note: Call to function 'memcpy' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memcpy_s' in case of C11
+    8 |         memcpy(destination, start, length);
+      |         ^~~~~~
+E:\smart-ev-charging-safety\src\communication\message.c:19:2: warning: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   19 |         memset(message, 0, sizeof(*message));
+      |         ^~~~~~
+E:\smart-ev-charging-safety\src\communication\message.c:19:2: note: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11
+   19 |         memset(message, 0, sizeof(*message));
+      |         ^~~~~~
+E:\smart-ev-charging-safety\src\communication\message.c:30:20: warning: 'atoi' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead [bugprone-unchecked-string-to-number-conversion]
+   30 |                         message->port = atoi(port_text);
+      |                                         ^
+E:\smart-ev-charging-safety\src\communication\message.c:35:31: warning: 'atof' used to convert a string to a floating-point value, but function will not report conversion errors; consider using 'strtod' instead [bugprone-unchecked-string-to-number-conversion]
+   35 |                         message->power_kw = (float)atof(power_text);
+      |                                                    ^
+E:\smart-ev-charging-safety\src\core\hang_so.h:11:28: warning: macro replacement list should be enclosed in parentheses [bugprone-macro-parentheses]
+   11 | #define NHIET_DO_TOI_THIEU -20.0f
+      |                            ^     
+      |                            (     )
+E:\smart-ev-charging-safety\src\logging\logger.c:27:22: warning: 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [clang-diagnostic-deprecated-declarations]
+   27 |         g_log_file = fopen(duong_dan_file, "w");
+      |                      ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h:212:20: note: 'fopen' has been explicitly marked deprecated here
+  212 |     _Check_return_ _CRT_INSECURE_DEPRECATE(fopen_s)
+      |                    ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:320:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  320 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:310:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  310 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+E:\smart-ev-charging-safety\src\logging\logger.c:46:26: warning: 'localtime' is deprecated: This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [clang-diagnostic-deprecated-declarations]
+   46 |     struct tm *tm_info = localtime(&now);
+      |                          ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\time.h:494:9: note: 'localtime' has been explicitly marked deprecated here
+  494 |         _CRT_INSECURE_DEPRECATE(localtime_s)
+      |         ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:320:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  320 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:310:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  310 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+E:\smart-ev-charging-safety\src\logging\logger.c:50:9: warning: 'strcpy' is deprecated: This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [clang-diagnostic-deprecated-declarations]
+   50 |         strcpy(thoi_gian_str, "00:00:00");
+      |         ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\string.h:130:1: note: 'strcpy' has been explicitly marked deprecated here
+  130 | __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1(
+      | ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt.h:821:5: note: expanded from macro '__DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1'
+  821 |     __DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1_EX(_ReturnType, _ReturnPolicy, _DeclSpec, _FuncName, _FuncName##_s, _DstType, _SalAttributeDst, _DstType, _Dst, _TType1, _TArg1)
+      |     ^
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt.h:1880:17: note: expanded from macro '__DEFINE_CPP_OVERLOAD_STANDARD_FUNC_0_1_EX'
+ 1880 |                 _CRT_INSECURE_DEPRECATE(_SecureFuncName) _DeclSpec _ReturnType __cdecl _FuncName(_SalAttributeDst _DstType *_Dst, _TType1 _TArg1);
+      |                 ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:320:55: note: expanded from macro '_CRT_INSECURE_DEPRECATE'
+  320 |         #define _CRT_INSECURE_DEPRECATE(_Replacement) _CRT_DEPRECATE_TEXT(    \
+      |                                                       ^
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30133\include\vcruntime.h:310:47: note: expanded from macro '_CRT_DEPRECATE_TEXT'
+  310 | #define _CRT_DEPRECATE_TEXT(_Text) __declspec(deprecated(_Text))
+      |                                               ^
+E:\smart-ev-charging-safety\src\logging\logger.c:64:9: warning: Call to function 'fprintf' is insecure as it does not provide bounding of the memory buffer or security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   64 |         fprintf(g_log_file, "[%s][%s] ", thoi_gian_str, ten_muc_log(muc));
+      |         ^~~~~~~
+E:\smart-ev-charging-safety\src\logging\logger.c:64:9: note: Call to function 'fprintf' is insecure as it does not provide bounding of the memory buffer or security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11
+   64 |         fprintf(g_log_file, "[%s][%s] ", thoi_gian_str, ten_muc_log(muc));
+      |         ^~~~~~~
+E:\smart-ev-charging-safety\src\logging\logger.c:68:9: warning: Call to function 'fprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   68 |         fprintf(g_log_file, "\n");
+      |         ^~~~~~~
+E:\smart-ev-charging-safety\src\logging\logger.c:68:9: note: Call to function 'fprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'fprintf_s' in case of C11
+   68 |         fprintf(g_log_file, "\n");
+      |         ^~~~~~~
+E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c:42:5: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   42 |     snprintf(item->ma_xe, sizeof(item->ma_xe), "%s", ma_xe ? ma_xe : "--");
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c:42:5: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+   42 |     snprintf(item->ma_xe, sizeof(item->ma_xe), "%s", ma_xe ? ma_xe : "--");
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c:43:5: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   43 |     snprintf(item->su_kien, sizeof(item->su_kien), "%s",
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c:43:5: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+   43 |     snprintf(item->su_kien, sizeof(item->su_kien), "%s",
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c:45:5: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   45 |     snprintf(item->hanh_dong, sizeof(item->hanh_dong), "%s",
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\logging\nhat_ky_su_kien.c:45:5: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+   45 |     snprintf(item->hanh_dong, sizeof(item->hanh_dong), "%s",
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\main.c:3:10: error: 'hang_so.h' file not found [clang-diagnostic-error]
+    3 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\main.c:34:58: warning: 2 adjacent parameters of 'in_kich_ban_ngau_nhien' of convertible types are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   34 | static void in_kich_ban_ngau_nhien(const XeDien ds_xe[], int so_xe, unsigned int seed) {
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\main.c:34:62: note: the first parameter in the range is 'so_xe'
+   34 | static void in_kich_ban_ngau_nhien(const XeDien ds_xe[], int so_xe, unsigned int seed) {
+      |                                                              ^~~~~
+E:\smart-ev-charging-safety\src\main.c:34:82: note: the last parameter in the range is 'seed'
+   34 | static void in_kich_ban_ngau_nhien(const XeDien ds_xe[], int so_xe, unsigned int seed) {
+      |                                                                                  ^~~~
+E:\smart-ev-charging-safety\src\main.c:34:69: note: 'int' and 'unsigned int' may be implicitly converted
+   34 | static void in_kich_ban_ngau_nhien(const XeDien ds_xe[], int so_xe, unsigned int seed) {
+      |                                                                     ^
+E:\smart-ev-charging-safety\src\main.c:78:9: warning: 'scanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead [bugprone-unchecked-string-to-number-conversion]
+   78 |     if (scanf("%d", &cong) != 1) {
+      |         ^
+E:\smart-ev-charging-safety\src\main.c:86:29: warning: 2 adjacent parameters of 'tim_xe_tren_cong' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   86 | static int tim_xe_tren_cong(const TramSac *tram, const XeDien ds_xe[], int cong_idx) {
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\main.c:86:44: note: the first parameter in the range is 'tram'
+   86 | static int tim_xe_tren_cong(const TramSac *tram, const XeDien ds_xe[], int cong_idx) {
+      |                                            ^~~~
+E:\smart-ev-charging-safety\src\main.c:86:63: note: the last parameter in the range is 'ds_xe'
+   86 | static int tim_xe_tren_cong(const TramSac *tram, const XeDien ds_xe[], int cong_idx) {
+      |                                                               ^~~~~
+E:\smart-ev-charging-safety\src\main.c:96:23: warning: narrowing conversion from 'size_t' (aka 'unsigned long long') to signed type 'int' is implementation-defined [bugprone-narrowing-conversions]
+   96 |     if (!fgets(ma_xe, kich_thuoc, stdin)) {
+      |                       ^
+E:\smart-ev-charging-safety\src\main.c:103:33: warning: 3 adjacent parameters of 'dieu_khien_thu_cong' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+  103 | static void dieu_khien_thu_cong(TramSac *tram, XeDien ds_xe[], PhienSac ds_phien[]) {
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\main.c:103:42: note: the first parameter in the range is 'tram'
+  103 | static void dieu_khien_thu_cong(TramSac *tram, XeDien ds_xe[], PhienSac ds_phien[]) {
+      |                                          ^~~~
+E:\smart-ev-charging-safety\src\main.c:103:73: note: the last parameter in the range is 'ds_phien'
+  103 | static void dieu_khien_thu_cong(TramSac *tram, XeDien ds_xe[], PhienSac ds_phien[]) {
+      |                                                                         ^~~~~~~~
+E:\smart-ev-charging-safety\src\main.c:120:13: warning: 'scanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead [bugprone-unchecked-string-to-number-conversion]
+  120 |         if (scanf("%d", &lua_chon) != 1) {
+      |             ^
+E:\smart-ev-charging-safety\src\main.c:256:13: warning: 'scanf' used to convert a string to an integer value, but function will not report conversion errors; consider using 'strtol' instead [bugprone-unchecked-string-to-number-conversion]
+  256 |         if (scanf("%d", &lua_chon) != 1) {
+      |             ^
+E:\smart-ev-charging-safety\src\main.c:269:17: warning: 'scanf' used to convert a string to an unsigned integer value, but function will not report conversion errors; consider using 'strtoul' instead [bugprone-unchecked-string-to-number-conversion]
+  269 |             if (scanf("%u", &seed) != 1) {
+      |                 ^
+E:\smart-ev-charging-safety\src\monitoring\chi_so.c:8:2: warning: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+    8 |         memset(chi_so, 0, sizeof(*chi_so));
+      |         ^~~~~~
+E:\smart-ev-charging-safety\src\monitoring\chi_so.c:8:2: note: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11
+    8 |         memset(chi_so, 0, sizeof(*chi_so));
+      |         ^~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:46:59: warning: 2 adjacent parameters of 'tim_xe_theo_id' of similar type ('int') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   46 | static const XeDien *tim_xe_theo_id(const XeDien ds_xe[], int so_xe, int id) {
+      |                                                           ^~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:46:63: note: the first parameter in the range is 'so_xe'
+   46 | static const XeDien *tim_xe_theo_id(const XeDien ds_xe[], int so_xe, int id) {
+      |                                                               ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:46:74: note: the last parameter in the range is 'id'
+   46 | static const XeDien *tim_xe_theo_id(const XeDien ds_xe[], int so_xe, int id) {
+      |                                                                          ^~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:75:7: warning: 2 adjacent parameters of 'xuat_snapshot_json' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   75 |                                                 const TramSac *tram,
+      |                                                 ^~~~~~~~~~~~~~~~~~~~
+   76 |                                                 const XeDien ds_xe[],
+      |                                                 ~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:75:22: note: the first parameter in the range is 'tram'
+   75 |                                                 const TramSac *tram,
+      |                                                                ^~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:76:20: note: the last parameter in the range is 'ds_xe'
+   76 |                                                 const XeDien ds_xe[],
+      |                                                              ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:78:7: warning: 2 adjacent parameters of 'xuat_snapshot_json' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   78 |                                                 const HangChoSac *queue,
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+   79 |                                                 const KichBanMoPhong *kich_ban) {
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:78:25: note: the first parameter in the range is 'queue'
+   78 |                                                 const HangChoSac *queue,
+      |                                                                   ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:79:29: note: the last parameter in the range is 'kich_ban'
+   79 |                                                 const KichBanMoPhong *kich_ban) {
+      |                                                                       ^~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:86:10: warning: 2 adjacent parameters of 'xuat_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   86 |                                                                         const TramSac *tram,
+      |                                                                         ^~~~~~~~~~~~~~~~~~~~
+   87 |                                                                         const XeDien ds_xe[],
+      |                                                                         ~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:86:25: note: the first parameter in the range is 'tram'
+   86 |                                                                         const TramSac *tram,
+      |                                                                                        ^~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:87:23: note: the last parameter in the range is 'ds_xe'
+   87 |                                                                         const XeDien ds_xe[],
+      |                                                                                      ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:89:17: warning: 2 adjacent parameters of 'xuat_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   89 |                                                                                                                                 const HangChoSac *queue,
+      |                                                                                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+   90 |                                                                                                                                 const KichBanMoPhong *kich_ban) {
+      |                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:89:35: note: the first parameter in the range is 'queue'
+   89 |                                                                                                                                 const HangChoSac *queue,
+      |                                                                                                                                                   ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:90:39: note: the last parameter in the range is 'kich_ban'
+   90 |                                                                                                                                 const KichBanMoPhong *kich_ban) {
+      |                                                                                                                                                       ^~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:210:8: warning: 2 adjacent parameters of 'ghi_snapshot_json' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+  210 |                                           const TramSac *tram,
+      |                                           ^~~~~~~~~~~~~~~~~~~~
+  211 |                                           const XeDien ds_xe[],
+      |                                           ~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:210:23: note: the first parameter in the range is 'tram'
+  210 |                                           const TramSac *tram,
+      |                                                          ^~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:211:21: note: the last parameter in the range is 'ds_xe'
+  211 |                                           const XeDien ds_xe[],
+      |                                                        ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:213:8: warning: 2 adjacent parameters of 'ghi_snapshot_json' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+  213 |                                           const HangChoSac *queue,
+      |                                           ^~~~~~~~~~~~~~~~~~~~~~~~
+  214 |                                           const KichBanMoPhong *kich_ban) {
+      |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:213:26: note: the first parameter in the range is 'queue'
+  213 |                                           const HangChoSac *queue,
+      |                                                             ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:214:30: note: the last parameter in the range is 'kich_ban'
+  214 |                                           const KichBanMoPhong *kich_ban) {
+      |                                                                 ^~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:231:11: warning: 2 adjacent parameters of 'ghi_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+  231 |                                                                   const TramSac *tram,
+      |                                                                   ^~~~~~~~~~~~~~~~~~~~
+  232 |                                                                   const XeDien ds_xe[],
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:231:26: note: the first parameter in the range is 'tram'
+  231 |                                                                   const TramSac *tram,
+      |                                                                                  ^~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:232:24: note: the last parameter in the range is 'ds_xe'
+  232 |                                                                   const XeDien ds_xe[],
+      |                                                                                ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:234:11: warning: 2 adjacent parameters of 'ghi_snapshot_json_voi_trang_thai' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+  234 |                                                                   const HangChoSac *queue,
+      |                                                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+  235 |                                                                   const KichBanMoPhong *kich_ban) {
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:234:29: note: the first parameter in the range is 'queue'
+  234 |                                                                   const HangChoSac *queue,
+      |                                                                                     ^~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.c:235:33: note: the last parameter in the range is 'kich_ban'
+  235 |                                                                   const KichBanMoPhong *kich_ban) {
+      |                                                                                         ^~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\du_lieu_giam_sat.h:5:10: error: 'tram_sac.h' file not found [clang-diagnostic-error]
+    5 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c:11:5: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   11 |     snprintf(dich, kich_thuoc, "%s", nguon ? nguon : "");
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c:11:5: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+   11 |     snprintf(dich, kich_thuoc, "%s", nguon ? nguon : "");
+      |     ^~~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c:15:5: warning: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   15 |     memset(danh_sach_su_kien, 0, sizeof(danh_sach_su_kien));
+      |     ^~~~~~
+E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c:15:5: note: Call to function 'memset' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memset_s' in case of C11
+   15 |     memset(danh_sach_su_kien, 0, sizeof(danh_sach_su_kien));
+      |     ^~~~~~
+E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c:26:9: warning: Call to function 'memmove' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memmove_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+   26 |         memmove(&danh_sach_su_kien[0],
+      |         ^~~~~~~
+E:\smart-ev-charging-safety\src\monitoring\su_kien_he_thong.c:26:9: note: Call to function 'memmove' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'memmove_s' in case of C11
+   26 |         memmove(&danh_sach_su_kien[0],
+      |         ^~~~~~~
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:5:34: warning: 2 adjacent parameters of 'kich_hoat_dung_khan_cap_cong' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+    5 | int kich_hoat_dung_khan_cap_cong(CongSac *cong, XeDien *xe) {
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:5:43: note: the first parameter in the range is 'cong'
+    5 | int kich_hoat_dung_khan_cap_cong(CongSac *cong, XeDien *xe) {
+      |                                           ^~~~
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:5:57: note: the last parameter in the range is 'xe'
+    5 | int kich_hoat_dung_khan_cap_cong(CongSac *cong, XeDien *xe) {
+      |                                                         ^~
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:22:34: warning: 2 adjacent parameters of 'kich_hoat_dung_khan_cap_tram' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   22 | int kich_hoat_dung_khan_cap_tram(TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:22:43: note: the first parameter in the range is 'tram'
+   22 | int kich_hoat_dung_khan_cap_tram(TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                           ^~~~
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.c:22:56: note: the last parameter in the range is 'ds_xe'
+   22 | int kich_hoat_dung_khan_cap_tram(TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                                        ^~~~~
+E:\smart-ev-charging-safety\src\safety\dung_khan_cap.h:4:10: error: 'cong_sac.h' file not found [clang-diagnostic-error]
+    4 | #include "cong_sac.h"
+      |          ^~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:5:35: warning: 3 adjacent parameters of 'giam_sat_xe_va_cong' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+    5 | KetQuaGiamSat giam_sat_xe_va_cong(XeDien *xe, CongSac *cong, TramSac *tram) {
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:5:43: note: the first parameter in the range is 'xe'
+    5 | KetQuaGiamSat giam_sat_xe_va_cong(XeDien *xe, CongSac *cong, TramSac *tram) {
+      |                                           ^~
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:5:71: note: the last parameter in the range is 'tram'
+    5 | KetQuaGiamSat giam_sat_xe_va_cong(XeDien *xe, CongSac *cong, TramSac *tram) {
+      |                                                                       ^~~~
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:85:27: warning: 2 adjacent parameters of 'kiem_tra_toan_bo_tram' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   85 | int kiem_tra_toan_bo_tram(TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:85:36: note: the first parameter in the range is 'tram'
+   85 | int kiem_tra_toan_bo_tram(TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                    ^~~~
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.c:85:49: note: the last parameter in the range is 'ds_xe'
+   85 | int kiem_tra_toan_bo_tram(TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                                 ^~~~~
+E:\smart-ev-charging-safety\src\safety\giam_sat_an_toan.h:4:10: error: 'xe_dien.h' file not found [clang-diagnostic-error]
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:6:27: warning: 2 adjacent parameters of 'kiem_tra_sr01_ket_noi' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+    6 | int kiem_tra_sr01_ket_noi(const XeDien *xe, const CongSac *cong) {
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:6:41: note: the first parameter in the range is 'xe'
+    6 | int kiem_tra_sr01_ket_noi(const XeDien *xe, const CongSac *cong) {
+      |                                         ^~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:6:60: note: the last parameter in the range is 'cong'
+    6 | int kiem_tra_sr01_ket_noi(const XeDien *xe, const CongSac *cong) {
+      |                                                            ^~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:42:28: warning: 2 adjacent parameters of 'kiem_tra_sr05_khan_cap' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   42 | int kiem_tra_sr05_khan_cap(const CongSac *cong, const TramSac *tram) {
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:42:43: note: the first parameter in the range is 'cong'
+   42 | int kiem_tra_sr05_khan_cap(const CongSac *cong, const TramSac *tram) {
+      |                                           ^~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:42:64: note: the last parameter in the range is 'tram'
+   42 | int kiem_tra_sr05_khan_cap(const CongSac *cong, const TramSac *tram) {
+      |                                                                ^~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:77:32: warning: 2 adjacent parameters of 'kiem_tra_sr09_ngat_ket_noi' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   77 | int kiem_tra_sr09_ngat_ket_noi(const XeDien *xe, const CongSac *cong) {
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:77:46: note: the first parameter in the range is 'xe'
+   77 | int kiem_tra_sr09_ngat_ket_noi(const XeDien *xe, const CongSac *cong) {
+      |                                              ^~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.c:77:65: note: the last parameter in the range is 'cong'
+   77 | int kiem_tra_sr09_ngat_ket_noi(const XeDien *xe, const CongSac *cong) {
+      |                                                                 ^~~~
+E:\smart-ev-charging-safety\src\safety\quy_tac_an_toan.h:4:10: error: 'xe_dien.h' file not found [clang-diagnostic-error]
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\kich_ban.c:64:28: warning: 2 adjacent parameters of 'ap_dung_kich_ban_tick' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   64 |                            TramSac *tram,
+      |                            ^~~~~~~~~~~~~~
+   65 |                            XeDien ds_xe[],
+      |                            ~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\kich_ban.c:64:37: note: the first parameter in the range is 'tram'
+   64 |                            TramSac *tram,
+      |                                     ^~~~
+E:\smart-ev-charging-safety\src\simulation\kich_ban.c:65:35: note: the last parameter in the range is 'ds_xe'
+   65 |                            XeDien ds_xe[],
+      |                                   ^~~~~
+E:\smart-ev-charging-safety\src\simulation\kich_ban.h:4:10: error: 'xe_dien.h' file not found [clang-diagnostic-error]
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:39:34: warning: 2 adjacent parameters of 'in_dashboard_tick' of similar type ('const int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   39 | void in_dashboard_tick(int tick, const TramSac *tram, const XeDien ds_xe[], int so_xe) {
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:39:49: note: the first parameter in the range is 'tram'
+   39 | void in_dashboard_tick(int tick, const TramSac *tram, const XeDien ds_xe[], int so_xe) {
+      |                                                 ^~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:39:68: note: the last parameter in the range is 'ds_xe'
+   39 | void in_dashboard_tick(int tick, const TramSac *tram, const XeDien ds_xe[], int so_xe) {
+      |                                                                    ^~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:74:25: warning: 3 adjacent parameters of 'thuc_hien_mot_tick' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   74 | void thuc_hien_mot_tick(int *tick_hien_tai,
+      |                         ^~~~~~~~~~~~~~~~~~~
+   75 |                         TramSac *tram,
+      |                         ~~~~~~~~~~~~~~
+   76 |                         XeDien ds_xe[],
+      |                         ~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:74:30: note: the first parameter in the range is 'tick_hien_tai'
+   74 | void thuc_hien_mot_tick(int *tick_hien_tai,
+      |                              ^~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:76:32: note: the last parameter in the range is 'ds_xe'
+   76 |                         XeDien ds_xe[],
+      |                                ^~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:78:25: warning: 2 adjacent parameters of 'thuc_hien_mot_tick' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   78 |                         PhienSac ds_phien[],
+      |                         ^~~~~~~~~~~~~~~~~~~~
+   79 |                         ChiSoHeThong *chi_so,
+      |                         ~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:78:34: note: the first parameter in the range is 'ds_phien'
+   78 |                         PhienSac ds_phien[],
+      |                                  ^~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:79:39: note: the last parameter in the range is 'chi_so'
+   79 |                         ChiSoHeThong *chi_so,
+      |                                       ^~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:271:20: warning: 2 adjacent parameters of 'chay_mo_phong' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+  271 | void chay_mo_phong(TramSac *tram,
+      |                    ^~~~~~~~~~~~~~
+  272 |                    XeDien ds_xe[],
+      |                    ~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:271:29: note: the first parameter in the range is 'tram'
+  271 | void chay_mo_phong(TramSac *tram,
+      |                             ^~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:272:27: note: the last parameter in the range is 'ds_xe'
+  272 |                    XeDien ds_xe[],
+      |                           ^~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:273:20: warning: 4 adjacent parameters of 'chay_mo_phong' of convertible types are easily swapped by mistake [bugprone-easily-swappable-parameters]
+  273 |                    int so_xe,
+      |                    ^~~~~~~~~~
+  274 |                    int tong_so_tick,
+      |                    ~~~~~~~~~~~~~~~~~
+  275 |                    int is_fixed_demo,
+      |                    ~~~~~~~~~~~~~~~~~~
+  276 |                    unsigned int seed) {
+      |                    ~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:273:24: note: the first parameter in the range is 'so_xe'
+  273 |                    int so_xe,
+      |                        ^~~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:276:33: note: the last parameter in the range is 'seed'
+  276 |                    unsigned int seed) {
+      |                                 ^~~~
+E:\smart-ev-charging-safety\src\simulation\mo_phong.c:276:20: note: 'int' and 'unsigned int' may be implicitly converted
+  276 |                    unsigned int seed) {
+      |                    ^
+E:\smart-ev-charging-safety\src\simulation\mo_phong.h:4:10: error: 'tram_sac.h' file not found [clang-diagnostic-error]
+    4 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\ngau_nhien.c:21:19: warning: narrowing conversion from 'int' to 'float' [bugprone-narrowing-conversions]
+   21 |     float scale = rand() / (float)RAND_MAX;
+      |                   ^
+E:\smart-ev-charging-safety\src\simulation\sinh_kich_ban.h:4:10: error: 'xe_dien.h' file not found [clang-diagnostic-error]
+    4 | #include "xe_dien.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.c:7:35: warning: 2 adjacent parameters of 'xu_ly_su_kien_tick' of similar type ('int *') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+    7 | void xu_ly_su_kien_tick(int tick, TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.c:7:44: note: the first parameter in the range is 'tram'
+    7 | void xu_ly_su_kien_tick(int tick, TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                            ^~~~
+E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.c:7:57: note: the last parameter in the range is 'ds_xe'
+    7 | void xu_ly_su_kien_tick(int tick, TramSac *tram, XeDien ds_xe[], int so_xe) {
+      |                                                         ^~~~~
+E:\smart-ev-charging-safety\src\simulation\sinh_su_kien.h:4:10: error: 'tram_sac.h' file not found [clang-diagnostic-error]
+    4 | #include "tram_sac.h"
+      |          ^~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\station\cong_sac.h:4:10: error: 'kieu_du_lieu.h' file not found [clang-diagnostic-error]
+    4 | #include "kieu_du_lieu.h"
+      |          ^~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\station\tram_sac.h:4:10: error: 'hang_so.h' file not found [clang-diagnostic-error]
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\utils\input.c:2:13: warning: declaration uses identifier '_placeholder_input', which is reserved in the global namespace [bugprone-reserved-identifier]
+    2 | typedef int _placeholder_input;
+      |             ^~~~~~~~~~~~~~~~~~
+      |             placeholder_input
+E:\smart-ev-charging-safety\src\utils\kiem_tra_du_lieu.c:2:13: warning: declaration uses identifier '_placeholder_kiem_tra_du_lieu', which is reserved in the global namespace [bugprone-reserved-identifier]
+    2 | typedef int _placeholder_kiem_tra_du_lieu;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |             placeholder_kiem_tra_du_lieu
+E:\smart-ev-charging-safety\src\utils\time_utils.c:2:13: warning: declaration uses identifier '_placeholder_time_utils', which is reserved in the global namespace [bugprone-reserved-identifier]
+    2 | typedef int _placeholder_time_utils;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+      |             placeholder_time_utils
+E:\smart-ev-charging-safety\src\vehicle\pin.c:3:10: error: 'hang_so.h' file not found [clang-diagnostic-error]
+    3 | #include "hang_so.h"
+      |          ^~~~~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\pin.c:6:19: warning: 3 adjacent parameters of 'khoi_tao_pin' of similar type ('float') are easily swapped by mistake [bugprone-easily-swappable-parameters]
+    6 |                   float dung_luong,
+      |                   ^~~~~~~~~~~~~~~~~
+    7 |                   float soc,
+      |                   ~~~~~~~~~~
+    8 |                   float nhiet_do) {
+      |                   ~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\pin.c:6:25: note: the first parameter in the range is 'dung_luong'
+    6 |                   float dung_luong,
+      |                         ^~~~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\pin.c:8:25: note: the last parameter in the range is 'nhiet_do'
+    8 |                   float nhiet_do) {
+      |                         ^~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\trang_thai_xe.h:4:10: error: 'kieu_du_lieu.h' file not found [clang-diagnostic-error]
+    4 | #include "kieu_du_lieu.h"
+      |          ^~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\xe_dien.c:11:23: warning: 3 adjacent parameters of 'khoi_tao_xe_dien' of convertible types are easily swapped by mistake [bugprone-easily-swappable-parameters]
+   11 |                       float nhiet_do,
+      |                       ^~~~~~~~~~~~~~~
+   12 |                       float cong_suat_max,
+      |                       ~~~~~~~~~~~~~~~~~~~~
+   13 |                       LoaiKichBan kich_ban) {
+      |                       ~~~~~~~~~~~~~~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\xe_dien.c:11:29: note: the first parameter in the range is 'nhiet_do'
+   11 |                       float nhiet_do,
+      |                             ^~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\xe_dien.c:13:35: note: the last parameter in the range is 'kich_ban'
+   13 |                       LoaiKichBan kich_ban) {
+      |                                   ^~~~~~~~
+E:\smart-ev-charging-safety\src\vehicle\xe_dien.c:13:23: note: 'float' and 'int' may be implicitly converted
+   13 |                       LoaiKichBan kich_ban) {
+      |                       ^
+E:\smart-ev-charging-safety\src\vehicle\xe_dien.h:4:10: error: 'hang_so.h' file not found [clang-diagnostic-error]
+    4 | #include "hang_so.h"
+      |          ^~~~~~~~~~~

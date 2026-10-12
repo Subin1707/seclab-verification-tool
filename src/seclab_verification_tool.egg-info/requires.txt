@@ -1,0 +1,11 @@
+jsonschema<5,>=4.18
+z3-solver<6,>=4.12
+
+[gui]
+PySide6<7,>=6.7
+
+[test]
+pytest<9,>=8
+
+[xlsx]
+openpyxl<4,>=3.1

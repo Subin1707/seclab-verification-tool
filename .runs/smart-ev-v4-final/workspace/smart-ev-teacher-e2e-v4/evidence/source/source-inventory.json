@@ -1,0 +1,1497 @@
+{
+  "files": [
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\auth\\token.c",
+      "before_sha256": "b294c3ccfec00ee915e3550ebc8d3348c8fd19da8b3c17dc60ab1a997349aea7",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/auth/token.c",
+      "requirement_ids": [],
+      "sha256": "b294c3ccfec00ee915e3550ebc8d3348c8fd19da8b3c17dc60ab1a997349aea7",
+      "size_bytes": 492,
+      "source_id": "SRC-bb7aaf85c4fa22f0"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\auth\\xac_thuc.c",
+      "before_sha256": "e577bb2d1404c205bd84873e3f929f8385df56fbf834dffe2255c3a3f3765d1c",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/auth/xac_thuc.c",
+      "requirement_ids": [],
+      "sha256": "e577bb2d1404c205bd84873e3f929f8385df56fbf834dffe2255c3a3f3765d1c",
+      "size_bytes": 639,
+      "source_id": "SRC-d2267d8729cc86fb"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\charging\\che_do_sac.c",
+      "before_sha256": "ada996335ff39ec1eb3d6096933874cefebe630949c0fdcdb523ad96fc8a901c",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/charging/che_do_sac.c",
+      "requirement_ids": [],
+      "sha256": "ada996335ff39ec1eb3d6096933874cefebe630949c0fdcdb523ad96fc8a901c",
+      "size_bytes": 279,
+      "source_id": "SRC-e6b4bdddb95ce88d"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\charging\\dieu_khien_sac.c",
+      "before_sha256": "15003af8ea8c26079c252cbdd9ed1098d2eca4dfae0d47044c01e66cd2925fe9",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/charging/dieu_khien_sac.c",
+      "requirement_ids": [],
+      "sha256": "15003af8ea8c26079c252cbdd9ed1098d2eca4dfae0d47044c01e66cd2925fe9",
+      "size_bytes": 2961,
+      "source_id": "SRC-6d2f1c05c1edeb50"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\charging\\phien_sac.c",
+      "before_sha256": "a54e4a59be49770bbd129c396d60b80c7de266da12f7db54ac2a362761d15c48",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/charging/phien_sac.c",
+      "requirement_ids": [],
+      "sha256": "a54e4a59be49770bbd129c396d60b80c7de266da12f7db54ac2a362761d15c48",
+      "size_bytes": 621,
+      "source_id": "SRC-f60d3b23654472b6"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\communication\\dieu_khien_tu_xa.c",
+      "before_sha256": "5f1d026a7219b8ad185db33441984d971d60c8b9587019f560e8c4b3aeb937f5",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/communication/dieu_khien_tu_xa.c",
+      "requirement_ids": [],
+      "sha256": "5f1d026a7219b8ad185db33441984d971d60c8b9587019f560e8c4b3aeb937f5",
+      "size_bytes": 10316,
+      "source_id": "SRC-d81a11ee0e26125c"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\communication\\message.c",
+      "before_sha256": "9a7a5b60e207c10982b3d33f915e85c6af7d934dfe78807e75dd48b7e634b9f8",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/communication/message.c",
+      "requirement_ids": [],
+      "sha256": "9a7a5b60e207c10982b3d33f915e85c6af7d934dfe78807e75dd48b7e634b9f8",
+      "size_bytes": 1411,
+      "source_id": "SRC-3a833eceb1674c2d"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\communication\\protocol.c",
+      "before_sha256": "74677da9dd13fbf3409d6c40f4ca49b04f7b74810c4f4ca18fd2bbe716c45aca",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/communication/protocol.c",
+      "requirement_ids": [],
+      "sha256": "74677da9dd13fbf3409d6c40f4ca49b04f7b74810c4f4ca18fd2bbe716c45aca",
+      "size_bytes": 507,
+      "source_id": "SRC-f4ed33ee682f1bfc"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\core\\cau_hinh.c",
+      "before_sha256": "df0ca03bb945b058988df0ad17ebe00272a7654c84cd7853f26a0b7624c90519",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/core/cau_hinh.c",
+      "requirement_ids": [],
+      "sha256": "df0ca03bb945b058988df0ad17ebe00272a7654c84cd7853f26a0b7624c90519",
+      "size_bytes": 885,
+      "source_id": "SRC-80aa0fc29c8656d4"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\core\\he_thong.c",
+      "before_sha256": "a2220914e9e6d7b3426419cb7be4f69f84142228a16004c8165a7ab38f667fe4",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/core/he_thong.c",
+      "requirement_ids": [],
+      "sha256": "a2220914e9e6d7b3426419cb7be4f69f84142228a16004c8165a7ab38f667fe4",
+      "size_bytes": 326,
+      "source_id": "SRC-9c7c96dc2ad148bf"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\logging\\logger.c",
+      "before_sha256": "06eac3806674160c459e36e69cc31cba2767b7e947b926ddf9798e0a8275a7cb",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/logging/logger.c",
+      "requirement_ids": [],
+      "sha256": "06eac3806674160c459e36e69cc31cba2767b7e947b926ddf9798e0a8275a7cb",
+      "size_bytes": 1776,
+      "source_id": "SRC-a9621a80f691bfdb"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\logging\\nhat_ky_su_kien.c",
+      "before_sha256": "a528bcda3c827cafac3689b40a8651dde9f368d99f6cc3bdb5795c690fdc7cfe",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/logging/nhat_ky_su_kien.c",
+      "requirement_ids": [],
+      "sha256": "a528bcda3c827cafac3689b40a8651dde9f368d99f6cc3bdb5795c690fdc7cfe",
+      "size_bytes": 4376,
+      "source_id": "SRC-1e497db30d3c9cae"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\main.c",
+      "before_sha256": "bf0af9758e4df351626f68370679c1236ede46619df39ec6d16b36c4d03c4185",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/main.c",
+      "requirement_ids": [],
+      "sha256": "bf0af9758e4df351626f68370679c1236ede46619df39ec6d16b36c4d03c4185",
+      "size_bytes": 12224,
+      "source_id": "SRC-e0cf5b28d9b6b600"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\chi_so.c",
+      "before_sha256": "1a179a0e284b51c7cfdb380573e0d24643cc503212740f772adb6b0cffea6e7f",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/monitoring/chi_so.c",
+      "requirement_ids": [],
+      "sha256": "1a179a0e284b51c7cfdb380573e0d24643cc503212740f772adb6b0cffea6e7f",
+      "size_bytes": 2148,
+      "source_id": "SRC-afaa183b609f2cd0"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\du_lieu_giam_sat.c",
+      "before_sha256": "3c1730f43113fda8e9f0c7efabf8434faa206a6dd7f4404d80dc4e53a6e32791",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/monitoring/du_lieu_giam_sat.c",
+      "requirement_ids": [],
+      "sha256": "3c1730f43113fda8e9f0c7efabf8434faa206a6dd7f4404d80dc4e53a6e32791",
+      "size_bytes": 8779,
+      "source_id": "SRC-27cb3ba250c0e809"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\monitoring\\su_kien_he_thong.c",
+      "before_sha256": "7d92ae87a5f88041f2746b3b08d56b52163c2ffff49d37a03c08d8b347de6df8",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/monitoring/su_kien_he_thong.c",
+      "requirement_ids": [],
+      "sha256": "7d92ae87a5f88041f2746b3b08d56b52163c2ffff49d37a03c08d8b347de6df8",
+      "size_bytes": 1917,
+      "source_id": "SRC-5c0e601d0cd517c9"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\safety\\dung_khan_cap.c",
+      "before_sha256": "6e388188f7381f3da37c0b5b462bf47849d9ce25e692d84348a1eecc609ffc0c",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/safety/dung_khan_cap.c",
+      "requirement_ids": [],
+      "sha256": "6e388188f7381f3da37c0b5b462bf47849d9ce25e692d84348a1eecc609ffc0c",
+      "size_bytes": 2034,
+      "source_id": "SRC-2795817b221353f3"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\safety\\giam_sat_an_toan.c",
+      "before_sha256": "e9c77d1ac6d3a1fda9043f88320607cdf79875f4ed45cce3a3f54ca9497f5ecc",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/safety/giam_sat_an_toan.c",
+      "requirement_ids": [],
+      "sha256": "e9c77d1ac6d3a1fda9043f88320607cdf79875f4ed45cce3a3f54ca9497f5ecc",
+      "size_bytes": 3166,
+      "source_id": "SRC-633a1b65c1a3241a"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\safety\\phat_hien_loi.c",
+      "before_sha256": "46ff88bcc12acccd85af6717f3a6cb7e47f7bc162a2ad7adc0388624b5c16c6c",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/safety/phat_hien_loi.c",
+      "requirement_ids": [],
+      "sha256": "46ff88bcc12acccd85af6717f3a6cb7e47f7bc162a2ad7adc0388624b5c16c6c",
+      "size_bytes": 737,
+      "source_id": "SRC-52ba46a10dbfb9e9"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\safety\\quy_tac_an_toan.c",
+      "before_sha256": "ae327baea1a2efd0d7ad73240c84bac3e160a51ac25b61b5748a6d1e377c1f30",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/safety/quy_tac_an_toan.c",
+      "requirement_ids": [],
+      "sha256": "ae327baea1a2efd0d7ad73240c84bac3e160a51ac25b61b5748a6d1e377c1f30",
+      "size_bytes": 2834,
+      "source_id": "SRC-38ef16eedc8c6d39"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\simulation\\kich_ban.c",
+      "before_sha256": "3a9c83d790d1562a689b91ddb59f184f3d35cc1bce1e2016c657f6f55f7b6649",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/simulation/kich_ban.c",
+      "requirement_ids": [],
+      "sha256": "3a9c83d790d1562a689b91ddb59f184f3d35cc1bce1e2016c657f6f55f7b6649",
+      "size_bytes": 6026,
+      "source_id": "SRC-278fed832fb0446b"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\simulation\\mo_phong.c",
+      "before_sha256": "7d0d9069470dcbd48cc7c3319c3791c446b476f11287087d504526f9f9db3bf3",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/simulation/mo_phong.c",
+      "requirement_ids": [],
+      "sha256": "7d0d9069470dcbd48cc7c3319c3791c446b476f11287087d504526f9f9db3bf3",
+      "size_bytes": 18515,
+      "source_id": "SRC-e367b6dc0f444143"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\simulation\\ngau_nhien.c",
+      "before_sha256": "9477ed0c62f40da5e1a4737e82ddf8e2c3ad5527f3d8bcae8857dd3f262c716c",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/simulation/ngau_nhien.c",
+      "requirement_ids": [],
+      "sha256": "9477ed0c62f40da5e1a4737e82ddf8e2c3ad5527f3d8bcae8857dd3f262c716c",
+      "size_bytes": 524,
+      "source_id": "SRC-72f3d96f07ebd0ee"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_kich_ban.c",
+      "before_sha256": "f3978e45e7997cc891f29b66ffb359349ca1b3f7503d11648253299ee29acd9e",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/simulation/sinh_kich_ban.c",
+      "requirement_ids": [],
+      "sha256": "f3978e45e7997cc891f29b66ffb359349ca1b3f7503d11648253299ee29acd9e",
+      "size_bytes": 2477,
+      "source_id": "SRC-c8f46d0c5b72a301"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\simulation\\sinh_su_kien.c",
+      "before_sha256": "5a131810a0aac360519cf5ee21e148f3aeb5817521c93ca84f17325c42b12560",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/simulation/sinh_su_kien.c",
+      "requirement_ids": [],
+      "sha256": "5a131810a0aac360519cf5ee21e148f3aeb5817521c93ca84f17325c42b12560",
+      "size_bytes": 1244,
+      "source_id": "SRC-11749ba6f76120dd"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\station\\cong_sac.c",
+      "before_sha256": "6109970fbb9aebe0539cc55a15c931a5cd84a862ecc38faf88d7424c02716a05",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/station/cong_sac.c",
+      "requirement_ids": [],
+      "sha256": "6109970fbb9aebe0539cc55a15c931a5cd84a862ecc38faf88d7424c02716a05",
+      "size_bytes": 1819,
+      "source_id": "SRC-d4743a9d01342c83"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\station\\dieu_phoi.c",
+      "before_sha256": "d8535691644b2517c14b9b053d48c0bbdfcb4e12465d6b624d33ebd52a25e73c",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/station/dieu_phoi.c",
+      "requirement_ids": [],
+      "sha256": "d8535691644b2517c14b9b053d48c0bbdfcb4e12465d6b624d33ebd52a25e73c",
+      "size_bytes": 2400,
+      "source_id": "SRC-6a7de777d2ea7320"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\station\\hang_cho.c",
+      "before_sha256": "753826fb7a535c96a97d21a3afef0186443200a845b5b8be3f8bb772c1c66fa9",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/station/hang_cho.c",
+      "requirement_ids": [],
+      "sha256": "753826fb7a535c96a97d21a3afef0186443200a845b5b8be3f8bb772c1c66fa9",
+      "size_bytes": 1106,
+      "source_id": "SRC-fc43986f872b2193"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\station\\quan_ly_cong_suat.c",
+      "before_sha256": "debfd0a5ea998206b283212881c9e4c22f25cc91e9719757382f2ce58a7cdd88",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/station/quan_ly_cong_suat.c",
+      "requirement_ids": [],
+      "sha256": "debfd0a5ea998206b283212881c9e4c22f25cc91e9719757382f2ce58a7cdd88",
+      "size_bytes": 10349,
+      "source_id": "SRC-a8535012f3a3993f"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\station\\tram_sac.c",
+      "before_sha256": "256ae26f8d9d900715bbb6efb94cb0b9defdc9399acdb82443bb97723846b3c6",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/station/tram_sac.c",
+      "requirement_ids": [],
+      "sha256": "256ae26f8d9d900715bbb6efb94cb0b9defdc9399acdb82443bb97723846b3c6",
+      "size_bytes": 5949,
+      "source_id": "SRC-78bdad4696d09db8"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\utils\\input.c",
+      "before_sha256": "56953343d5014a9ae4155906421063638a8b3aa037a2344aa313a523510ff481",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/utils/input.c",
+      "requirement_ids": [],
+      "sha256": "56953343d5014a9ae4155906421063638a8b3aa037a2344aa313a523510ff481",
+      "size_bytes": 100,
+      "source_id": "SRC-ef505c02e2b1df19"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\utils\\kiem_tra_du_lieu.c",
+      "before_sha256": "4738aaccb062b2e3fca92674b877971d665a06edd8025c02d4786f53bae146db",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/utils/kiem_tra_du_lieu.c",
+      "requirement_ids": [],
+      "sha256": "4738aaccb062b2e3fca92674b877971d665a06edd8025c02d4786f53bae146db",
+      "size_bytes": 111,
+      "source_id": "SRC-f9ef75cc0165c2ba"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\utils\\time_utils.c",
+      "before_sha256": "1a221c669556088daa52e4ca29fe1b62a88a93c97a551bbe299f7848bf80b892",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/utils/time_utils.c",
+      "requirement_ids": [],
+      "sha256": "1a221c669556088daa52e4ca29fe1b62a88a93c97a551bbe299f7848bf80b892",
+      "size_bytes": 105,
+      "source_id": "SRC-f75cf607ee498997"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\pin.c",
+      "before_sha256": "856b8d823fb3ed9fb3ca0950f3a814e261c73e0aab411f87f86df4ca893d1f64",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/vehicle/pin.c",
+      "requirement_ids": [],
+      "sha256": "856b8d823fb3ed9fb3ca0950f3a814e261c73e0aab411f87f86df4ca893d1f64",
+      "size_bytes": 1356,
+      "source_id": "SRC-7212376b601b96e6"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\trang_thai_xe.c",
+      "before_sha256": "5950babf5b9b1e1ad1322dd2f39751ec5d93922293863a1699f0ef5158331e84",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/vehicle/trang_thai_xe.c",
+      "requirement_ids": [],
+      "sha256": "5950babf5b9b1e1ad1322dd2f39751ec5d93922293863a1699f0ef5158331e84",
+      "size_bytes": 1245,
+      "source_id": "SRC-9bdf9760ff19864a"
+    },
+    {
+      "artifact_class": "PRODUCTION_SOURCE",
+      "artifact_path": "E:\\smart-ev-charging-safety\\src\\vehicle\\xe_dien.c",
+      "before_sha256": "8096df6f9b7c5dd6282ea73fbf0bd396acc1e948bbc0f89348a7d17bc44c4b23",
+      "function_ids": [],
+      "language_hint": "C",
+      "project_relative_path": "src/vehicle/xe_dien.c",
+      "requirement_ids": [],
+      "sha256": "8096df6f9b7c5dd6282ea73fbf0bd396acc1e948bbc0f89348a7d17bc44c4b23",
+      "size_bytes": 3857,
+      "source_id": "SRC-1233cd7003106ded"
+    }
+  ],
+  "function_links": [
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_alloc_session_record",
+      "match_status": "UNMATCHED",
+      "name": "ev_alloc_session_record",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_charging_power_ratio",
+      "match_status": "UNMATCHED",
+      "name": "ev_charging_power_ratio",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_copy_auth_token",
+      "match_status": "UNMATCHED",
+      "name": "ev_copy_auth_token",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_copy_vehicle_id",
+      "match_status": "UNMATCHED",
+      "name": "ev_copy_vehicle_id",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_firmware_unlock_gate",
+      "match_status": "UNMATCHED",
+      "name": "ev_firmware_unlock_gate",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_parse_remote_cmd",
+      "match_status": "UNMATCHED",
+      "name": "ev_parse_remote_cmd",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_release_port_context",
+      "match_status": "UNMATCHED",
+      "name": "ev_release_port_context",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_resume_charging_after_fault",
+      "match_status": "UNMATCHED",
+      "name": "ev_resume_charging_after_fault",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    },
+    {
+      "declared_file": null,
+      "detected_file": null,
+      "detected_line": null,
+      "function_id": "FN-ev_token_validation_ratio",
+      "match_status": "UNMATCHED",
+      "name": "ev_token_validation_ratio",
+      "requirement_ids": [],
+      "source_id": null,
+      "source_relative_path": null
+    }
+  ],
+  "functions": [
+    {
+      "file": "src/auth/token.c",
+      "language": "C",
+      "line": 1,
+      "name": "sinh_token_xe"
+    },
+    {
+      "file": "src/auth/token.c",
+      "language": "C",
+      "line": 11,
+      "name": "kiem_tra_token_hop_le"
+    },
+    {
+      "file": "src/auth/xac_thuc.c",
+      "language": "C",
+      "line": 1,
+      "name": "xac_thuc_xe"
+    },
+    {
+      "file": "src/charging/che_do_sac.c",
+      "language": "C",
+      "line": 1,
+      "name": "ten_che_do_sac"
+    },
+    {
+      "file": "src/charging/dieu_khien_sac.c",
+      "language": "C",
+      "line": 8,
+      "name": "co_the_bat_dau_sac"
+    },
+    {
+      "file": "src/charging/dieu_khien_sac.c",
+      "language": "C",
+      "line": 57,
+      "name": "bat_dau_sac"
+    },
+    {
+      "file": "src/charging/dieu_khien_sac.c",
+      "language": "C",
+      "line": 78,
+      "name": "dung_sac"
+    },
+    {
+      "file": "src/charging/phien_sac.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_phien_sac"
+    },
+    {
+      "file": "src/charging/phien_sac.c",
+      "language": "C",
+      "line": 16,
+      "name": "ket_thuc_phien_sac"
+    },
+    {
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "language": "C",
+      "line": 12,
+      "name": "xoa_lenh"
+    },
+    {
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "language": "C",
+      "line": 20,
+      "name": "tim_gia_tri_chuoi"
+    },
+    {
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "language": "C",
+      "line": 46,
+      "name": "tim_gia_tri_so"
+    },
+    {
+      "file": "src/communication/dieu_khien_tu_xa.c",
+      "language": "C",
+      "line": 65,
+      "name": "xu_ly_lenh_dieu_khien"
+    },
+    {
+      "file": "src/communication/message.c",
+      "language": "C",
+      "line": 1,
+      "name": "copy_field"
+    },
+    {
+      "file": "src/communication/message.c",
+      "language": "C",
+      "line": 13,
+      "name": "parse_protocol_message"
+    },
+    {
+      "file": "src/communication/protocol.c",
+      "language": "C",
+      "line": 1,
+      "name": "protocol_message_is_safe"
+    },
+    {
+      "file": "src/core/cau_hinh.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_cau_hinh_mac_dinh"
+    },
+    {
+      "file": "src/core/cau_hinh.c",
+      "language": "C",
+      "line": 16,
+      "name": "in_cau_hinh"
+    },
+    {
+      "file": "src/core/he_thong.c",
+      "language": "C",
+      "line": 6,
+      "name": "khoi_tao_he_thong"
+    },
+    {
+      "file": "src/core/he_thong.c",
+      "language": "C",
+      "line": 11,
+      "name": "giai_phong_he_thong"
+    },
+    {
+      "file": "src/logging/logger.c",
+      "language": "C",
+      "line": 9,
+      "name": "ten_muc_log"
+    },
+    {
+      "file": "src/logging/logger.c",
+      "language": "C",
+      "line": 20,
+      "name": "khoi_tao_logger"
+    },
+    {
+      "file": "src/logging/logger.c",
+      "language": "C",
+      "line": 36,
+      "name": "dong_logger"
+    },
+    {
+      "file": "src/logging/logger.c",
+      "language": "C",
+      "line": 43,
+      "name": "ghi_log"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 10,
+      "name": "ten_muc_do"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 19,
+      "name": "muc_do_tu_chuoi"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 25,
+      "name": "khoi_tao_nhat_ky"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 29,
+      "name": "ghi_su_kien_an_toan"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 50,
+      "name": "them_su_kien_nhat_ky"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 55,
+      "name": "lay_tong_so_su_kien"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 59,
+      "name": "in_lich_su_su_kien_an_toan"
+    },
+    {
+      "file": "src/logging/nhat_ky_su_kien.c",
+      "language": "C",
+      "line": 93,
+      "name": "in_tong_ket_nhat_ky"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 1,
+      "name": "xoa_dong_nhap"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 29,
+      "name": "nhan_enter_quay_lai"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 34,
+      "name": "in_kich_ban_ngau_nhien"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 50,
+      "name": "in_menu_chinh"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 67,
+      "name": "tim_xe"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 76,
+      "name": "nhap_cong"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 86,
+      "name": "tim_xe_tren_cong"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 95,
+      "name": "nhap_ma_xe"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 103,
+      "name": "dieu_khien_thu_cong"
+    },
+    {
+      "file": "src/main.c",
+      "language": "C",
+      "line": 238,
+      "name": "main"
+    },
+    {
+      "file": "src/monitoring/chi_so.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_chi_so"
+    },
+    {
+      "file": "src/monitoring/chi_so.c",
+      "language": "C",
+      "line": 12,
+      "name": "ghi_nhan_cong_suat"
+    },
+    {
+      "file": "src/monitoring/chi_so.c",
+      "language": "C",
+      "line": 20,
+      "name": "in_tong_ket_mo_phong"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 1,
+      "name": "thay_the_snapshot"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 18,
+      "name": "trang_thai_xe_json"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 33,
+      "name": "trang_thai_cong_json"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 46,
+      "name": "tim_xe_theo_id"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 55,
+      "name": "tim_port_cua_xe"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 73,
+      "name": "xuat_snapshot_json"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 83,
+      "name": "xuat_snapshot_json_voi_trang_thai"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 208,
+      "name": "ghi_snapshot_json"
+    },
+    {
+      "file": "src/monitoring/du_lieu_giam_sat.c",
+      "language": "C",
+      "line": 228,
+      "name": "ghi_snapshot_json_voi_trang_thai"
+    },
+    {
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "language": "C",
+      "line": 9,
+      "name": "sao_chep_chuoi"
+    },
+    {
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "language": "C",
+      "line": 14,
+      "name": "khoi_tao_su_kien_he_thong"
+    },
+    {
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "language": "C",
+      "line": 19,
+      "name": "them_su_kien"
+    },
+    {
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "language": "C",
+      "line": 41,
+      "name": "lay_su_kien_he_thong"
+    },
+    {
+      "file": "src/monitoring/su_kien_he_thong.c",
+      "language": "C",
+      "line": 46,
+      "name": "da_co_su_kien"
+    },
+    {
+      "file": "src/safety/dung_khan_cap.c",
+      "language": "C",
+      "line": 1,
+      "name": "kich_hoat_dung_khan_cap_cong"
+    },
+    {
+      "file": "src/safety/dung_khan_cap.c",
+      "language": "C",
+      "line": 22,
+      "name": "kich_hoat_dung_khan_cap_tram"
+    },
+    {
+      "file": "src/safety/dung_khan_cap.c",
+      "language": "C",
+      "line": 52,
+      "name": "khoi_phuc_khan_cap_tram"
+    },
+    {
+      "file": "src/safety/giam_sat_an_toan.c",
+      "language": "C",
+      "line": 1,
+      "name": "giam_sat_xe_va_cong"
+    },
+    {
+      "file": "src/safety/giam_sat_an_toan.c",
+      "language": "C",
+      "line": 85,
+      "name": "kiem_tra_toan_bo_tram"
+    },
+    {
+      "file": "src/safety/phat_hien_loi.c",
+      "language": "C",
+      "line": 1,
+      "name": "ten_ma_loi"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 1,
+      "name": "kiem_tra_sr01_ket_noi"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 15,
+      "name": "kiem_tra_sr02_xac_thuc"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 24,
+      "name": "kiem_tra_sr03_nhiet_do"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 33,
+      "name": "kiem_tra_sr04_pin_day"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 42,
+      "name": "kiem_tra_sr05_khan_cap"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 53,
+      "name": "kiem_tra_sr06_soc_hop_le"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 59,
+      "name": "kiem_tra_sr07_doc_quyen_cong"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 68,
+      "name": "kiem_tra_sr08_ma_loi"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 77,
+      "name": "kiem_tra_sr09_ngat_ket_noi"
+    },
+    {
+      "file": "src/safety/quy_tac_an_toan.c",
+      "language": "C",
+      "line": 86,
+      "name": "kiem_tra_sr10_gioi_han_cong_suat_tram"
+    },
+    {
+      "file": "src/simulation/kich_ban.c",
+      "language": "C",
+      "line": 9,
+      "name": "tim_xe"
+    },
+    {
+      "file": "src/simulation/kich_ban.c",
+      "language": "C",
+      "line": 14,
+      "name": "khoi_tao_kich_ban"
+    },
+    {
+      "file": "src/simulation/kich_ban.c",
+      "language": "C",
+      "line": 23,
+      "name": "ten_kich_ban_scenario"
+    },
+    {
+      "file": "src/simulation/kich_ban.c",
+      "language": "C",
+      "line": 39,
+      "name": "dat_kich_ban"
+    },
+    {
+      "file": "src/simulation/kich_ban.c",
+      "language": "C",
+      "line": 62,
+      "name": "ap_dung_kich_ban_tick"
+    },
+    {
+      "file": "src/simulation/mo_phong.c",
+      "language": "C",
+      "line": 39,
+      "name": "in_dashboard_tick"
+    },
+    {
+      "file": "src/simulation/mo_phong.c",
+      "language": "C",
+      "line": 74,
+      "name": "thuc_hien_mot_tick"
+    },
+    {
+      "file": "src/simulation/mo_phong.c",
+      "language": "C",
+      "line": 271,
+      "name": "chay_mo_phong"
+    },
+    {
+      "file": "src/simulation/ngau_nhien.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_ngau_nhien"
+    },
+    {
+      "file": "src/simulation/ngau_nhien.c",
+      "language": "C",
+      "line": 14,
+      "name": "sinh_so_nguyen_ngau_nhien"
+    },
+    {
+      "file": "src/simulation/ngau_nhien.c",
+      "language": "C",
+      "line": 19,
+      "name": "sinh_so_thuc_ngau_nhien"
+    },
+    {
+      "file": "src/simulation/sinh_kich_ban.c",
+      "language": "C",
+      "line": 1,
+      "name": "thiet_lap_kich_ban_co_dinh"
+    },
+    {
+      "file": "src/simulation/sinh_kich_ban.c",
+      "language": "C",
+      "line": 38,
+      "name": "thiet_lap_kich_ban_ngau_nhien"
+    },
+    {
+      "file": "src/simulation/sinh_su_kien.c",
+      "language": "C",
+      "line": 1,
+      "name": "xu_ly_su_kien_tick"
+    },
+    {
+      "file": "src/station/cong_sac.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_cong_sac"
+    },
+    {
+      "file": "src/station/cong_sac.c",
+      "language": "C",
+      "line": 18,
+      "name": "ket_noi_xe_vao_cong"
+    },
+    {
+      "file": "src/station/cong_sac.c",
+      "language": "C",
+      "line": 30,
+      "name": "ngat_ket_noi_cong"
+    },
+    {
+      "file": "src/station/cong_sac.c",
+      "language": "C",
+      "line": 40,
+      "name": "dat_cong_suat_cong"
+    },
+    {
+      "file": "src/station/cong_sac.c",
+      "language": "C",
+      "line": 56,
+      "name": "ten_trang_thai_cong"
+    },
+    {
+      "file": "src/station/dieu_phoi.c",
+      "language": "C",
+      "line": 1,
+      "name": "tim_cong_ranh"
+    },
+    {
+      "file": "src/station/dieu_phoi.c",
+      "language": "C",
+      "line": 15,
+      "name": "tim_cong_sac_ranh"
+    },
+    {
+      "file": "src/station/dieu_phoi.c",
+      "language": "C",
+      "line": 27,
+      "name": "gan_cong_sac_tu_dong"
+    },
+    {
+      "file": "src/station/dieu_phoi.c",
+      "language": "C",
+      "line": 41,
+      "name": "sap_xep_xe_theo_soc"
+    },
+    {
+      "file": "src/station/hang_cho.c",
+      "language": "C",
+      "line": 3,
+      "name": "khoi_tao_hang_cho"
+    },
+    {
+      "file": "src/station/hang_cho.c",
+      "language": "C",
+      "line": 11,
+      "name": "co_trong_hang_cho"
+    },
+    {
+      "file": "src/station/hang_cho.c",
+      "language": "C",
+      "line": 21,
+      "name": "them_vao_hang_cho"
+    },
+    {
+      "file": "src/station/hang_cho.c",
+      "language": "C",
+      "line": 33,
+      "name": "lay_xe_dau_hang"
+    },
+    {
+      "file": "src/station/quan_ly_cong_suat.c",
+      "language": "C",
+      "line": 1,
+      "name": "phan_phoi_cong_suat_chia_deu"
+    },
+    {
+      "file": "src/station/quan_ly_cong_suat.c",
+      "language": "C",
+      "line": 36,
+      "name": "phan_phoi_cong_suat_theo_soc"
+    },
+    {
+      "file": "src/station/quan_ly_cong_suat.c",
+      "language": "C",
+      "line": 91,
+      "name": "xu_ly_qua_tai_cong_suat"
+    },
+    {
+      "file": "src/station/quan_ly_cong_suat.c",
+      "language": "C",
+      "line": 156,
+      "name": "chay_demo_qua_tai_cong_suat"
+    },
+    {
+      "file": "src/station/tram_sac.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_tram_sac"
+    },
+    {
+      "file": "src/station/tram_sac.c",
+      "language": "C",
+      "line": 28,
+      "name": "ket_noi_xe_vao_tram"
+    },
+    {
+      "file": "src/station/tram_sac.c",
+      "language": "C",
+      "line": 55,
+      "name": "ngat_ket_noi_xe_khoi_tram"
+    },
+    {
+      "file": "src/station/tram_sac.c",
+      "language": "C",
+      "line": 71,
+      "name": "cap_nhat_tong_cong_suat_tram"
+    },
+    {
+      "file": "src/station/tram_sac.c",
+      "language": "C",
+      "line": 82,
+      "name": "hien_thi_dashboard"
+    },
+    {
+      "file": "src/station/tram_sac.c",
+      "language": "C",
+      "line": 160,
+      "name": "in_trang_thai_tram"
+    },
+    {
+      "file": "src/vehicle/pin.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_pin"
+    },
+    {
+      "file": "src/vehicle/pin.c",
+      "language": "C",
+      "line": 17,
+      "name": "soc_hop_le"
+    },
+    {
+      "file": "src/vehicle/pin.c",
+      "language": "C",
+      "line": 22,
+      "name": "pin_da_day"
+    },
+    {
+      "file": "src/vehicle/pin.c",
+      "language": "C",
+      "line": 27,
+      "name": "pin_qua_nhiet"
+    },
+    {
+      "file": "src/vehicle/pin.c",
+      "language": "C",
+      "line": 32,
+      "name": "cap_nhat_pin"
+    },
+    {
+      "file": "src/vehicle/trang_thai_xe.c",
+      "language": "C",
+      "line": 1,
+      "name": "ten_trang_thai_xe"
+    },
+    {
+      "file": "src/vehicle/trang_thai_xe.c",
+      "language": "C",
+      "line": 18,
+      "name": "ten_kich_ban"
+    },
+    {
+      "file": "src/vehicle/xe_dien.c",
+      "language": "C",
+      "line": 1,
+      "name": "khoi_tao_xe_dien"
+    },
+    {
+      "file": "src/vehicle/xe_dien.c",
+      "language": "C",
+      "line": 33,
+      "name": "khoi_tao_danh_sach_5_xe"
+    },
+    {
+      "file": "src/vehicle/xe_dien.c",
+      "language": "C",
+      "line": 55,
+      "name": "in_thong_tin_xe"
+    },
+    {
+      "file": "src/vehicle/xe_dien.c",
+      "language": "C",
+      "line": 70,
+      "name": "in_danh_sach_xe"
+    }
+  ],
+  "language": "C",
+  "language_reason": "C translation units are present; headers do not override them.",
+  "source_function_links": [
+    {
+      "function_ids": [],
+      "project_relative_path": "src/auth/token.c",
+      "requirement_ids": [],
+      "source_id": "SRC-bb7aaf85c4fa22f0"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/auth/xac_thuc.c",
+      "requirement_ids": [],
+      "source_id": "SRC-d2267d8729cc86fb"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/charging/che_do_sac.c",
+      "requirement_ids": [],
+      "source_id": "SRC-e6b4bdddb95ce88d"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/charging/dieu_khien_sac.c",
+      "requirement_ids": [],
+      "source_id": "SRC-6d2f1c05c1edeb50"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/charging/phien_sac.c",
+      "requirement_ids": [],
+      "source_id": "SRC-f60d3b23654472b6"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/communication/dieu_khien_tu_xa.c",
+      "requirement_ids": [],
+      "source_id": "SRC-d81a11ee0e26125c"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/communication/message.c",
+      "requirement_ids": [],
+      "source_id": "SRC-3a833eceb1674c2d"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/communication/protocol.c",
+      "requirement_ids": [],
+      "source_id": "SRC-f4ed33ee682f1bfc"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/core/cau_hinh.c",
+      "requirement_ids": [],
+      "source_id": "SRC-80aa0fc29c8656d4"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/core/he_thong.c",
+      "requirement_ids": [],
+      "source_id": "SRC-9c7c96dc2ad148bf"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/logging/logger.c",
+      "requirement_ids": [],
+      "source_id": "SRC-a9621a80f691bfdb"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/logging/nhat_ky_su_kien.c",
+      "requirement_ids": [],
+      "source_id": "SRC-1e497db30d3c9cae"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/main.c",
+      "requirement_ids": [],
+      "source_id": "SRC-e0cf5b28d9b6b600"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/monitoring/chi_so.c",
+      "requirement_ids": [],
+      "source_id": "SRC-afaa183b609f2cd0"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/monitoring/du_lieu_giam_sat.c",
+      "requirement_ids": [],
+      "source_id": "SRC-27cb3ba250c0e809"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/monitoring/su_kien_he_thong.c",
+      "requirement_ids": [],
+      "source_id": "SRC-5c0e601d0cd517c9"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/safety/dung_khan_cap.c",
+      "requirement_ids": [],
+      "source_id": "SRC-2795817b221353f3"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/safety/giam_sat_an_toan.c",
+      "requirement_ids": [],
+      "source_id": "SRC-633a1b65c1a3241a"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/safety/phat_hien_loi.c",
+      "requirement_ids": [],
+      "source_id": "SRC-52ba46a10dbfb9e9"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/safety/quy_tac_an_toan.c",
+      "requirement_ids": [],
+      "source_id": "SRC-38ef16eedc8c6d39"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/simulation/kich_ban.c",
+      "requirement_ids": [],
+      "source_id": "SRC-278fed832fb0446b"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/simulation/mo_phong.c",
+      "requirement_ids": [],
+      "source_id": "SRC-e367b6dc0f444143"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/simulation/ngau_nhien.c",
+      "requirement_ids": [],
+      "source_id": "SRC-72f3d96f07ebd0ee"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/simulation/sinh_kich_ban.c",
+      "requirement_ids": [],
+      "source_id": "SRC-c8f46d0c5b72a301"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/simulation/sinh_su_kien.c",
+      "requirement_ids": [],
+      "source_id": "SRC-11749ba6f76120dd"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/station/cong_sac.c",
+      "requirement_ids": [],
+      "source_id": "SRC-d4743a9d01342c83"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/station/dieu_phoi.c",
+      "requirement_ids": [],
+      "source_id": "SRC-6a7de777d2ea7320"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/station/hang_cho.c",
+      "requirement_ids": [],
+      "source_id": "SRC-fc43986f872b2193"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/station/quan_ly_cong_suat.c",
+      "requirement_ids": [],
+      "source_id": "SRC-a8535012f3a3993f"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/station/tram_sac.c",
+      "requirement_ids": [],
+      "source_id": "SRC-78bdad4696d09db8"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/utils/input.c",
+      "requirement_ids": [],
+      "source_id": "SRC-ef505c02e2b1df19"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/utils/kiem_tra_du_lieu.c",
+      "requirement_ids": [],
+      "source_id": "SRC-f9ef75cc0165c2ba"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/utils/time_utils.c",
+      "requirement_ids": [],
+      "source_id": "SRC-f75cf607ee498997"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/vehicle/pin.c",
+      "requirement_ids": [],
+      "source_id": "SRC-7212376b601b96e6"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/vehicle/trang_thai_xe.c",
+      "requirement_ids": [],
+      "source_id": "SRC-9bdf9760ff19864a"
+    },
+    {
+      "function_ids": [],
+      "project_relative_path": "src/vehicle/xe_dien.c",
+      "requirement_ids": [],
+      "source_id": "SRC-1233cd7003106ded"
+    }
+  ]
+}

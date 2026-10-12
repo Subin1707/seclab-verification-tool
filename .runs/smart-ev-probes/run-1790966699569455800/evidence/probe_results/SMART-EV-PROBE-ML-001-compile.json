@@ -1,0 +1,44 @@
+{
+  "binary_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-ML-001\\compile\\build\\probe-program.exe",
+  "build_evidence_ids": [
+    "d8ca43dc-5952-45ce-98b7-861c3585c1f7",
+    "3852829a-1d5a-4fa3-a5c3-38c1631107c3",
+    "e33bc5ea-7b5b-4a91-850a-5d7c8eb9f58d"
+  ],
+  "command": {
+    "argv": [
+      "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c",
+      "-o",
+      "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-ML-001\\compile\\build\\probe-program.exe"
+    ],
+    "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-ML-001\\compile",
+    "duration_ms": 187.0000000053551,
+    "executable_path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+    "execution_error": null,
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "",
+    "succeeded": true,
+    "timed_out": false
+  },
+  "compiler": {
+    "capabilities": [
+      "compile_c"
+    ],
+    "installed": true,
+    "name": "gcc",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.EXE",
+    "version": "gcc.EXE (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+  },
+  "error_code": null,
+  "language": "C",
+  "source_files": [
+    "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\memory_leak.c"
+  ],
+  "success": true
+}

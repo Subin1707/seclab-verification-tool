@@ -1,0 +1,87 @@
+{
+  "expected": {
+    "category": "use_after_free",
+    "cwe": null,
+    "issue": "A heap byte is written after its allocation has been freed."
+  },
+  "observed": {
+    "build_error": null,
+    "build_succeeded": true,
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+          "-std=c11",
+          "-g",
+          "-fsanitize=undefined",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c",
+          "-o",
+          "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-8ac395ac7a26419d9f46b0c6fe0a0179.exe"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\undefinedbehaviorsanitizer",
+        "duration_ms": 391.00000000325963,
+        "executable_path": "C:\\Program Files\\LLVM\\bin\\clang.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "phase": "build",
+        "stderr": "",
+        "stdout": "",
+        "succeeded": true,
+        "timed_out": false
+      },
+      {
+        "argv": [
+          "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-8ac395ac7a26419d9f46b0c6fe0a0179.exe"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\undefinedbehaviorsanitizer",
+        "duration_ms": 187.9999999946449,
+        "executable_path": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-8ac395ac7a26419d9f46b0c6fe0a0179.exe",
+        "execution_error": null,
+        "exit_code": 0,
+        "phase": "runtime",
+        "stderr": "",
+        "stdout": "",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mapping_note": "Existing CWEMapper maps static Finding records only; no mapping is inferred for MemoryFinding.",
+    "cwe_mappings": [],
+    "expected_issue_observed": false,
+    "findings": [],
+    "issue_categories": [],
+    "limitations": [],
+    "raw_output": "$ C:\\Program Files\\LLVM\\bin\\clang.EXE -std=c11 -g -fsanitize=undefined E:\\seclab-verification-tool\\examples\\smart-ev-probes\\use_after_free.c -o E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-8ac395ac7a26419d9f46b0c6fe0a0179.exe\n\n\n$ E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-UAF-001\\undefinedbehaviorsanitizer\\build\\undefinedbehaviorsanitizer-8ac395ac7a26419d9f46b0c6fe0a0179.exe",
+    "supported": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 187.9999999946449,
+      "evidence_ids": [
+        "dcad0a65-90b0-4c37-ad63-26f01a65f891",
+        "2556bad7-1c35-4317-b5cd-8299232affae",
+        "8d92b642-d06e-405a-94b7-17931696a4cc",
+        "edd2f875-081c-4232-b303-a4fbc474d8e8",
+        "cebae49d-85dc-4ec7-b8b0-88939b0c31ce",
+        "6d96f922-2956-467e-bc6e-ec2e76ff3187",
+        "1c6eeab2-edac-4c61-b3b3-83f5d026969b",
+        "e90dea40-a2cb-4489-a380-ae8c5ee903e4"
+      ],
+      "id": "2d13ba2d-60f4-49ef-a006-f97e818864fa",
+      "message": "No UndefinedBehaviorSanitizer violation was observed in this execution.",
+      "metadata": {
+        "exit_code": 0,
+        "finding_ids": [],
+        "timed_out": false
+      },
+      "property_id": null,
+      "reason_code": "NO_SANITIZER_VIOLATION_OBSERVED",
+      "requirement_id": null,
+      "scope": "UndefinedBehaviorSanitizer observations for binary undefinedbehaviorsanitizer-8ac395ac7a26419d9f46b0c6fe0a0179.exe and this execution/input only; this is not a global memory-safety proof.",
+      "source": null,
+      "stage": "SANITIZER",
+      "status": "PASS",
+      "technique": "UNDEFINEDBEHAVIORSANITIZER"
+    }
+  },
+  "tool": "UndefinedBehaviorSanitizer"
+}

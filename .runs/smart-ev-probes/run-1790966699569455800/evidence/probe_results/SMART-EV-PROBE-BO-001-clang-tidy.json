@@ -1,0 +1,154 @@
+{
+  "expected": {
+    "cwe": null,
+    "issue": "A heap write occurs one byte past the allocated 8-byte buffer."
+  },
+  "observed": {
+    "commands": [
+      {
+        "argv": [
+          "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+          "-checks=clang-analyzer-*,bugprone-*,performance-*,portability-*",
+          "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c",
+          "--",
+          "-x",
+          "c",
+          "-std=c11"
+        ],
+        "cwd": "E:\\seclab-verification-tool\\.runs\\smart-ev-probes\\run-1790966699569455800\\tool_work\\SMART-EV-PROBE-BO-001\\clang-tidy",
+        "duration_ms": 93.99999998277053,
+        "executable_path": "C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE",
+        "execution_error": null,
+        "exit_code": 0,
+        "stderr": "64 warnings generated.\r\nSuppressed 63 warnings (63 in non-user code).\r\nUse -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.\r\n",
+        "stdout": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:9:5: warning: Out of bound access to memory after the end of the heap area [clang-analyzer-security.ArrayBound]\n    9 |     buffer[index] = 'X';\n      |     ^~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:6:9: note: Assuming 'buffer' is not equal to NULL\n    6 |     if (buffer == NULL) {\n      |         ^~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:6:5: note: Taking false branch\n    6 |     if (buffer == NULL) {\n      |     ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:9:5: note: Access of the heap area at index 8, while it holds only 8 'char' elements\n    9 |     buffer[index] = 'X';\n      |     ^~~~~~~~~~~~~\n",
+        "succeeded": true,
+        "timed_out": false
+      }
+    ],
+    "cwe_mappings": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "executed": true,
+    "findings": [
+      {
+        "category": "warning",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "buffer_overflow.c",
+        "function": null,
+        "id": "76d043cb-5b67-44d3-85a8-28f46cc03c73",
+        "line": 9,
+        "message": "Out of bound access to memory after the end of the heap area",
+        "metadata": {
+          "original_severity": "warning",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+        },
+        "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+        "rule_id": "clang-analyzer-security.ArrayBound",
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 9,
+        "confidence": null,
+        "cwe": null,
+        "file": "buffer_overflow.c",
+        "function": null,
+        "id": "0b3b7cd1-a333-459d-9dbd-9319f5ee95e5",
+        "line": 6,
+        "message": "Assuming 'buffer' is not equal to NULL",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+        },
+        "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "buffer_overflow.c",
+        "function": null,
+        "id": "f9a0ffe1-637b-484a-998f-1413bb5b1955",
+        "line": 6,
+        "message": "Taking false branch",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+        },
+        "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      },
+      {
+        "category": "note",
+        "column": 5,
+        "confidence": null,
+        "cwe": null,
+        "file": "buffer_overflow.c",
+        "function": null,
+        "id": "7e4402b9-3034-4231-a00c-80ac38028687",
+        "line": 9,
+        "message": "Access of the heap area at index 8, while it holds only 8 'char' elements",
+        "metadata": {
+          "original_severity": "note",
+          "raw_file_path": "E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c"
+        },
+        "raw_evidence": "85c649b4-926c-4f90-bcc2-a594c19bf506",
+        "rule_id": null,
+        "severity": "UNKNOWN",
+        "tool": "clang-tidy"
+      }
+    ],
+    "limitations": [
+      "No compile_commands.json exists; analysis uses limited default compile flags."
+    ],
+    "raw_output": "$ C:\\Program Files\\LLVM\\bin\\clang-tidy.EXE -checks=clang-analyzer-*,bugprone-*,performance-*,portability-* E:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c -- -x c -std=c11\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:9:5: warning: Out of bound access to memory after the end of the heap area [clang-analyzer-security.ArrayBound]\n    9 |     buffer[index] = 'X';\n      |     ^~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:6:9: note: Assuming 'buffer' is not equal to NULL\n    6 |     if (buffer == NULL) {\n      |         ^~~~~~~~~~~~~~\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:6:5: note: Taking false branch\n    6 |     if (buffer == NULL) {\n      |     ^\nE:\\seclab-verification-tool\\examples\\smart-ev-probes\\buffer_overflow.c:9:5: note: Access of the heap area at index 8, while it holds only 8 'char' elements\n    9 |     buffer[index] = 'X';\n      |     ^~~~~~~~~~~~~\n\n64 warnings generated.\r\nSuppressed 63 warnings (63 in non-user code).\r\nUse -header-filter=.* or leave it as default to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.",
+    "reason_code": "STATIC_FINDINGS_DETECTED",
+    "successful": true,
+    "verification_result": {
+      "counterexample": null,
+      "duration_ms": 93.99999998277053,
+      "evidence_ids": [
+        "35e40942-0e1c-4ff3-a970-d43544fe6dcf",
+        "c2638de4-45e0-4585-9b99-6091cc193b65",
+        "cf6ef48c-c9d6-497b-8e32-043cc37bfa88",
+        "85c649b4-926c-4f90-bcc2-a594c19bf506",
+        "1dbb80ef-b7bf-49a0-a83f-b73767f641eb"
+      ],
+      "id": "b9329726-4a59-45f3-af6f-7fcb8852ed7d",
+      "message": "4 finding(s) reported by clang-tidy; these are not confirmed property violations.",
+      "metadata": {
+        "finding_ids": [
+          "76d043cb-5b67-44d3-85a8-28f46cc03c73",
+          "0b3b7cd1-a333-459d-9dbd-9319f5ee95e5",
+          "f9a0ffe1-637b-484a-998f-1413bb5b1955",
+          "7e4402b9-3034-4231-a00c-80ac38028687"
+        ],
+        "limitations": [
+          "No compile_commands.json exists; analysis uses limited default compile flags."
+        ]
+      },
+      "property_id": null,
+      "reason_code": "STATIC_FINDINGS_DETECTED",
+      "requirement_id": null,
+      "scope": "Clang-Tidy checks for collected translation units; analyzer diagnostics are reports, not confirmed property violations.",
+      "source": null,
+      "stage": "STATIC_ANALYSIS",
+      "status": "INCONCLUSIVE",
+      "technique": "CLANG-TIDY"
+    }
+  },
+  "tool": "clang-tidy"
+}

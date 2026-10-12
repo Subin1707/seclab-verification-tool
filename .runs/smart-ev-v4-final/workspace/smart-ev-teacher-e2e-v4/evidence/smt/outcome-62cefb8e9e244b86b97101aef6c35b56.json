@@ -1,0 +1,11 @@
+{
+  "backend": "z3-python",
+  "backend_version": "5.1.0",
+  "duration_ms": 0.0,
+  "model": null,
+  "query_evidence_id": "de5a74ea-ca6c-432b-8c96-19ddd9ef68f8",
+  "query_intent": "SATISFIABILITY",
+  "query_sha256": "719c7c015ccd33706e61534008fddb4c8f49c0a17403f4477702eadd601fa1e3",
+  "reason": null,
+  "solver_outcome": "UNSAT"
+}

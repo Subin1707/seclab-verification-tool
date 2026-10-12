@@ -1,0 +1,7 @@
+{
+  "layouts": [],
+  "limitations": [
+    "Struct layout is not inferred by regex. A trustworthy implementation needs compiler-backed type selection and a probe build/run contract."
+  ],
+  "supported": false
+}
