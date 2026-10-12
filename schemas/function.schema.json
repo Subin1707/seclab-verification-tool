@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seclab.local/schemas/function.schema.json",
+  "title": "SecLab source function",
+  "$ref": "specification.schema.json#/$defs/function"
+}

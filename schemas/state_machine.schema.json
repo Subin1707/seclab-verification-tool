@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seclab.local/schemas/state_machine.schema.json",
+  "title": "SecLab state machine elements",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "states": { "type": "array", "items": { "$ref": "specification.schema.json#/$defs/state" }, "default": [] },
+    "transitions": { "type": "array", "items": { "$ref": "specification.schema.json#/$defs/transition" }, "default": [] }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seclab.local/schemas/specification.schema.json",
+  "title": "SecLab verification specification",
+  "description": "Generic SecLab verification specification bundle (v1 compatible, v2 additive).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "name"],
+  "properties": {
+    "schema_version": { "enum": ["1.0", "2.0"] },
+    "id": { "$ref": "#/$defs/identifier" },
+    "name": { "type": "string", "minLength": 1 },
+    "description": { "type": "string" },
+    "initial_state": { "$ref": "#/$defs/identifier" },
+    "requirements": { "type": "array", "items": { "$ref": "#/$defs/requirement" }, "default": [] },
+    "variables": { "type": "array", "items": { "$ref": "#/$defs/variable" }, "default": [] },
+    "constraints": { "type": "array", "items": { "$ref": "#/$defs/constraint" }, "default": [] },
+    "states": { "type": "array", "items": { "$ref": "#/$defs/state" }, "default": [] },
+    "transitions": { "type": "array", "items": { "$ref": "#/$defs/transition" }, "default": [] },
+    "properties": { "type": "array", "items": { "$ref": "#/$defs/property" }, "default": [] },
+    "functions": { "type": "array", "items": { "$ref": "#/$defs/function" }, "default": [] },
+    "tests": { "type": "array", "items": { "$ref": "#/$defs/test" }, "default": [] },
+    "metadata": { "type": "object", "additionalProperties": true, "default": {} },
+    "project": { "$ref": "#/$defs/project", "default": {} },
+    "state_machines": { "type": "array", "items": { "$ref": "#/$defs/state_machine" }, "default": [] },
+    "coverage": { "$ref": "#/$defs/coverage", "default": {} },
+    "fuzzing": { "$ref": "#/$defs/fuzzing", "default": {} }
+  },
+  "$defs": {
+    "identifier": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$" },
+    "project": {
+      "type": "object", "additionalProperties": false, "properties": {
+        "kind": { "type": "string", "minLength": 1 },
+        "languages": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "source_roots": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "build": { "type": "object", "additionalProperties": true },
+        "metadata": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false, "properties": {
+        "enabled": { "type": "boolean" }, "backend": { "type": "string", "minLength": 1 },
+        "metrics": { "type": "array", "items": { "enum": ["line", "branch"] }, "uniqueItems": true },
+        "source_files": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "metadata": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "fuzzing": {
+      "type": "object", "additionalProperties": false, "properties": {
+        "enabled": { "type": "boolean" },
+        "strategy": { "enum": ["black_box", "boundary", "coverage_guided", "concolic"] },
+        "iterations": { "type": "integer", "minimum": 0 }, "timeout_seconds": { "type": "number", "exclusiveMinimum": 0 },
+        "seed_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "metadata": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "scalar": { "type": ["string", "number", "integer", "boolean", "null"] },
+    "domain": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["type"], "properties": {
+          "type": { "enum": ["boolean", "integer", "number", "string"] },
+          "minimum": { "type": "number" }, "maximum": { "type": "number" },
+          "values": { "type": "array", "items": { "$ref": "#/$defs/scalar" }, "minItems": 1 }
+        } },
+        { "type": "object", "additionalProperties": false, "required": ["enum"], "properties": {
+          "enum": { "type": "array", "items": { "$ref": "#/$defs/scalar" }, "minItems": 1, "uniqueItems": true }
+        } }
+      ]
+    },
+    "requirement": {
+      "type": "object", "additionalProperties": false, "required": ["id", "description"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "type": { "enum": ["safety", "liveness", "functional", "security", "performance", "other"] },
+        "priority": { "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"] }, "description": { "type": "string", "minLength": 1 },
+        "constraint_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "property_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "function_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "test_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "metadata": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "variable": {
+      "type": "object", "additionalProperties": false, "required": ["id", "domain"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "domain": { "$ref": "#/$defs/domain" },
+        "initial": { "$ref": "#/$defs/scalar" }, "description": { "type": "string" },
+        "metadata": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "constraint": {
+      "type": "object", "additionalProperties": false, "required": ["id", "expression"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "expression": { "type": "string", "minLength": 1 },
+        "requirement_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "kind": { "enum": ["invariant", "initial", "transition", "assumption", "other"] },
+        "description": { "type": "string" }, "metadata": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "state": {
+      "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "machine_id": { "$ref": "#/$defs/identifier" }, "initial": { "type": "boolean", "default": false },
+        "values": { "type": "object", "additionalProperties": { "$ref": "#/$defs/scalar" } },
+        "labels": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "description": { "type": "string" }
+      }
+    },
+    "transition": {
+      "type": "object", "additionalProperties": false, "required": ["id", "source", "target"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "machine_id": { "$ref": "#/$defs/identifier" }, "source": { "$ref": "#/$defs/identifier" }, "target": { "$ref": "#/$defs/identifier" },
+        "guard": { "type": "string" }, "action": { "type": "string" }, "label": { "type": "string" }
+      }
+    },
+    "state_machine": {
+      "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "initial_state": { "$ref": "#/$defs/identifier" },
+        "description": { "type": "string" },
+        "states": { "type": "array", "items": { "$ref": "#/$defs/state" }, "minItems": 1 },
+        "transitions": { "type": "array", "items": { "$ref": "#/$defs/transition" }, "default": [] }
+      }
+    },
+    "property": {
+      "type": "object", "additionalProperties": false, "required": ["id", "logic", "formula"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "logic": { "enum": ["CTL", "SMT", "BMC"] },
+        "formula": { "type": "string", "minLength": 1 }, "requirement_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "description": { "type": "string" }, "bound": { "type": "integer", "minimum": 0 },
+        "metadata": { "type": "object", "additionalProperties": true }
+      },
+      "allOf": [{ "if": { "properties": { "logic": { "const": "BMC" } }, "required": ["logic"] }, "then": { "required": ["bound"] } }]
+    },
+    "function": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "name": { "type": "string", "minLength": 1 }, "file": { "type": "string" }, "language": { "type": "string", "minLength": 1 },
+        "requirement_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true }, "description": { "type": "string" }
+      }
+    },
+    "test": {
+      "type": "object", "additionalProperties": false, "required": ["id"], "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "function_id": { "$ref": "#/$defs/identifier" },
+        "requirement_ids": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "kind": { "enum": ["unit", "integration", "system", "boundary", "fuzz", "other"] },
+        "input": { "type": "object", "additionalProperties": true }, "expected": { "type": ["string", "number", "integer", "boolean", "object", "array", "null"] },
+        "description": { "type": "string" }
+      }
+    }
+  }
+}
