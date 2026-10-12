@@ -1,0 +1,1 @@
+{"static_analyzers": [], "run_memory": false, "run_coverage": true, "coverage_backend": "llvm", "execution_timeout": 2.0}
