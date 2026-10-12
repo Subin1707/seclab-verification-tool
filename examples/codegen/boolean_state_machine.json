@@ -1,0 +1,1 @@
+{"schema_version":"1.0","id":"bool-machine","name":"Boolean state machine","variables":[{"id":"enabled","domain":{"type":"boolean"},"initial":false}],"states":[{"id":"off","initial":true,"values":{"enabled":false}},{"id":"on","values":{"enabled":true}}],"transitions":[{"id":"switch-on","source":"off","target":"on","guard":"enabled == false"}]}

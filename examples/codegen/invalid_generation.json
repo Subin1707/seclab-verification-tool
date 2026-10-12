@@ -1,0 +1,1 @@
+{"schema_version":"1.0","id":"invalid-generation","name":"Invalid generation guard","variables":[{"id":"ready","domain":{"type":"boolean"},"initial":true}],"states":[{"id":"source","initial":true,"values":{"ready":true}},{"id":"target"}],"transitions":[{"id":"unsupported-guard","source":"source","target":"target","guard":"ready &&"}]}

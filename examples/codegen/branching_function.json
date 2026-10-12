@@ -1,0 +1,1 @@
+{"schema_version":"1.0","id":"branching","name":"Branching graph","states":[{"id":"input","initial":true},{"id":"left"},{"id":"right"}],"transitions":[{"id":"choose-left","source":"input","target":"left","guard":"choose_left == true"},{"id":"choose-right","source":"input","target":"right","guard":"choose_right == true"}]}
