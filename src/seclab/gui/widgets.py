@@ -20,12 +20,34 @@ class ReadOnlyTable(QTableWidget):
         self.horizontalHeader().setStretchLastSection(True)
 
     def set_records(self, records: list[tuple[Any, ...]] | tuple[tuple[Any, ...], ...]) -> None:
-        self.setRowCount(len(records))
-        for row, values in enumerate(records):
+        self.setUpdatesEnabled(False)
+        try:
+            self.setRowCount(len(records))
+            self._populate_records(records, 0)
+        finally:
+            self.setUpdatesEnabled(True)
+            self.viewport().update()
+
+    def append_records(self, records: list[tuple[Any, ...]] | tuple[tuple[Any, ...], ...]) -> None:
+        if not records:
+            return
+        self.setUpdatesEnabled(False)
+        try:
+            first_row = self.rowCount()
+            self.setRowCount(first_row + len(records))
+            self._populate_records(records, first_row)
+        finally:
+            self.setUpdatesEnabled(True)
+            self.viewport().update()
+
+    def _populate_records(self, records: list[tuple[Any, ...]] | tuple[tuple[Any, ...], ...],
+                          first_row: int) -> None:
+        for offset, values in enumerate(records):
             for column, value in enumerate(values):
-                item = QTableWidgetItem(_display(value))
-                item.setToolTip(_display(value))
-                self.setItem(row, column, item)
+                display = _display(value)
+                item = QTableWidgetItem(display)
+                item.setToolTip(display)
+                self.setItem(first_row + offset, column, item)
 
 
 class DetailDialog(QDialog):

@@ -126,6 +126,7 @@ class PipelineOrchestrator:
         toolchain = Toolchain(self.options.toolchain_tools, command_runner=tools)
         ctx = VerificationContext(run_id, project_path, run_root, now, TrackedArtifactStore(run_root, run_id), toolchain,
                               options=self.options, command_runner=tools, progress_callback=progress_callback)
+        _prime_specification_hashes(ctx)
         selected = self._select_stages(stage_ids)
         for stage_id in self._ordered_ids():
             stage = self._by_id[stage_id]
@@ -142,7 +143,7 @@ class PipelineOrchestrator:
                 record.reason = "Run cancelled before this stage started."
                 timestamp = datetime.now(timezone.utc).isoformat()
                 record.started_at = record.finished_at = timestamp
-                _notify_progress(progress_callback, record)
+                _notify_progress(progress_callback, record, run_id=run_id)
                 continue
             record.input_refs = _stage_input_refs(stage_id, stage.dependencies, ctx, self.options)
             blocked = ([] if stage_id in {"REPORT", "CROSS_CHECK"} else
@@ -156,22 +157,28 @@ class PipelineOrchestrator:
                 record.reason = f"Required input stages did not complete: {', '.join(blocked)}."
                 timestamp = datetime.now(timezone.utc).isoformat()
                 record.started_at = record.finished_at = timestamp
-                _notify_progress(progress_callback, record)
+                _notify_progress(progress_callback, record, run_id=run_id)
                 continue
             record.status = StageStatus.RUNNING
             record.started_at = datetime.now(timezone.utc).isoformat()
-            _notify_progress(progress_callback, record)
+            _notify_progress(progress_callback, record, run_id=run_id)
             started = ctx.monotonic()
-            artifact_ids_before = {item.id for item in ctx.artifact_store.all()}
+            artifact_ids_before = ctx.artifact_store.ids()
+            progress_results: tuple[Any, ...] = ()
+            progress_evidence: tuple[Any, ...] = ()
             try:
                 output = stage.execute(ctx)
                 if not isinstance(output, StageOutput):
                     raise TypeError(f"Stage {stage_id} returned {type(output).__name__}, expected StageOutput")
+                progress_results = tuple(output.results)
                 ctx.add_results(output.results)
                 ctx.add_evidence(output.evidence)
                 ctx.flush_artifacts()
-                created_artifact_ids = tuple(item.id for item in ctx.artifact_store.all()
-                                             if item.id not in artifact_ids_before)
+                if stage_id == "SOURCE":
+                    _cache_source_hashes(ctx)
+                created_artifact_ids = tuple(ctx.artifact_store.ids() - artifact_ids_before)
+                progress_evidence = tuple(item for item in ctx.artifact_store.all()
+                                          if item.id in set(created_artifact_ids))
                 record.output_refs = created_artifact_ids
                 if output.value is not None and output.value.__class__.__name__ == "FuzzCampaignResult":
                     for result in output.results:
@@ -204,8 +211,10 @@ class PipelineOrchestrator:
                         metadata={"error_type": type(exc).__name__}))
                     ctx.add_evidence((ref,)); ctx.add_results((result,))
                     ctx.flush_artifacts()
-                    stage_artifacts = tuple(item.id for item in ctx.artifact_store.all()
-                                            if item.id not in artifact_ids_before)
+                    stage_artifacts = tuple(ctx.artifact_store.ids() - artifact_ids_before)
+                    progress_results = (result,)
+                    progress_evidence = tuple(item for item in ctx.artifact_store.all()
+                                              if item.id in set(stage_artifacts))
                     record.result_ids = (result.id,)
                     record.evidence_ids = tuple(dict.fromkeys((*stage_artifacts, ref.id)))
                     record.output_refs = record.evidence_ids
@@ -214,7 +223,7 @@ class PipelineOrchestrator:
             finally:
                 record.duration_ms = max(0.0, (ctx.monotonic() - started) * 1000.0)
                 record.finished_at = datetime.now(timezone.utc).isoformat()
-                _notify_progress(progress_callback, record)
+                _notify_progress(progress_callback, record, progress_results, progress_evidence, run_id)
         for record in ctx.stage_records.values():
             if record.stage_id == "REPORT":
                 record.output_refs = ("path:evidence/manifest/run-manifest.json",
@@ -455,6 +464,30 @@ def _verify_artifact_hashes(ctx: VerificationContext) -> list[dict[str, Any]]:
     return verified
 
 
+def _cache_source_hashes(ctx: VerificationContext) -> None:
+    """Cache source digests discovered by SOURCE for all later provenance records."""
+    for item in _provenance_sources(ctx):
+        path = Path(item.path if hasattr(item, "path") else item)
+        relative = getattr(item, "relative_path", path.name)
+        digest = getattr(item, "sha256", None)
+        if digest is None:
+            try:
+                digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            except OSError:
+                digest = None
+        ctx.source_hashes[str(relative)] = digest
+
+
+def _prime_specification_hashes(ctx: VerificationContext) -> None:
+    """Hash specification inputs once; stage execution records reuse these digests."""
+    for specification_path in getattr(ctx.options, "specification_paths", ()):
+        path = Path(specification_path)
+        try:
+            ctx.specification_input_hashes[str(path.name)] = hashlib.sha256(path.read_bytes()).hexdigest()
+        except OSError:
+            ctx.specification_input_hashes[str(path.name)] = None
+
+
 def _broken_evidence_references(ctx: VerificationContext) -> list[dict[str, str]]:
     known = {item.id for item in ctx.evidence_collector.all()}
     return [{"result_id": result.id, "evidence_id": evidence_id}
@@ -569,10 +602,18 @@ def _safe_run_id(value: str) -> str:
     return value
 
 
-def _notify_progress(callback: Callable[[dict[str, Any]], None] | None, record: StageRecord) -> None:
+def _notify_progress(callback: Callable[[dict[str, Any]], None] | None, record: StageRecord,
+                     results: tuple[Any, ...] = (), evidence: tuple[Any, ...] = (),
+                     run_id: str | None = None) -> None:
     if callback is not None:
         try:
-            callback(record.to_dict())
+            payload = record.to_dict()
+            if run_id is not None:
+                payload["run_id"] = run_id
+            if results or evidence:
+                payload["stage_results"] = [item.to_dict() for item in results]
+                payload["stage_evidence"] = [item.to_dict() for item in evidence]
+            callback(payload)
         except Exception:
             # UI progress is observational and must not change verification behavior.
             pass
@@ -794,17 +835,7 @@ def _enrich_evidence_provenance(ctx: VerificationContext) -> None:
 
 def _record_stage_execution(ctx: VerificationContext, record: StageRecord) -> None:
     """Persist common provenance for every attempted or lifecycle-skipped stage."""
-    source_hashes = {}
-    for item in _provenance_sources(ctx):
-        path = Path(item.path if hasattr(item, "path") else item)
-        relative = getattr(item, "relative_path", path.name)
-        digest = getattr(item, "sha256", None)
-        if digest is None:
-            try:
-                digest = hashlib.sha256(path.read_bytes()).hexdigest()
-            except OSError:
-                digest = None
-        source_hashes[str(relative)] = digest
+    source_hashes = dict(ctx.source_hashes)
     specification_hash = None
     if ctx.specification is not None:
         try:
@@ -813,13 +844,7 @@ def _record_stage_execution(ctx: VerificationContext, record: StageRecord) -> No
             specification_hash = hashlib.sha256(encoded_spec).hexdigest()
         except (TypeError, ValueError):
             specification_hash = None
-    specification_input_hashes = {}
-    for specification_path in getattr(ctx.options, "specification_paths", ()):
-        path = Path(specification_path)
-        try:
-            specification_input_hashes[str(path.name)] = hashlib.sha256(path.read_bytes()).hexdigest()
-        except OSError:
-            specification_input_hashes[str(path.name)] = None
+    specification_input_hashes = dict(ctx.specification_input_hashes)
     options = ctx.options
     configuration = _plain_data(options) if options is not None else {}
     # Preserve reproducible knobs while leaving runtime timestamps in the

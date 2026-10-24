@@ -58,6 +58,53 @@ def _properties(spec: Any, logic: str) -> tuple[Any, ...]:
     return tuple(item for item in spec.properties if item.logic.upper() == logic)
 
 
+def _ctl_negative_control(model: Any, prop: Any, *, baseline_holds: bool) -> dict[str, Any] | None:
+    """Check that an AG safety property catches an isolated reachable mutant."""
+    from seclab.formal.ctl.ast import AG
+    from seclab.formal.ctl.parser import parse_ctl
+    from seclab.model import KripkeStructure, Transition
+
+    formula = parse_ctl(prop.formula)
+    if not isinstance(formula, AG):
+        return None
+    record: dict[str, Any] = {"property_id": prop.id, "formula": prop.formula,
+        "baseline_model_hash": model.model_hash, "baseline_holds": baseline_holds,
+        "mutant_model_hash": None, "mutation": None, "counterexample": [],
+        "counterexample_validated": False}
+    if not baseline_holds:
+        record.update(status="SKIPPED_BASELINE_ALREADY_VIOLATED",
+                      reason="The baseline already violates this property; the negative control is not independent.")
+        return record
+
+    false_states = set(model.states) - model_checker.sat(model, formula.child)
+    unreachable = set(unreachable_states(model))
+    targets = sorted((state for state in false_states if state in unreachable), key=lambda item: item.id)
+    if not targets:
+        record.update(status="SKIPPED_NO_UNREACHABLE_VIOLATION_STATE",
+                      reason="No unreachable state falsifies the AG property, so a separate transition mutant cannot be formed.")
+        return record
+
+    target = targets[0]
+    source = model.initial_states[0]
+    mutation_id = f"NEGATIVE-CONTROL-{_filename(prop.id)}"
+    mutation = Transition(source=source.id, target=target.id,
+                         label="negative-control-mutant", id=mutation_id)
+    mutant = KripkeStructure(model.states, model.initial_states, (*model.transitions, mutation))
+    checked = model_checker.check(mutant, formula)
+    counterexample = [state.id for state in (checked.counterexample or ())]
+    detected = (not checked.satisfied and checked.counterexample_validated
+                and target.id in counterexample and source.id in counterexample)
+    record.update(status="DETECTED" if detected else "MISSED",
+        mutant_model_hash=mutant.model_hash,
+        mutation={"transition_id": mutation_id, "source": source.id, "target": target.id,
+                  "target_labels": sorted(target.labels)},
+        counterexample=counterexample,
+        counterexample_validated=checked.counterexample_validated,
+        reason=("CTL checker reported the injected reachable violation with a validated counterexample."
+                if detected else "CTL checker did not return the injected violation as a validated counterexample."))
+    return record
+
+
 class PipelineStages:
     """Stage implementations. Core checkers retain ownership of verdict semantics."""
 
@@ -107,14 +154,10 @@ class PipelineStages:
                 spec = options.normalized_specification
             else:
                 if loaded is None:
-                    if len(paths) == 1 and Path(paths[0]).suffix.casefold() == ".xlsx":
-                        from seclab.integrations.xlsx_adapter import load_teacher_xlsx
-                        loaded, compatibility, _raw_document = load_teacher_xlsx(paths[0])
-                    else:
-                        if any(Path(path).suffix.casefold() == ".xlsx" for path in paths):
-                            raise ValueError("Không thể gộp XLSX với các tệp đặc tả khác; hãy chọn riêng một workbook.")
-                        from seclab.specification.legacy_adapter import load_compatible_specification
-                        loaded, compatibility, _raw_documents = load_compatible_specification(paths)
+                    if any(Path(path).suffix.casefold() == ".xlsx" for path in paths):
+                        raise ValueError("XLSX must be loaded by the optional integration adapter before entering the generic pipeline.")
+                    from seclab.specification.legacy_adapter import load_compatible_specification
+                    loaded, compatibility, _raw_documents = load_compatible_specification(paths)
                 else:
                     compatibility = {}
                 validated = validate_specification(loaded, schema_path=options.schema_path)
@@ -323,7 +366,7 @@ class PipelineStages:
         # An empty explicit model keeps no-machine specifications applicable to
         # C model-runtime generation without inventing a state or transition.
         model = ctx.kripke if ctx.kripke is not None else KripkeStructure((), (), ())
-        include_fuzz = options.generate_c_fuzz_harness or options.fuzz_config is not None
+        include_fuzz = getattr(options, "generate_c_fuzz_harness", False) or getattr(options, "fuzz_config", None) is not None
         generated = CGenerator().generate(ctx.specification, model, output_root,
             include_fuzz=include_fuzz, validate_specification_match=True,
             source_specification_paths=tuple(str(item.source) for item in
@@ -600,6 +643,7 @@ class PipelineStages:
         if not ctl_properties:
             return StageOutput(value=StageSkipped("The specification declares no CTL properties."))
         results, evidence = [], []
+        negative_controls = []
         for prop in ctl_properties:
             ctx.metadata.setdefault("property_model_links", {})[prop.id] = {
                 "model_hash": model.model_hash, "state_ids": list(model.state_ids),
@@ -629,6 +673,29 @@ class PipelineStages:
                     property_id=prop.id)
                 result = classify_ctl_result(checked, property_id=prop.id, evidence_ids=(ref.id,),
                                              duration_ms=elapsed_ms)
+                try:
+                    control = _ctl_negative_control(model, prop, baseline_holds=checked.satisfied)
+                except Exception as control_exc:
+                    control = {"property_id": prop.id, "formula": prop.formula,
+                        "baseline_model_hash": model.model_hash, "baseline_holds": checked.satisfied,
+                        "status": "ERROR", "reason": f"{type(control_exc).__name__}: {control_exc}",
+                        "mutant_model_hash": None, "mutation": None, "counterexample": [],
+                        "counterexample_validated": False}
+                if control is not None:
+                    try:
+                        control_ref = ctx.artifact_store.write_json("ctl-negative-controls",
+                            f"{_filename(prop.id)}-mutant.json", control,
+                            evidence_type=(EvidenceType.COUNTEREXAMPLE if control["status"] == "DETECTED"
+                                           else EvidenceType.MODEL), property_id=prop.id,
+                            source="ctl-negative-control", metadata={"stage_id": "CTL",
+                                "control_kind": "REACHABLE_VIOLATION_MUTANT", "baseline_unchanged": True})
+                        control["evidence_id"] = control_ref.id
+                        evidence.append(control_ref)
+                    except Exception as evidence_exc:
+                        control.update(status="ERROR", reason=(
+                            f"Negative control ran, but its evidence could not be saved: "
+                            f"{type(evidence_exc).__name__}: {evidence_exc}"))
+                    negative_controls.append(control)
             except Exception as exc:
                 ref = ctx.artifact_store.write_json("ctl", f"{_filename(prop.id)}-error.json",
                     {"property_id": prop.id, "error_type": type(exc).__name__, "message": str(exc)},
@@ -651,7 +718,12 @@ class PipelineStages:
                        "cross_check_key": prop.metadata.get("cross_check_key"),
                        "state_ids": list(model.state_ids),
                        "transition_ids": list(model.transition_ids)} for prop in ctl_properties})
-        return StageOutput(results=tuple(results), evidence=tuple(evidence), metadata={"properties_checked": len(ctl_properties)})
+        return StageOutput(results=tuple(results), evidence=tuple(evidence), metadata={
+            "properties_checked": len(ctl_properties),
+            "negative_controls": negative_controls,
+            "negative_control_count": len(negative_controls),
+            "negative_control_detected_count": sum(item["status"] == "DETECTED" for item in negative_controls),
+        })
 
     @staticmethod
     def bmc(ctx: Any, options: Any) -> StageOutput:
@@ -1119,7 +1191,8 @@ class PipelineStages:
                 metadata={"status": "SKIPPED", "reason_code": "FUZZ_CONFIG_MISSING",
                           "fuzz_configured": False,
                           "gui_run_configuration": options.metadata.get("gui_run_configuration", {})})
-        generated_scope = bool(ctx.codegen_result and ctx.generated_c_root and _generated_model_runtime_sources(ctx))
+        generated_scope = bool(ctx.codegen_result and ctx.generated_c_root and _generated_model_runtime_sources(ctx)
+                               and ctx.kripke is not None and ctx.kripke.states)
         if generated_scope:
             fuzz_sources = _generated_model_fuzz_sources(ctx)
             # Transition testcases exercise the CLI with fixed argv; that CLI does

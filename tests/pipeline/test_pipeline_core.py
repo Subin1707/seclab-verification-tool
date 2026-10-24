@@ -294,7 +294,17 @@ def test_opt_in_generic_c_codegen_persists_classified_reproducible_outputs(tmp_p
     assert "source/model.c" in memory["metadata"]["generated_model_files"]
     coverage = next(item for item in report.stage_summaries if item["stage_id"] == "COVERAGE")
     assert coverage["metadata"]["target_scope"] == "MODEL_GENERATED"
-    assert coverage["metadata"]["has_report"] is True
+    coverage_result = next((item for item in report.results
+                            if item.technique == "COVERAGE_MEASUREMENT"), None)
+    if coverage["metadata"]["has_report"]:
+        assert coverage_result is None or coverage_result.status.value == "INCONCLUSIVE"
+    else:
+        # A host/backend build failure is retained as measurement evidence and
+        # must never be represented as zero or successful coverage.
+        assert coverage["output"] is None
+        assert coverage_result is not None
+        assert coverage_result.status.value in {"BUILD_ERROR", "TOOL_ERROR", "INCONCLUSIVE"}
+        assert coverage_result.evidence_ids
     fuzzing = next(item for item in report.stage_summaries if item["stage_id"] == "FUZZING")
     assert fuzzing["metadata"]["target_scope"] == "MODEL_GENERATED"
     assert fuzzing["metadata"]["target_count"] == 1

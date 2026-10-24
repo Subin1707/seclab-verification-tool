@@ -5,13 +5,15 @@ import json
 import hashlib
 import os
 import platform
+import time
 import uuid
+from types import SimpleNamespace
 from datetime import datetime, timezone
 from threading import Event
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-from PySide6.QtCore import QObject, QSettings, QThread, Qt, Signal, Slot
+from PySide6.QtCore import QObject, QSettings, QThread, QTimer, Qt, Signal, Slot
 from PySide6.QtWidgets import (QComboBox, QDockWidget, QFileDialog, QHBoxLayout, QLabel, QVBoxLayout,
                                QListWidget, QMainWindow, QMessageBox, QPlainTextEdit,
                                QSplitter, QStackedWidget, QToolBar, QWidget, QPushButton, QLineEdit, QTabWidget)
@@ -28,6 +30,48 @@ from seclab.gui.pages import AccuracyPage, EvidencePage, HistoryPage, ResultsPag
 from seclab.gui.pages.base import DataPage
 from seclab.gui.session import SessionState, VerificationSession
 from seclab.pipeline import PipelineOptions
+
+
+def _read_fuzz_observations(report: Any, run_root: Path,
+                            evidence_records: tuple[dict[str, Any], ...]) -> tuple[dict[str, dict[str, Any]], dict[str, str]]:
+    """Load per-iteration observations while keeping filesystem work off the GUI thread."""
+    manifest = {str(item.get("id", "")): item for item in evidence_records}
+    stage = next((item for item in report.stage_summaries
+                  if str(item.get("stage_id", "")).upper() == "FUZZING"), None)
+    output = stage.get("output", {}) if stage else {}
+    campaigns = output.get("campaigns", ()) if isinstance(output, dict) else ()
+    if not campaigns and isinstance(output, dict) and output.get("strategy"):
+        campaigns = (output,)
+    observations: dict[str, dict[str, Any]] = {}
+    errors: dict[str, str] = {}
+    for campaign in campaigns:
+        for record in campaign.get("execution_evidence", ()):
+            evidence_id = str(record.get("evidence_id", ""))
+            reference = manifest.get(evidence_id)
+            if not reference:
+                errors[evidence_id] = "Evidence ID is absent from run manifest."
+                continue
+            if reference.get("path") != record.get("path") or reference.get("hash") != record.get("sha256"):
+                errors[evidence_id] = "Campaign evidence reference differs from the manifest."
+                continue
+            try:
+                relative = PurePosixPath(str(reference["path"]))
+                if relative.is_absolute() or ".." in relative.parts:
+                    raise ValueError("Evidence path is not a safe run-relative path.")
+                path = (run_root / Path(*relative.parts)).resolve(strict=True)
+                if not path.is_relative_to(run_root.resolve()):
+                    raise ValueError("Evidence path escapes the run workspace.")
+                payload = path.read_bytes()
+                digest = hashlib.sha256(payload).hexdigest()
+                if digest != reference.get("hash") or len(payload) != reference.get("size_bytes"):
+                    raise ValueError("Evidence hash/size does not match the run manifest.")
+                value = json.loads(payload.decode("utf-8"))
+                if value.get("input_sha256") != record.get("input_sha256"):
+                    raise ValueError("Observation input hash does not match campaign summary.")
+                observations[evidence_id] = value
+            except (OSError, UnicodeDecodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+                errors[evidence_id] = f"{type(exc).__name__}: {exc}"
+    return observations, errors
 
 
 def _default_workspace() -> Path:
@@ -123,6 +167,42 @@ class _BenchmarkWorker(QObject):
             self.finished.emit()
 
 
+class _HistoryWorker(QObject):
+    loaded = Signal(object)
+    finished = Signal()
+
+    def __init__(self, controller: VerificationController, workspace: Path) -> None:
+        super().__init__()
+        self.controller, self.workspace = controller, workspace
+
+    @Slot()
+    def run(self) -> None:
+        try:
+            self.loaded.emit(self.controller.load_run_history(self.workspace))
+        finally:
+            self.finished.emit()
+
+
+class _FuzzObservationWorker(QObject):
+    loaded = Signal(str, object, object)
+    finished = Signal()
+
+    def __init__(self, report: Any, run_root: Path,
+                 evidence_records: tuple[dict[str, Any], ...]) -> None:
+        super().__init__()
+        self.report, self.run_root, self.evidence_records = report, run_root, evidence_records
+
+    @Slot()
+    def run(self) -> None:
+        try:
+            observations, errors = _read_fuzz_observations(self.report, self.run_root, self.evidence_records)
+            self.loaded.emit(self.report.run_id, observations, errors)
+        except Exception as exc:
+            self.loaded.emit(self.report.run_id, {}, {"*": f"{type(exc).__name__}: {exc}"})
+        finally:
+            self.finished.emit()
+
+
 class MainWindow(QMainWindow):
     PAGE_NAMES = (UI_TEXT["project"], UI_TEXT["specification"], UI_TEXT["requirements"], UI_TEXT["model"], UI_TEXT["codegen"],
                   UI_TEXT["formal"], UI_TEXT["static"], UI_TEXT["memory"], UI_TEXT["dynamic"],
@@ -147,9 +227,24 @@ class MainWindow(QMainWindow):
         self._worker: _RunWorker | None = None
         self._benchmark_thread: QThread | None = None
         self._benchmark_worker: _BenchmarkWorker | None = None
+        self._history_thread: QThread | None = None
+        self._history_worker: _HistoryWorker | None = None
+        self._history_reload_pending = False
+        self._close_when_workers_finish = False
+        self._fuzz_observation_thread: QThread | None = None
+        self._fuzz_observation_worker: _FuzzObservationWorker | None = None
+        self._fuzz_progress_timer = QTimer(self)
+        self._fuzz_progress_timer.setSingleShot(True)
+        self._fuzz_progress_timer.setInterval(80)
+        self._fuzz_progress_timer.timeout.connect(self._flush_fuzz_progress)
+        self._pending_fuzz_progress: dict[str, Any] | None = None
+        self._live_result_records: dict[str, Any] = {}
+        self._live_evidence_records: dict[str, dict[str, Any]] = {}
+        self._live_static_evidence_loaded = False
         self._current_stage_status: dict[str, str] = {}
         self._last_log_index = 0
         self._log_lines: list[tuple[str, str]] = []
+        self._log_view_cache_key: tuple[str, str, int] | None = None
         self._workflow_busy = False
         self._specification_reviewed = False
         self._build_ui()
@@ -160,10 +255,102 @@ class MainWindow(QMainWindow):
         self.stages.stageActivated.connect(self._show_stage_details)
         self.report_page.resultActivated.connect(self._open_result)
         self.report_page.accuracyReportRequested.connect(self._choose_accuracy_report)
-        self.report_page.set_history(self.verification_controller.load_run_history())
-        self.history_page.set_history(self.verification_controller.load_run_history())
         self._refresh_session_views()
         self.statusBar().showMessage(f"Thư mục chạy: {self._workspace}")
+
+    def showEvent(self, event) -> None:
+        super().showEvent(event)
+        if self._history_thread is None:
+            self._load_history_async()
+
+    def closeEvent(self, event) -> None:
+        """Do not destroy the window while one of its worker threads is alive."""
+        threads = tuple(thread for thread in (
+            self._thread, self._benchmark_thread, self._history_thread,
+            self._fuzz_observation_thread,
+        ) if thread is not None and thread.isRunning())
+        if threads and getattr(self, "_cancellation_event", None) is not None:
+            self._cancellation_event.set()
+        for thread in threads:
+            thread.quit()
+        if threads:
+            self._close_when_workers_finish = True
+            event.ignore()
+            self.statusBar().showMessage("Đang kết thúc tác vụ nền trước khi đóng cửa sổ.", 5000)
+            return
+        event.accept()
+
+    def _close_after_workers_finish(self) -> None:
+        if not self._close_when_workers_finish:
+            return
+        threads = (self._thread, self._benchmark_thread, self._history_thread,
+                   self._fuzz_observation_thread)
+        if any(thread is not None and thread.isRunning() for thread in threads):
+            return
+        self._close_when_workers_finish = False
+        QTimer.singleShot(0, self.close)
+
+    def _load_history_async(self) -> None:
+        if self._history_thread is not None:
+            # A live worker owns its controller/workspace snapshot. Avoid
+            # overlapping scans when a new run finishes or the user switches
+            # workspaces; its completion will trigger a fresh load if needed.
+            self._history_reload_pending = True
+            return
+        self._history_reload_pending = False
+        thread = QThread(self)
+        worker = _HistoryWorker(self.verification_controller, self._workspace)
+        worker.moveToThread(thread)
+        thread.started.connect(worker.run)
+        worker.loaded.connect(self._apply_history)
+        worker.finished.connect(thread.quit)
+        worker.finished.connect(worker.deleteLater)
+        thread.finished.connect(thread.deleteLater)
+        thread.finished.connect(lambda: self._history_finished(thread))
+        self._history_thread, self._history_worker = thread, worker
+        thread.start()
+
+    def _load_fuzz_observations(self, report: Any, run_root: Path,
+                                evidence_records: tuple[dict[str, Any], ...]) -> None:
+        if self._fuzz_observation_thread is not None:
+            self._fuzz_observation_thread.requestInterruption()
+        thread = QThread(self)
+        worker = _FuzzObservationWorker(report, run_root, evidence_records)
+        worker.moveToThread(thread)
+        thread.started.connect(worker.run)
+        worker.loaded.connect(self._apply_fuzz_observations)
+        worker.finished.connect(thread.quit)
+        worker.finished.connect(worker.deleteLater)
+        thread.finished.connect(thread.deleteLater)
+        thread.finished.connect(lambda: self._fuzz_observation_finished(thread))
+        self._fuzz_observation_thread, self._fuzz_observation_worker = thread, worker
+        thread.start()
+
+    @Slot(str, object, object)
+    def _apply_fuzz_observations(self, run_id: str, observations: dict[str, dict[str, Any]],
+                                 errors: dict[str, str]) -> None:
+        if self.session.run_id == run_id:
+            self.fuzzing.set_execution_observations(observations, errors)
+
+    def _fuzz_observation_finished(self, thread: QThread) -> None:
+        if self._fuzz_observation_thread is thread:
+            self._fuzz_observation_thread = None
+            self._fuzz_observation_worker = None
+        self._close_after_workers_finish()
+
+    @Slot(object)
+    def _apply_history(self, records) -> None:
+        if self._history_worker and self._history_worker.workspace == self._workspace:
+            self.report_page.set_history(records)
+            self.history_page.set_history(records)
+
+    def _history_finished(self, thread: QThread) -> None:
+        if self._history_thread is thread:
+            self._history_thread = None
+            self._history_worker = None
+            if getattr(self, "_history_reload_pending", False):
+                self._load_history_async()
+        self._close_after_workers_finish()
 
     def _build_ui(self) -> None:
         toolbar = QToolBar("Thanh công cụ")
@@ -411,7 +598,6 @@ class MainWindow(QMainWindow):
             if not self.session.model.get("states") and not self.session.model.get("transitions"):
                 self.session.model.update(preview_status="NOT_APPLICABLE",
                     reason="Specification declares no state-machine elements; the model stage will be skipped.")
-            self.model.show_specification_preview(self.session.model)
             preview_status = self.session.model.get("preview_status", "PREVIEW")
             self._workflow_progress("BUILD_SPECIFICATION_MODEL", preview_status,
                 "Preview is derived only from normalized Specification states and transitions.")
@@ -428,6 +614,9 @@ class MainWindow(QMainWindow):
             self.project_info.setText(f"Dự án: {self.project_controller.project_path or 'Chưa xác thực'}\nĐặc tả: {selected}\nXác thực dự án: Chưa xác thực\nXác thực đặc tả: Chưa xác thực\nThư mục chạy: {self._workspace}")
             self.dashboard.set_project(str(self.project_controller.project_path or ""), str(selected))
             self.navigation.setCurrentRow(self.PAGE_NAMES.index(UI_TEXT["model"]))
+            preview_model = self.session.model
+            self.model.description.setText("Đang dựng mô hình trạng thái từ đặc tả…")
+            QTimer.singleShot(0, lambda data=preview_model: self.model.show_specification_preview(data))
             self.statusBar().showMessage("Đặc tả đã chuẩn hóa; xem và duyệt model trước khi chạy pipeline", 6000)
             self._refresh_session_views()
         except Exception as exc:
@@ -456,7 +645,7 @@ class MainWindow(QMainWindow):
             self.session.workspace = self._workspace
             self.verification_controller.workspace = self._workspace
             self.project_info.setText(f"Dự án: {self.project_controller.project_path or 'Chưa xác thực'}\nĐặc tả: {self.project_controller.specification_path or 'Chưa xác thực'}\nThư mục chạy: {self._workspace}")
-            self.report_page.set_history(self.verification_controller.load_run_history())
+            self._load_history_async()
             self.statusBar().showMessage(f"Thư mục chạy: {self._workspace}", 5000)
 
     @Slot(str)
@@ -649,6 +838,16 @@ class MainWindow(QMainWindow):
             self._show_error(exc)
             return
         self._current_stage_status.clear()
+        self._live_result_records.clear()
+        self._live_evidence_records.clear()
+        self._live_static_evidence_loaded = False
+        self.results_page.show_report(None)
+        self.evidence_page.set_evidence(())
+        self.formal.show_report(None)
+        self.static.show_report(None)
+        self.dynamic.show_report(None)
+        self.codegen.show_report(None)
+        self.static.load_evidence({"evidence": ()}, self._workspace)
         self.fuzzing.begin_run(options.fuzz_config)
         self._last_log_index = len(self.verification_controller.logs)
         self.session.workspace = self._workspace
@@ -693,19 +892,42 @@ class MainWindow(QMainWindow):
     def _on_stage_progress(self, stage: dict[str, Any]) -> None:
         progress_event = stage.get("progress_event")
         if progress_event:
-            fuzzing_page = getattr(self, "fuzzing", None)
-            update_progress = getattr(fuzzing_page, "update_progress", None)
-            if callable(update_progress):
-                update_progress(progress_event)
+            self._pending_fuzz_progress = progress_event
             target = progress_event.get("target") or progress_event.get("function_id") or "target"
             completed = progress_event.get("completed", progress_event.get("executed", 0))
             total = progress_event.get("requested", "?")
             current = progress_event.get("target_index", "?")
             count = progress_event.get("target_count", "?")
             self.statusBar().showMessage(f"Fuzzing · {target} · hàm {current}/{count} · lượt {completed}/{total}")
+            event_name = str(progress_event.get("event", "")).lower()
+            if event_name in {"target_finished", "fuzz_finished"}:
+                self._flush_fuzz_progress()
+            elif not self._fuzz_progress_timer.isActive():
+                self._fuzz_progress_timer.start()
             return
+        stage_results = tuple(stage.get("stage_results", ()))
+        stage_evidence = tuple(stage.get("stage_evidence", ()))
+        stage = {key: value for key, value in stage.items()
+                 if key not in {"stage_results", "stage_evidence"}}
         stage_id = str(stage.get("stage_id", "UNKNOWN"))
+        self.session.run_id = stage.get("run_id", self.session.run_id)
         self.session.update_stage(stage)
+        if stage_results or stage_evidence:
+            from seclab.results import VerificationResult
+
+            for record in stage_results:
+                result_id = str(record.get("id", ""))
+                if result_id and result_id not in self._live_result_records:
+                    self._live_result_records[result_id] = VerificationResult.from_dict(record)
+            for record in stage_evidence:
+                evidence_id = str(record.get("id", ""))
+                if evidence_id:
+                    self._live_evidence_records[evidence_id] = record
+            self.results_page.append_live_results(stage_results)
+            self.evidence_page.append_live_evidence(stage_evidence)
+            self.session.evidence = tuple(self._live_evidence_records.values())
+        if stage.get("status") in {"COMPLETED", "FAILED", "SKIPPED"}:
+            self._render_live_stage(stage_id, stage)
         self.stage_status.setText(f"{stage_label(stage_id)} · {status_label(stage.get('status', 'RUNNING'))}")
         self._current_stage_status[stage_id] = str(stage.get("status", "UNKNOWN"))
         self._append_log(stage_id, str(stage.get("status", "INFO")), str(stage.get("reason") or "Stage finished"))
@@ -742,7 +964,63 @@ class MainWindow(QMainWindow):
                                     str(stage.get("status", "UNKNOWN")),
                                     str(stage.get("reason") or stage.get("metadata", {})))
         self.statusBar().showMessage(f"{stage_label(stage_id)}: {status_label(stage.get('status', 'RUNNING'))}")
-        self._refresh_session_views()
+        if stage_id == "SOURCE" and stage.get("status") in {"COMPLETED", "FAILED", "SKIPPED"}:
+            self._refresh_session_views()
+
+    def _render_live_stage(self, stage_id: str, stage: dict[str, Any]) -> None:
+        """Render one completed stage from its real results while later stages continue."""
+        summaries = tuple(self.session.stage_results.values())
+        partial = SimpleNamespace(results=tuple(self._live_result_records.values()),
+            stage_summaries=summaries, limitations=(), metadata={}, run_id=self.session.run_id or "RUNNING",
+            duration_seconds=0.0, end_time=datetime.now(timezone.utc))
+        run_root = (self._workspace / self.session.run_id).resolve() if self.session.run_id else None
+        if stage_id in {"CTL", "BMC", "SMT"}:
+            self.formal.show_report(partial)
+        elif stage_id in {"STATIC", "MEMORY"}:
+            if run_root is not None and stage_id == "STATIC" and not self._live_static_evidence_loaded:
+                self.static.load_evidence({"evidence": tuple(self._live_evidence_records.values())}, run_root)
+                self._live_static_evidence_loaded = True
+            self.static.show_report(partial)
+        elif stage_id in {"DYNAMIC", "COVERAGE"}:
+            self.dynamic.show_report(partial)
+        elif stage_id == "SOURCE":
+            inventory_ref = next((item for item in self._live_evidence_records.values()
+                                  if str(item.get("path", "")).endswith("source-inventory.json")), None)
+            inventory = self._read_live_json(inventory_ref, run_root) if inventory_ref and run_root else None
+            if inventory is not None:
+                partial.metadata = {"source_inventory": inventory}
+                self.source.show_report(partial)
+                self.session.source_files = tuple(item.get("project_relative_path", "")
+                                                  for item in inventory.get("files", ()))
+                self.project_sources.setPlainText("\n".join(self.session.source_files))
+        elif stage_id == "MODEL":
+            model_ref = next((item for item in self._live_evidence_records.values()
+                              if item.get("stage", "").upper() == "MODEL"
+                              and str(item.get("path", "")).endswith("kripke.json")), None)
+            model_data = self._read_live_json(model_ref, run_root) if model_ref and run_root else None
+            if model_data is not None:
+                self.session.model = model_data
+                self.model.show_report(partial, model_data)
+        elif stage_id in {"CODEGEN", "BUILD"}:
+            self.codegen.show_report(partial, tuple(self._live_evidence_records.values()), run_root)
+
+    @staticmethod
+    def _read_live_json(evidence: dict[str, Any], run_root: Path) -> dict[str, Any] | None:
+        try:
+            relative = PurePosixPath(str(evidence.get("path", "")))
+            if relative.is_absolute() or ".." in relative.parts:
+                return None
+            root = run_root.resolve(strict=True)
+            selected = (root / Path(*relative.parts)).resolve(strict=True)
+            if not selected.is_relative_to(root):
+                return None
+            payload = selected.read_bytes()
+            if hashlib.sha256(payload).hexdigest() != evidence.get("hash"):
+                return None
+            value = json.loads(payload.decode("utf-8"))
+            return value if isinstance(value, dict) else None
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            return None
 
     @Slot(object)
     def _on_run_succeeded(self, report: Any) -> None:
@@ -799,17 +1077,17 @@ class MainWindow(QMainWindow):
         self._worker = None
         self._cancellation_event = None
         self._set_actions_enabled(True)
+        self._close_after_workers_finish()
 
     def _render_report(self, report: Any) -> None:
         self.dashboard.set_project(str(self.session.project_path or ""),
                                    str(self.session.specification_path or self.session.specification_info.get("name", "")))
         self.dashboard.reset_stages()
-        for page in self.page_widgets:
-            if hasattr(page, "show_report"):
-                page.show_report(report)
-        self.source.show_report(report)
-        self.results_page.show_report(report)
-        self.traceability_page.show_report(report)
+        # Refreshing every hidden page builds potentially thousands of table
+        # cells on the GUI thread. Pages render lazily when selected instead.
+        current_page = self.pages.currentWidget()
+        if current_page is not self.project_page and hasattr(current_page, "show_report"):
+            current_page.show_report(report)
         coverage_stages = [stage for stage in report.stage_summaries if stage.get("stage_id") == "COVERAGE"]
         self.coverage_page.table.set_records([(stage_label(stage.get("stage_id", "")), key, value, stage.get("reason", ""))
             for stage in coverage_stages for key, value in stage.get("metadata", {}).items()])
@@ -835,11 +1113,7 @@ class MainWindow(QMainWindow):
                             for item in manifest.get("evidence", ()))
             self._load_fuzz_observations(report, run_root, records)
             self.session.evidence = records
-            self.report_page.set_evidence(records)
-            self.evidence_page.set_evidence(records)
-            self.codegen.show_report(report, records, run_root)
             self.static.load_evidence(manifest, run_root)
-            self.static.show_report(report)
             model_ref = next((item for item in manifest.get("evidence", ())
                               if str(item.get("type", "")).upper() == "MODEL"
                               and str(item.get("stage", "")).upper() == "MODEL"
@@ -848,7 +1122,6 @@ class MainWindow(QMainWindow):
                 model_path = (run_root / model_ref["path"]).resolve(strict=True)
                 if model_path.is_relative_to(run_root):
                     self.session.model = json.loads(model_path.read_text(encoding="utf-8"))
-                    self.model.show_report(report, self.session.model)
             self.session.source_files = tuple(item.get("project_relative_path", "")
                 for item in report.metadata.get("source_inventory", {}).get("files", ()))
             self.project_sources.setPlainText("\n".join(self.session.source_files) or "Không có mã nguồn được nạp trong lần chạy này.")
@@ -860,60 +1133,26 @@ class MainWindow(QMainWindow):
             # Keep the CODEGEN stage visible even when its manifest cannot be
             # resolved; the page will report missing evidence instead of showing
             # a workspace path that may not exist.
-            self.codegen.show_report(report, (), None)
-        self.report_page.set_history(self.verification_controller.load_run_history())
-        self.history_page.set_history(self.verification_controller.load_run_history())
-
-    def _load_fuzz_observations(self, report: Any, run_root: Path,
-                                evidence_records: tuple[dict[str, Any], ...]) -> None:
-        """Load only per-iteration observations whose manifest hash matches."""
-        manifest = {str(item.get("id", "")): item for item in evidence_records}
-        stage = next((item for item in report.stage_summaries
-                      if str(item.get("stage_id", "")).upper() == "FUZZING"), None)
-        output = stage.get("output", {}) if stage else {}
-        campaigns = output.get("campaigns", ()) if isinstance(output, dict) else ()
-        if not campaigns and isinstance(output, dict) and output.get("strategy"):
-            campaigns = (output,)
-        observations: dict[str, dict[str, Any]] = {}
-        errors: dict[str, str] = {}
-        for campaign in campaigns:
-            for record in campaign.get("execution_evidence", ()):
-                evidence_id = str(record.get("evidence_id", ""))
-                reference = manifest.get(evidence_id)
-                if not reference:
-                    errors[evidence_id] = "Evidence ID is absent from run manifest."
-                    continue
-                if reference.get("path") != record.get("path") or reference.get("hash") != record.get("sha256"):
-                    errors[evidence_id] = "Campaign evidence reference differs from the manifest."
-                    continue
-                try:
-                    relative = PurePosixPath(str(reference["path"]))
-                    if relative.is_absolute() or ".." in relative.parts:
-                        raise ValueError("Evidence path is not a safe run-relative path.")
-                    path = (run_root / Path(*relative.parts)).resolve(strict=True)
-                    if not path.is_relative_to(run_root.resolve()):
-                        raise ValueError("Evidence path escapes the run workspace.")
-                    payload = path.read_bytes()
-                    digest = hashlib.sha256(payload).hexdigest()
-                    if digest != reference.get("hash") or len(payload) != reference.get("size_bytes"):
-                        raise ValueError("Evidence hash/size does not match the run manifest.")
-                    value = json.loads(payload.decode("utf-8"))
-                    if value.get("input_sha256") != record.get("input_sha256"):
-                        raise ValueError("Observation input hash does not match campaign summary.")
-                    observations[evidence_id] = value
-                except (OSError, UnicodeDecodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
-                    errors[evidence_id] = f"{type(exc).__name__}: {exc}"
-        self.fuzzing.set_execution_observations(observations, errors)
+        self._load_history_async()
 
     def _workflow_progress(self, stage: str, status: str, detail: str = "") -> None:
         """Present workflow bookkeeping only; verification decisions stay in the pipeline."""
         record = {"stage_id": stage, "status": status, "reason": detail,
                   "evidence_ids": self.session.stage_results.get(stage, {}).get("evidence_ids", ()),
-                  "logs": self.log_view.toPlainText() if hasattr(self, "log_view") else ""}
+                  "logs": "See run log"}
         self.session.update_workflow_step(record)
         if hasattr(self, "stages"):
             self.stages.set_workflow(self.session.workflow_steps)
         self._append_log(stage, status, detail or status)
+
+    @Slot()
+    def _flush_fuzz_progress(self) -> None:
+        self._fuzz_progress_timer.stop()
+        event, self._pending_fuzz_progress = self._pending_fuzz_progress, None
+        if event is not None:
+            update_progress = getattr(getattr(self, "fuzzing", None), "update_progress", None)
+            if callable(update_progress):
+                update_progress(event)
 
     def _set_actions_enabled(self, enabled: bool) -> None:
         for action in self._toolbar_actions:
@@ -1041,6 +1280,7 @@ class MainWindow(QMainWindow):
             self._benchmark_thread.deleteLater()
         self._benchmark_thread = None
         self._benchmark_worker = None
+        self._close_after_workers_finish()
 
     def _show_error(self, error: Exception) -> None:
         QMessageBox.critical(self, "Không thể hoàn tất thao tác",
@@ -1050,6 +1290,41 @@ class MainWindow(QMainWindow):
         if 0 <= row < len(self._navigation_widgets):
             page = self._navigation_widgets[row]
             self.pages.setCurrentWidget(page)
+            report = self.session.report
+            if report is not None and page is not self.project_page:
+                if page is self.report_page:
+                    page.show_report(report)
+                    page.set_evidence(self.session.evidence)
+                elif page is self.evidence_page:
+                    page.set_evidence(self.session.evidence)
+                elif page is self.source:
+                    page.show_report(report)
+                elif page is self.coverage_page:
+                    coverage_stages = [stage for stage in report.stage_summaries
+                                       if stage.get("stage_id") == "COVERAGE"]
+                    page.table.set_records([
+                        (stage_label(stage.get("stage_id", "")), key, value, stage.get("reason", ""))
+                        for stage in coverage_stages
+                        for key, value in stage.get("metadata", {}).items()])
+                elif page is self.model:
+                    page.show_report(report, self.session.model)
+                elif page is self.codegen:
+                    run_root = ((self.verification_controller.workspace or self._workspace) / report.run_id)
+                    self.codegen.show_report(report, self.session.evidence, run_root)
+                elif page is self.static:
+                    run_root = ((self.verification_controller.workspace or self._workspace) / report.run_id)
+                    manifest = {"evidence": self.session.evidence}
+                    try:
+                        page.load_evidence(manifest, run_root)
+                    except (OSError, ValueError):
+                        pass
+                    page.show_report(report)
+                elif page is self.history_page:
+                    pass  # Preserve the independently loaded run history.
+                elif page in {self.results_page, self.traceability_page}:
+                    page.show_report(report)
+                elif hasattr(page, "show_report"):
+                    page.show_report(report)
             if self._thread is not None:
                 # Browsing existing session data stays available while execution runs.
                 self._refresh_session_views()
@@ -1075,6 +1350,7 @@ class MainWindow(QMainWindow):
         from datetime import datetime
         line = f"{datetime.now().astimezone().isoformat(timespec='seconds')}  {log_label(stage, level, message)}"
         self._log_lines.append((level.upper(), line))
+        self._log_view_cache_key = None
         self._set_log_filter()
 
     def _append_controller_logs(self) -> None:
@@ -1083,18 +1359,25 @@ class MainWindow(QMainWindow):
             line = f"{record['timestamp']}  {log_label(record['stage'], record['level'], record['message'])}"
             self._log_lines.append((record['level'].upper(), line))
         self._last_log_index = len(logs)
-        self._set_log_filter()
+        if logs:
+            self._log_view_cache_key = None
+            self._set_log_filter()
 
     def _set_log_filter(self, _value: str = "") -> None:
         query = self.log_filter.text().casefold()
         selected = self.log_level.currentData()
+        cache_key = (query, str(selected), len(self._log_lines))
+        if cache_key == self._log_view_cache_key:
+            return
         visible = (line for level, line in self._log_lines
                    if (selected == "ALL" or level == selected) and query in line.casefold())
         self.log_view.setPlainText("\n".join(visible))
+        self._log_view_cache_key = cache_key
         if self.log_autoscroll.isChecked():
             from PySide6.QtGui import QTextCursor
             self.log_view.moveCursor(QTextCursor.MoveOperation.End)
 
     def _clear_logs(self) -> None:
         self._log_lines.clear()
+        self._log_view_cache_key = None
         self.log_view.clear()

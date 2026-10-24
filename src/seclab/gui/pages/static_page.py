@@ -81,7 +81,7 @@ class StaticPage(DataPage):
     def load_evidence(self, manifest: dict, run_root: Path) -> None:
         cache = {}
         for item in manifest.get("evidence", ()):
-            if item.get("stage", "").lower() != "static_analysis":
+            if str(item.get("stage", "")).lower().replace("-", "_") not in {"static", "static_analysis"}:
                 continue
             try:
                 path = (run_root / item["path"]).resolve(strict=True)

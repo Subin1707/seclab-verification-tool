@@ -69,6 +69,33 @@ def test_qapplication_main_window_sidebar_and_controller_initialization(applicat
         application.processEvents()
 
 
+def test_window_close_waits_for_history_worker(application, tmp_path, monkeypatch):
+    entered = threading.Event()
+
+    def delayed_history(_controller, _workspace):
+        entered.set()
+        time.sleep(0.15)
+        return ()
+
+    monkeypatch.setattr("seclab.gui.controllers.verification_controller.VerificationController.load_run_history",
+                        delayed_history)
+    window = MainWindow()
+    window._workspace = tmp_path
+    window.verification_controller.workspace = tmp_path
+    window.show()
+    application.processEvents()
+    assert entered.wait(1)
+    assert window._history_thread is not None and window._history_thread.isRunning()
+    window.close()
+    deadline = time.monotonic() + 2
+    while window.isVisible() and time.monotonic() < deadline:
+        application.processEvents()
+        time.sleep(0.01)
+    application.processEvents()
+    assert not window.isVisible()
+    assert window._history_thread is None
+
+
 def test_accuracy_page_shows_fixture_metrics_from_json_and_markdown(application):
     page = AccuracyPage()
     try:
@@ -301,6 +328,9 @@ def test_real_generic_c_project_runs_through_gui_workflow(application, tmp_path)
         window.settings_page.analyzers.setText("")
         window.settings_page.memory.setChecked(False)
         window.settings_page.coverage.setChecked(False)
+        # Keep this workflow smoke bounded while still exercising a real fuzz
+        # testcase, campaign evidence, and report refresh through the GUI.
+        window.settings_page.fuzz_iterations.setValue(1)
         window._set_specification(str(specification))
         assert window.session.ready
         assert window.session.workflow_step("LOAD_SPECIFICATION")["status"] == "COMPLETED"
@@ -327,6 +357,8 @@ def test_real_generic_c_project_runs_through_gui_workflow(application, tmp_path)
                     if item.metadata.get("test_case_id") == "TEST-ADD").status.value == "PASS"
         assert window.evidence_page.table.rowCount() > 0
         assert window.results_page.table.rowCount() >= 2
+        window.navigation.setCurrentRow(window._navigation_widgets.index(window.traceability_page))
+        application.processEvents()
         assert window.traceability_page.table.rowCount() > 0
         assert "overall_verdict" not in report.to_dict() and "overall_status" not in report.to_dict()
         assert window.session.workflow_step("VIEW_REPORT")["status"] == "COMPLETED"

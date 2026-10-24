@@ -29,6 +29,7 @@ class StagesPage(QWidget):
         self.items = QListWidget()
         self.items.setSelectionMode(QAbstractItemView.SelectionMode.ExtendedSelection)
         self._records: dict[str, dict] = {}
+        self._workflow_items: dict[str, QListWidgetItem] = {}
         self._refresh()
         self.items.itemDoubleClicked.connect(self._activate)
         self.items.itemClicked.connect(self._select_stage)
@@ -55,21 +56,25 @@ class StagesPage(QWidget):
     def _refresh(self) -> None:
         self.items.clear()
         for index, stage in enumerate(STAGES, 1):
-            record = self._records.get(stage, {})
-            status = record.get("status", "PENDING")
-            icon = {"COMPLETED": "✓", "RUNNING": "⏳", "SKIPPED": "—", "FAILED": "❌",
-                    "PENDING": "○", "NOT_STARTED": "○"}.get(status, "○")
-            detail = f"{record.get('duration_ms', 0) / 1000:.2f}s" if record.get("duration_ms") else "—"
-            reason = f" · {record['reason']}" if record.get("reason") else ""
-            item = QListWidgetItem(f"{index:02d}  {icon}  {stage_label(stage)}  ·  {status_label(status)}  ·  {detail}{reason}")
+            item = QListWidgetItem()
             item.setData(32, stage)
-            item.setToolTip(f"{stage_label(stage)} [{stage}]\n{status_label(status)}\n{record.get('reason') or ''}")
             self.items.addItem(item)
+            self._update_stage_item(stage, item)
+
+    def _update_stage_item(self, stage_id: str, item: QListWidgetItem) -> None:
+        record = self._records.get(stage_id, {})
+        status = record.get("status", "PENDING")
+        icon = {"COMPLETED": "✓", "RUNNING": "⏳", "SKIPPED": "—", "FAILED": "❌",
+                "PENDING": "○", "NOT_STARTED": "○"}.get(status, "○")
+        detail = f"{record.get('duration_ms', 0) / 1000:.2f}s" if record.get("duration_ms") else "—"
+        reason = f" · {record['reason']}" if record.get("reason") else ""
+        index = STAGES.index(stage_id) + 1
+        item.setText(f"{index:02d}  {icon}  {stage_label(stage_id)}  ·  {status_label(status)}  ·  {detail}{reason}")
+        item.setToolTip(f"{stage_label(stage_id)} [{stage_id}]\n{status_label(status)}\n{record.get('reason') or ''}")
 
     def set_stage_progress(self, stage_id: str, record: dict) -> None:
         self._records[stage_id] = dict(record)
-        ordered = [stage for stage in STAGES if stage in self._records]
-        current_index = ordered.index(stage_id) + 1 if stage_id in ordered else len(ordered)
+        current_index = STAGES.index(stage_id) + 1 if stage_id in STAGES else len(self._records)
         reason = str(record.get("reason") or "")
         evidence = ", ".join(record.get("evidence_ids", ()))
         tooltip = (f"{stage_label(stage_id)} [{stage_id}]\n{status_label(record.get('status', 'UNKNOWN'))}\n"
@@ -77,10 +82,16 @@ class StagesPage(QWidget):
         self.current.setToolTip(tooltip)
         self.current.setText(f"Đang thực hiện: {stage_label(stage_id)} · {current_index} / {len(STAGES)} giai đoạn\n{tooltip}")
         self.progress.setText("Đang kiểm chứng…")
-        self._refresh()
+        for row in range(self.items.count()):
+            item = self.items.item(row)
+            if item is not None and item.data(32) == stage_id:
+                self._update_stage_item(stage_id, item)
+                break
 
     def show_report(self, report) -> None:
         if report is None:
+            self._records.clear()
+            self._refresh()
             self.progress.setText("Mở dự án và đặc tả hợp lệ để bắt đầu.")
             self.current.setText("Chưa có lần chạy nào")
             return
@@ -111,15 +122,24 @@ class StagesPage(QWidget):
         self.set_workflow(session.workflow_steps)
 
     def set_workflow(self, steps: dict[str, dict]) -> None:
-        self.workflow.clear()
+        active_names = set(steps)
+        for name in tuple(self._workflow_items):
+            if name not in active_names:
+                item = self._workflow_items.pop(name)
+                row = self.workflow.row(item)
+                if row >= 0:
+                    self.workflow.takeItem(row)
         for name, record in steps.items():
             status = str(record.get("status", "NOT_RUN"))
             reason = str(record.get("reason") or "")
             evidence = ", ".join(str(item) for item in record.get("evidence_ids", ()))
-            logs = str(record.get("logs") or "See run log")
-            row = QListWidgetItem(f"{name} · {status}" + (f" · {reason}" if reason else ""))
-            row.setToolTip(f"{name}\n{status}\nreason: {reason}\nevidence: {evidence}\nlogs: {logs}")
-            self.workflow.addItem(row)
+            item = self._workflow_items.get(name)
+            if item is None:
+                item = QListWidgetItem()
+                self.workflow.addItem(item)
+                self._workflow_items[name] = item
+            item.setText(f"{name} · {status}" + (f" · {reason}" if reason else ""))
+            item.setToolTip(f"{name}\n{status}\nreason: {reason}\nevidence: {evidence}\nlogs: see run log")
 
     def _activate(self, item: QListWidgetItem) -> None:
         self.stageActivated.emit(str(item.data(32)))

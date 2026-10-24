@@ -17,9 +17,11 @@ class ResultsPage(DataPage):
         super().__init__("Kết quả kiểm chứng", ("Giai đoạn", "Bộ kiểm tra", "Thuộc tính / kiểm thử", "Trạng thái", "Lý do", "Bằng chứng"), parent)
         self.table.cellDoubleClicked.connect(self._activate)
         self._result_ids: list[str] = []
+        self._live_result_ids: set[str] = set()
 
     def show_report(self, report: Any | None) -> None:
         self._result_ids = []
+        self._live_result_ids.clear()
         if report is None:
             self.table.set_records(())
             self.description.setText("Hiển thị kết quả riêng của từng bộ kiểm tra; không tạo kết luận PASS/FAIL tổng thể cho dự án.")
@@ -33,6 +35,23 @@ class ResultsPage(DataPage):
         self.table.set_records(rows)
         self.description.setText(f"{len(report.results)} kết quả trong lần chạy {report.run_id}; trạng thái được giữ riêng theo từng giai đoạn và bộ kiểm tra.")
 
+    def append_live_results(self, records: tuple[dict[str, Any], ...] | list[dict[str, Any]]) -> None:
+        rows = []
+        for result in records:
+            result_id = str(result.get("id", ""))
+            if not result_id or result_id in self._live_result_ids:
+                continue
+            self._live_result_ids.add(result_id)
+            self._result_ids.append(result_id)
+            target = result.get("property_id") or (result.get("metadata") or {}).get("test_case_id") \
+                or (result.get("metadata") or {}).get("target_id", "")
+            rows.append((stage_label(result.get("stage", "")), result.get("technique", ""), target,
+                         status_label(str(result.get("status", "UNKNOWN"))), result.get("message", ""),
+                         ", ".join(result.get("evidence_ids", ()))))
+        if rows:
+            self.table.append_records(rows)
+            self.description.setText(f"Đang phân tích · đã nhận {len(self._live_result_ids)} kết quả từ các stage đã hoàn tất.")
+
     def _activate(self, row: int, _column: int) -> None:
         if 0 <= row < len(self._result_ids):
             self.resultActivated.emit(self._result_ids[row])
@@ -45,6 +64,7 @@ class EvidencePage(DataPage):
     def __init__(self, parent=None) -> None:
         super().__init__("Bằng chứng kiểm chứng (Evidence)", ("Mã", "Loại", "Giai đoạn", "Bộ kiểm tra", "Đường dẫn", "SHA-256", "Dung lượng (byte)", "Mã lần chạy"), parent)
         self._ids: list[str] = []
+        self._live_evidence_ids: set[str] = set()
         self.table.cellDoubleClicked.connect(self._activate)
         controls = QVBoxLayout()
         self.open_button = QPushButton("Mở bằng chứng đã chọn")
@@ -58,11 +78,27 @@ class EvidencePage(DataPage):
         self.verify_button.clicked.connect(self._verify_selected)
 
     def set_evidence(self, records: tuple[dict[str, Any], ...]) -> None:
+        self._live_evidence_ids = {str(item.get("id", "")) for item in records if item.get("id")}
         self._ids = [str(item.get("id", "")) for item in records]
         self.table.set_records([(item.get("id", ""), item.get("type", ""), stage_label(item.get("stage", "")),
             item.get("checker", ""), item.get("path", ""), item.get("hash", ""),
             item.get("size_bytes", ""), item.get("run_id", "")) for item in records])
         self.description.setText(f"Đã ghi {len(records)} mục bằng chứng trong bản kê chạy (Manifest).")
+
+    def append_live_evidence(self, records: tuple[dict[str, Any], ...] | list[dict[str, Any]]) -> None:
+        rows = []
+        for item in records:
+            evidence_id = str(item.get("id", ""))
+            if not evidence_id or evidence_id in self._live_evidence_ids:
+                continue
+            self._live_evidence_ids.add(evidence_id)
+            self._ids.append(evidence_id)
+            rows.append((evidence_id, item.get("type", ""), stage_label(item.get("stage", "")),
+                         item.get("checker", ""), item.get("path", ""), item.get("hash", ""),
+                         item.get("size_bytes", ""), item.get("run_id", "")))
+        if rows:
+            self.table.append_records(rows)
+            self.description.setText(f"Đang phân tích · đã nhận {len(self._live_evidence_ids)} mục bằng chứng.")
 
     def set_integrity(self, evidence_id: str, status: str, detail: str = "") -> None:
         self.integrity.setText(f"{evidence_id}: {status_label(status)}" + (f" · {detail}" if detail else ""))

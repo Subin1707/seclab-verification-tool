@@ -43,6 +43,9 @@ class TrackedArtifactStore(ArtifactStore):
     def all(self) -> tuple[Evidence, ...]:
         return tuple(self._items.values())
 
+    def ids(self) -> frozenset[str]:
+        return frozenset(self._items)
+
 
 @dataclass(frozen=True, slots=True)
 class ProjectContext:
@@ -104,6 +107,7 @@ class VerificationContext:
     outputs: dict[str, Any] = field(default_factory=dict)
     stage_records: dict[str, Any] = field(default_factory=dict)
     result_collector: ResultCollector = field(default_factory=ResultCollector)
+    result_ids: set[str] = field(default_factory=set)
     evidence_collector: EvidenceStore = field(default_factory=EvidenceStore)
     traceability: TraceabilityStore = field(default_factory=TraceabilityStore)
     limitations: list[str] = field(default_factory=list)
@@ -114,12 +118,15 @@ class VerificationContext:
     command_runner: Any = None
     test_runner: Any = None
     coverage_runner: Any = None
+    source_hashes: dict[str, str | None] = field(default_factory=dict)
+    specification_input_hashes: dict[str, str | None] = field(default_factory=dict)
     finished_at: datetime | None = None
 
     def add_results(self, results: tuple[VerificationResult, ...] | list[VerificationResult]) -> None:
         for result in results:
-            if result.id not in {item.id for item in self.result_collector.all()}:
+            if result.id not in self.result_ids:
                 self.result_collector.add(result)
+                self.result_ids.add(result.id)
             if result.requirement_id:
                 row = self.traceability.setdefault(result.requirement_id, {
                     "requirement_id": result.requirement_id, "checker_refs": [], "results": [],

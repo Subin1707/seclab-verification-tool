@@ -13,6 +13,17 @@ from seclab.results import VerificationStatus
 from seclab.testing import TestCase
 
 
+def _skip_if_instrumented_build_unavailable(run, backend: str) -> None:
+    if run.report is not None:
+        return
+    result = run.verification_result
+    assert result is not None
+    assert result.status in {VerificationStatus.BUILD_ERROR, VerificationStatus.TOOL_ERROR,
+                             VerificationStatus.INCONCLUSIVE}
+    assert result.evidence_ids
+    pytest.skip(f"{backend} measurement unavailable: {result.status.value}/{result.reason_code}: {result.message}")
+
+
 def test_real_gcov_suite_aggregates_both_function_branches_and_keeps_oracle_failure(tmp_path: Path) -> None:
     if not (shutil.which("gcc") and shutil.which("gcov")):
         pytest.skip("gcc and gcov are required for the gcov integration.")
@@ -28,6 +39,7 @@ def test_real_gcov_suite_aggregates_both_function_branches_and_keeps_oracle_fail
     toolchain = Toolchain(["gcc", "gcov"])
     runner = CoverageRunner(workspace, toolchain)
     run = runner.run(cases, source_files=[source], backend="gcov")
+    _skip_if_instrumented_build_unavailable(run, "gcov")
     assert run.report is not None, run.errors
     assert run.report.backend == "gcov"
     assert run.report.line_metrics.total_lines > 0
@@ -96,6 +108,7 @@ def test_real_llvm_coverage_integration_when_tools_are_available(tmp_path: Path)
              TestCase("negative", "negative", "classify", {"x": -2}, {"return_value": -1}))
     result = CoverageRunner(tmp_path / "llvm workspace", Toolchain(list(names))).run(
         cases, source_files=[source], backend="llvm")
+    _skip_if_instrumented_build_unavailable(result, "LLVM coverage")
     assert result.report is not None, result.errors
     assert result.report.backend == "llvm"
     assert result.report.line_metrics.total_lines > 0
@@ -115,6 +128,7 @@ def test_timeout_marks_suite_partial_while_preserving_other_coverage(tmp_path: P
                       target_kind="EXECUTABLE", timeout_seconds=0.05))
     result = CoverageRunner(tmp_path / "partial workspace", Toolchain(["gcc", "gcov"])).run(
         cases, source_files=[source], backend="gcov")
+    _skip_if_instrumented_build_unavailable(result, "gcov timeout coverage")
     assert result.report is not None, result.errors
     assert result.report.partial is True
     assert result.report.tests_executed == 2

@@ -56,13 +56,14 @@ def to_json(model: KripkeStructure, *, indent: int | None = 2) -> str:
 
 def to_dot(model: KripkeStructure) -> str:
     """Export a Graphviz DOT string without requiring the Graphviz package."""
-    initial_ids = {state.id for state in model.initial_states}
+    from .reachability import deadlock_states
+    terminal_ids = {state.id for state in deadlock_states(model)}
     lines = ["digraph Kripke {", "  rankdir=LR;"]
     for state in model.states:
         label = state.id
         if state.labels:
             label += "\n" + ", ".join(sorted(state.labels))
-        shape = "doublecircle" if state.id in initial_ids else "circle"
+        shape = "doublecircle" if state.id in terminal_ids else "circle"
         lines.append(f"  {_quote(state.id)} [shape={shape}, label={_quote(label)}];")
     for edge in model.transitions:
         edge_label = edge.label

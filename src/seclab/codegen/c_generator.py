@@ -176,6 +176,11 @@ class CGenerator:
             declared_metadata = {key: declared[key] for key in (
                 "parameters", "operation", "magic_values", "bug", "buffer_size",
                 "allocation_count", "exception_message", "probe_class") if key in declared}
+            generation_status = "SOURCE_BOUND_NOT_GENERATED" if item.file else "UNSUPPORTED_NO_EXECUTABLE_CONTRACT"
+            # Legacy source-generation fixtures can carry probe declarations in
+            # specification provenance. Keep those distinct from real source
+            # functions and from model-generated code in the public status field.
+            status = "NOT_MODEL_CODE" if declared.get("probe_class") else generation_status
             function_records.append({
                 "function_id": item.id, "function_name": item.name, "name": item.name,
                 "file": item.file, "source_location": source_location,
@@ -188,9 +193,9 @@ class CGenerator:
                 "requirement_ids": list(item.requirement_ids or declared.get("requirement_ids", ())),
                 "mapping_status": "DECLARED_ONLY", "specification_id": specification.id,
                 "model_state_ids": [], "model_transition_ids": [], "source_kind": None,
-                "generated": False, "status": "SOURCE_BOUND_NOT_GENERATED" if item.file else
-                    "UNSUPPORTED_NO_EXECUTABLE_CONTRACT",
-                "reason": ("Function source is bound to a project file; CODEGEN emits model runtimes only."
+                "generated": False, "status": status, "generation_status": generation_status,
+                "reason": ("Declared probe metadata is not executable function code; CODEGEN emits model runtimes only."
+                           if declared else "Function source is bound to a project file; CODEGEN emits model runtimes only."
                            if item.file else "No typed signature or executable behavior contract is declared."),
                 "production_source": False,
             })

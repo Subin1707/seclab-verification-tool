@@ -74,6 +74,17 @@ class FormalPage(DataPage):
                                     status_label(result.status.value), result.scope or "",
                                     result.counterexample or metadata.get("witness", ""),
                                     ", ".join(result.evidence_ids)))
+        ctl_stage = stage_details.get("CTL", {})
+        ctl_metadata = ctl_stage.get("metadata", {})
+        negative_controls = ctl_metadata.get("negative_controls", ())
+        for control in negative_controls:
+            by_logic["CTL"].append((
+                f"Negative control · {control.get('property_id', '')}",
+                control.get("formula", ""), "MUTANT CHECK",
+                status_label(control.get("status", "UNKNOWN")),
+                "Mutant riêng; baseline không thay đổi",
+                " → ".join(control.get("counterexample", ())) or control.get("reason", ""),
+                control.get("evidence_id", "")))
         empty_messages = self._show_empty_state(stage_details)
         for logic, table in self.formal_tables.items():
             if by_logic[logic]:
@@ -83,7 +94,12 @@ class FormalPage(DataPage):
                 table.set_records((("—", "—", "—", status_label(stage.get("status", "NO_RESULTS")),
                                    "—", empty_messages[logic], "—"),))
         if any(by_logic.values()):
-            self.description.setText(
+            message = (
                 "Kết quả bộ giải (Solver) và trạng thái kiểm chứng là hai thông tin độc lập. "
                 "Logic không có dòng kết quả hiển thị trạng thái stage hoặc lý do bị bỏ qua."
             )
+            if negative_controls:
+                detected = sum(item.get("status") == "DETECTED" for item in negative_controls)
+                message += (f" Negative control CTL: phát hiện {detected}/{len(negative_controls)} "
+                            "vi phạm được cài trong mô hình mutant riêng; các verdict baseline không bị thay đổi.")
+            self.description.setText(message)

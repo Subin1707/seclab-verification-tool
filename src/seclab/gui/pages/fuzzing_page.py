@@ -281,7 +281,7 @@ class FuzzingPage(DataPage):
         process_layout.addStretch(1)
         self.process_tab.setWidget(process_content)
         self.coverage_table = ReadOnlyTable(("Chỉ số", "Tệp", "Đã bao phủ", "Còn thiếu", "Tỷ lệ", "Công cụ", "Giới hạn"))
-        self.coverage_description = QLabel("Độ bao phủ là phép đo trên các đầu vào đã chạy; không phải kết luận về an toàn.")
+        self.coverage_description = QLabel("Độ bao phủ là phép đo trên các đầu vào đã chạy; không phải kết luận về an toàn. Black-box quan sát input/output/crash/timeout; white-box cần instrumentation. Vòng fuzz là số lượt thực thi, không phải vòng lặp trong target.")
         self.coverage_description.setWordWrap(True)
         coverage_tab = QWidget()
         coverage_layout = QVBoxLayout(coverage_tab)
@@ -503,6 +503,8 @@ class FuzzingPage(DataPage):
                 lines.append("Diễn giải: chương trình mục tiêu chưa được chạy; lượt này không cung cấp bằng chứng về hành vi của nó.")
             else:
                 lines.append("Diễn giải: không đầu vào nào tạo ra dấu hiệu lỗi mà các bộ kiểm tra crash, sanitizer hoặc oracle hiện cấu hình nhận diện được. Kết quả này không chứng minh mục tiêu an toàn.")
+            if campaign.get("analysis_surface") == "MODEL_GENERATED_API":
+                lines.append("Giới hạn phạm vi: campaign này chỉ kiểm tra độ bền/crash của API C sinh từ mô hình; nó không đánh giá các yêu cầu an toàn trong đặc tả. Xem trang Kiểm chứng hình thức (CTL) để xem negative control chạy trên mutant riêng và counterexample tương ứng.")
             if executed < int(requested or 0):
                 lines.append("Chưa chạy hết số lượt dự kiến; hãy xem lý do dừng và lỗi chiến dịch trước khi coi lượt chạy là hoàn tất.")
             if errors:
@@ -691,8 +693,16 @@ class FuzzingPage(DataPage):
             input_display = str(input_data)
         command = observation.get("command") or {}
         output = observation.get("observation") or {}
+        iteration = observation.get("iteration")
+        if iteration is None:
+            iteration = record.get("iteration", "—")
+        else:
+            try:
+                iteration = int(iteration) + 1
+            except (TypeError, ValueError):
+                iteration = record.get("iteration", iteration)
         lines = [
-            f"LƯỢT {observation.get('iteration', record.get('iteration', '—'))} · "
+            f"LƯỢT {iteration} · "
             f"phân loại={observation.get('classification', 'UNKNOWN')} · kết quả={observation.get('result_status', 'UNKNOWN')}",
             f"Đầu vào: {observation.get('input_id', '—')} · loại={input_record.get('kind', '—')} · "
             f"nguồn={input_record.get('origin', '—')} · SHA-256={observation.get('input_sha256', '—')}",
@@ -832,6 +842,9 @@ class FuzzingPage(DataPage):
         if campaign.get("strategy") and not campaign.get("failures"):
             self.description.setText(self.description.text() +
                 " Chiến dịch này chưa phát hiện lỗi trong ngân sách đã chạy (INCONCLUSIVE), không phải kết luận PASS.")
+        if campaign.get("analysis_surface") == "MODEL_GENERATED_API":
+            self.description.setText(self.description.text() +
+                " Phạm vi chỉ là API C sinh tự động; các negative control cho vi phạm yêu cầu được hiển thị riêng trong bảng CTL.")
         evidence_meta = result_metadata
         if evidence_meta:
             written = evidence_meta.get("observation_evidence_written")
@@ -904,7 +917,9 @@ class FuzzingPage(DataPage):
         status = str(stage.get("status", "NOT_RUN")).upper()
         reason = stage.get("reason") or data.get("skipped_reason") or ""
         self.coverage_description.setText(
-            f"Giai đoạn đo coverage · {status_label(status)}. Đây chỉ là số đo thực thi, không phải verdict." +
+            f"Giai đoạn đo coverage · {status_label(status)}. Line = executable lines đã chạy / tổng executable lines; "
+            "branch = arcs/nhánh được backend báo đã chạy / tổng arcs/nhánh. Đây là white-box coverage khi binary được instrument; "
+            "không đồng nghĩa độ an toàn hay coverage trạng thái mô hình." +
             (f" Lý do: {reason}" if reason else " Bộ máy fuzzing chỉ dùng số đo này để dẫn hướng khi chọn COVERAGE_GUIDED."))
         rows = []
         for name, metric, count_key, total_key in (

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import os
+import time
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -90,7 +91,8 @@ def test_fuzz_page_clears_campaign_when_stage_is_absent(application):
     assert "NOT_RUN" in page.coverage_description.text()
     assert page.flow_diagram._statuses["TARGET"] == "NOT_RUN"
     assert page.flow_diagram._statuses["CONCOLIC"] == "NOT_SELECTED"
-    assert "no checker result" in page.technique_table.item(page.technique_table.rowCount() - 1, 1).text().lower()
+    assert "không có kết quả checker" in page.technique_table.item(
+        page.technique_table.rowCount() - 1, 1).text().lower()
     page.close()
 
 
@@ -313,7 +315,7 @@ def test_fuzz_page_shows_bounded_campaign_metrics_and_checker_verdict(applicatio
     assert any(page.coverage_table.item(row, 6).text().startswith("No coverage measurement")
                for row in range(page.coverage_table.rowCount()))
     assert page.technique_table.rowCount() == 14
-    assert "UNSUPPORTED" in page.technique_table.item(5, 1).text()
+    assert "CHƯA HỖ TRỢ" in page.technique_table.item(5, 1).text()
     assert "INCONCLUSIVE" in page.technique_table.item(13, 1).text()
     page.flow_diagram.resize(1450, 535)
     page.flow_diagram.show()
@@ -345,7 +347,7 @@ def test_fuzz_loop_progress_and_timeout_finding_explanation_are_visible(applicat
     report = SimpleNamespace(results=(), stage_summaries=({"stage_id": "FUZZING",
         "status": "INCONCLUSIVE", "output": campaign},), metadata={})
     page.show_report(report)
-    assert "FUZZ FINDING" in page.finding_banner.text()
+    assert "PHÁT HIỆN LỖI FUZZING" in page.finding_banner.text()
     details = page.campaign_analysis.toPlainText()
     assert "VÌ SAO ĐÂY LÀ LỖI" in details
     assert "timeout" in details.casefold()
@@ -377,7 +379,8 @@ def test_fuzz_page_renders_verified_observation_as_analysis(application, tmp_pat
     import json
     import hashlib
 
-    page = FuzzingPage()
+    window = MainWindow()
+    page = window.fuzzing
     observation = {"iteration": 1, "input_id": "input-1", "input_sha256": "b" * 64,
         "input": {"kind": "BYTES", "origin": "BLACKBOX", "data": {"base64": "AAEC", "size_bytes": 3}},
         "target": "generated-model-api", "test_case_id": "MODEL-API-1", "target_kind": "EXECUTABLE",
@@ -402,21 +405,33 @@ def test_fuzz_page_renders_verified_observation_as_analysis(application, tmp_pat
         "evidence_ids": ["ev-observation"], "execution_evidence": [record],
         "verification_result": {"status": "INCONCLUSIVE", "reason_code": "NO_FAILURE_FOUND_WITHIN_FUZZ_BUDGET",
             "message": "No failure within budget."}}
-    report = SimpleNamespace(results=(), stage_summaries=({"stage_id": "FUZZING", "status": "COMPLETED",
-        "output": campaign},), metadata={})
+    report = SimpleNamespace(run_id="fuzz-page-test", results=(),
+        stage_summaries=({"stage_id": "FUZZING", "status": "COMPLETED", "output": campaign},), metadata={})
+    window.session.run_id = report.run_id
     page.show_report(report)
-    host = SimpleNamespace(fuzzing=page)
-    MainWindow._load_fuzz_observations(host, report, tmp_path,
+    window._load_fuzz_observations(report, tmp_path,
         ({"id": "ev-observation", "path": "evidence/observation.json", "hash": digest,
           "size_bytes": len(payload)},))
-    assert "Command: model-fuzz.exe" in page.execution_analysis.toPlainText()
-    assert "Expected oracle" in page.execution_analysis.toPlainText()
-    assert "Actual testcase arguments" in page.execution_analysis.toPlainText()
-    MainWindow._load_fuzz_observations(host, report, tmp_path,
+    deadline = time.monotonic() + 2
+    while window._fuzz_observation_thread is not None and time.monotonic() < deadline:
+        application.processEvents()
+        time.sleep(0.01)
+    application.processEvents()
+    assert window._fuzz_observation_thread is None
+    assert "Lệnh chạy: model-fuzz.exe" in page.execution_analysis.toPlainText()
+    assert "Oracle kỳ vọng" in page.execution_analysis.toPlainText()
+    assert "Đối số ca kiểm thử thực tế" in page.execution_analysis.toPlainText()
+    window._load_fuzz_observations(report, tmp_path,
         ({"id": "ev-observation", "path": "evidence/observation.json", "hash": "0" * 64,
           "size_bytes": len(payload)},))
+    deadline = time.monotonic() + 2
+    while window._fuzz_observation_thread is not None and time.monotonic() < deadline:
+        application.processEvents()
+        time.sleep(0.01)
+    application.processEvents()
+    assert window._fuzz_observation_thread is None
     assert "KHÔNG XÁC THỰC ĐƯỢC ARTIFACT" in page.execution_analysis.toPlainText()
-    page.close()
+    window.close()
 
 
 def test_fuzz_page_projects_coverage_and_specification_model(application):

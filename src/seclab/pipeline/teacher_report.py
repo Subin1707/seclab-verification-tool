@@ -70,6 +70,13 @@ def render_teacher_report(report: PipelineReport) -> str:
     unreachable = model_meta.get("unreachable_state_ids", model_output.get("unreachable_state_ids", ()))
     lines.append(f"Trạng thái ban đầu: {_cell(initial_states)} · Deadlock: {_cell(deadlocks)} · "
                  f"Không tới được: {_cell(unreachable)}.")
+    total_states = stats.get("state_count", len(model_output.get("states", ())))
+    reachable_count = stats.get("reachable_state_count", len(model_output.get("reachable_state_ids", ())))
+    total_transitions = stats.get("transition_count", len(model_output.get("transitions", ())))
+    reachability_pct = f"{reachable_count / total_states * 100:.1f}%" if total_states else "n/a"
+    lines.append(f"Model-state reachability: {reachable_count}/{total_states} trạng thái từ initial state ({reachability_pct}); "
+                 f"đây không phải runtime code coverage. Có {total_transitions} transition khai báo; stage MODEL "
+                 "chưa đo riêng tập transition đi qua bởi execution trace.")
     lines.append("")
     formal = [item for item in results if str(item.get("technique", "")).upper() in {"CTL", "BMC"}]
     lines.append(f"Thuộc tính hình thức: {len(formal)} · Đạt: {sum(item.get('status') == 'PASS' for item in formal)} · "
@@ -127,10 +134,12 @@ def render_teacher_report(report: PipelineReport) -> str:
                       "| Tệp:dòng / analyzer | Mức độ / CWE | Finding | Evidence |",
                       "|---|---|---|---|"))
         for finding in finding_records[:15]:
+            explanation = _static_finding_explanation(finding)
             lines.append("| " + " | ".join(_cell(value) for value in (
                 f"{_trim(finding.get('file', '—'), 28)}:{finding.get('line') or '—'} / {_trim(finding.get('tool', '—'), 18)}",
                 f"{finding.get('severity', finding.get('category', '—'))} / {finding.get('cwe', '—')}",
-                _trim(finding.get("message", "—"), 100), _short_ids((finding.get("evidence_id", "—"),)))) + " |")
+                _trim(finding.get("message", "—"), 100) + " · " + explanation,
+                _short_ids((finding.get("evidence_id", "—"),)))) + " |")
         if len(finding_records) > 15:
             lines.append(f"\nHiển thị 15/{len(finding_records)} finding tiêu biểu; số lượng theo analyzer và CWE được tổng hợp bên dưới. Toàn bộ bản ghi ở evidence.")
     else:
@@ -189,7 +198,10 @@ def render_teacher_report(report: PipelineReport) -> str:
     fuzz_output = fuzz.get("output", {}) if isinstance(fuzz.get("output"), dict) else {}
     campaigns = fuzz_output.get("campaigns", [fuzz_output] if fuzz_output else [])
     if campaigns:
-        lines.extend(("| Target / chiến lược | Vòng fuzz / input duy nhất | Corpus / coverage đo được | Lỗi / crash / timeout |",
+        lines.extend(("Black-box quan sát input, output, exit/crash, timeout và oracle mà không dùng instrumentation để chọn nhánh. "
+                      "White-box cần instrumentation/coverage feedback; chiến lược CONCOLIC hiện chưa hỗ trợ trong engine.",
+                      "Vòng fuzz là số lần chạy input, không phải số vòng lặp bên trong chương trình. Line/branch coverage đo mã nguồn được chạy; model-state reachability ở mục 2 đo đồ thị đặc tả.", "",
+                      "| Target / chiến lược | Vòng yêu cầu/thực chạy · input duy nhất | Corpus / coverage đo được | Lỗi / crash / timeout |",
                       "|---|---:|---:|---|"))
         for item in campaigns:
             target_name = _trim(item.get("function_id") or item.get("target", "—"), 28)
@@ -197,7 +209,7 @@ def render_teacher_report(report: PipelineReport) -> str:
             coverage_text = f"{len(item.get('coverage_delta', ()))} mới" if coverage_observed else "chưa đo"
             lines.append("| " + " | ".join(_cell(value) for value in (
                 f"{target_name} · {item.get('strategy', '—')}/{item.get('seed', '—')}",
-                f"{item.get('iterations_executed', 0)} / {item.get('unique_inputs', 0)}",
+                f"{item.get('iterations_requested', '—')} / {item.get('iterations_executed', 0)} · {item.get('unique_inputs', 0)}",
                 f"{item.get('corpus_size', 0)} / {coverage_text}",
                 f"{len(item.get('failures', ()))} / {item.get('crashes', 0)} / {item.get('timeouts', 0)}")) + " |")
             lines.append(f"Dừng: {_trim(item.get('stop_reason', '—'), 72)}.")
@@ -284,6 +296,7 @@ def render_teacher_report(report: PipelineReport) -> str:
     cwe_ids.update(str(item.get("cwe", "")).upper() for item in finding_records if item.get("cwe"))
     cve_ids.update(value.upper() for item in finding_records for value in
                    re.findall(r"\bCVE-\d{4}-\d{4,}\b", json.dumps(item, default=str), re.I))
+    lines.append("Nguyên nhân/ảnh hưởng được diễn giải từ finding và thông điệp analyzer; cần review source/đường đi thực tế trước khi kết luận mức độ khai thác được.")
     lines.append("**CWE ghi trực tiếp trong finding/evidence:** " +
                  (", ".join(f"`{x.upper()}`" for x in sorted(cwe_ids)) or "không có mã CWE được ghi nhận."))
     lines.append("")
@@ -555,6 +568,21 @@ def _static_findings(results: list[dict[str, Any]], reader) -> list[dict[str, An
                         key = str(item.get("id") or (result.get("technique"), item.get("file"), item.get("line"), item.get("message")))
                         findings[key] = {**item, "evidence_id": evidence_id}
     return list(findings.values())
+
+
+def _static_finding_explanation(finding: dict[str, Any]) -> str:
+    """Give a cautious CWE-level explanation without inventing source-specific causality."""
+    cwe = str(finding.get("cwe") or "").upper()
+    explanations = {
+        "CWE-476": "Có thể dereference con trỏ null; có thể gây crash hoặc từ chối dịch vụ nếu đường đi này được thực thi.",
+        "CWE-120": "Có thể ghi vượt bộ đệm không kiểm tra kích thước; có thể làm hỏng dữ liệu hoặc điều khiển luồng.",
+        "CWE-787": "Có thể ghi ngoài vùng nhớ dự kiến; cần xác minh bounds và đường đi gọi.",
+        "CWE-125": "Có thể đọc ngoài vùng nhớ; có thể gây crash hoặc lộ dữ liệu tùy ngữ cảnh.",
+        "CWE-416": "Có thể dùng vùng nhớ sau khi giải phóng; hành vi không xác định và nguy cơ hỏng dữ liệu.",
+        "CWE-415": "Có thể giải phóng cùng vùng nhớ nhiều lần; allocator có thể lỗi hoặc trạng thái heap bị hỏng.",
+        "CWE-401": "Có thể không giải phóng tài nguyên đã cấp phát; lặp lại có thể làm cạn bộ nhớ.",
+    }
+    return explanations.get(cwe, "Review thông điệp, rule và source location của analyzer để xác định nguyên nhân/ảnh hưởng cụ thể.")
 
 
 def _fuzz_failure_output(evidence_ids: Any, reader) -> str:

@@ -57,6 +57,7 @@ class ModelPage(DataPage):
         super().__init__("MÔ HÌNH KIỂM CHỨNG / KRIPKE", ("Loại", "ID", "Chi tiết"), parent)
         self.model_data = {}
         self.graph_scene = QGraphicsScene(self)
+        self.graph_scene.setItemIndexMethod(QGraphicsScene.ItemIndexMethod.NoIndex)
         self.graph_view = _GraphView(self)
         self.graph_view.setScene(self.graph_scene)
         self.graph_view.setMinimumHeight(320)
@@ -93,6 +94,14 @@ class ModelPage(DataPage):
         self.fit_graph()
 
     def _draw_graph(self):
+        self.graph_view.setUpdatesEnabled(False)
+        try:
+            self._populate_graph()
+        finally:
+            self.graph_view.setUpdatesEnabled(True)
+            self.graph_view.viewport().update()
+
+    def _populate_graph(self):
         data = self.model_data
         self.graph_scene.clear()
         states = list(data.get("states", ()))
@@ -133,11 +142,12 @@ class ModelPage(DataPage):
         for state_id in ids:
             if state_id in distance:
                 layers[distance[state_id]].append(state_id)
-        node_w = 292.0
+        node_w = 220.0
         gap_x, gap_y = 112.0, 58.0
-        text_width = node_w - 38.0
+        text_width = node_w - 40.0
         node_heights = {}
         text_layouts = {}
+        required_diameter = node_w
         for state_id in ids:
             state = state_by_id[state_id]
             title_text = state_id.replace("_", " ")
@@ -149,7 +159,7 @@ class ModelPage(DataPage):
             title_font.setBold(True)
             title_font.setPointSize(11)
             title_measure.setFont(title_font)
-            title_width = text_width - 94.0
+            title_width = text_width
             title_measure.setTextWidth(title_width)
             title_height = title_measure.boundingRect().height()
             detail_height = 0.0
@@ -161,9 +171,12 @@ class ModelPage(DataPage):
                 detail_measure.setTextWidth(text_width)
                 detail_height = detail_measure.boundingRect().height()
             content_height = max(title_height, 20.0) + detail_height + (8.0 if detail_text else 0.0)
-            node_heights[state_id] = max(88.0, content_height + 38.0)
-            text_layouts[state_id] = (title_text, title_font, title_width, detail_text,
+            required_diameter = max(required_diameter, content_height + 82.0)
+            text_layouts[state_id] = (title_text, title_font, title_width, title_height, detail_text,
                                       detail_height, detail_font)
+        node_w = required_diameter
+        text_width = node_w - 40.0
+        node_heights = {state_id: node_w for state_id in ids}
         positions = {}
         for column in sorted(layers):
             members = layers[column]
@@ -232,7 +245,8 @@ class ModelPage(DataPage):
             for index, edge in enumerate(pair_edges):
                 self._draw_edge(positions[source], positions[target], node_w,
                                 node_heights[source], node_heights[target],
-                                edge, index, len(pair_edges))
+                                edge, index, len(pair_edges),
+                                source in deadlocks, target in deadlocks)
 
         for state_id in ids:
             state = state_by_id[state_id]
@@ -247,8 +261,17 @@ class ModelPage(DataPage):
             else:
                 status, color, border = "TỚI ĐƯỢC", _PALETTE["normal"], _PALETTE["reachable_border"]
             node_h = node_heights[state_id]
+            if is_deadlock:
+                outer_path = QPainterPath()
+                outer_path.addEllipse(QRectF(x - 8.0, y - 8.0, node_w + 16.0, node_h + 16.0))
+                outer_ring = QGraphicsPathItem(outer_path)
+                outer_ring.setBrush(QBrush(Qt.BrushStyle.NoBrush))
+                outer_ring.setPen(QPen(border, 1.8))
+                outer_ring.setZValue(0.5)
+                outer_ring.setToolTip(f"{state_id} · trạng thái kết thúc (không có chuyển tiếp đi ra)")
+                self.graph_scene.addItem(outer_ring)
             node_path = QPainterPath()
-            node_path.addRoundedRect(QRectF(x, y, node_w, node_h), 16.0, 16.0)
+            node_path.addEllipse(QRectF(x, y, node_w, node_h))
             node = QGraphicsPathItem(node_path)
             node.setBrush(QBrush(color))
             node.setPen(QPen(border, 1.8))
@@ -265,17 +288,24 @@ class ModelPage(DataPage):
             node.setToolTip("\n".join(tooltip))
             self.graph_scene.addItem(node)
 
-            title_text, title_font, title_width, detail_text, detail_height, detail_font = text_layouts[state_id]
+            (title_text, title_font, title_width, title_height, detail_text,
+             detail_height, detail_font) = text_layouts[state_id]
             title = self.graph_scene.addText(title_text)
             title.setDefaultTextColor(_PALETTE["text"])
             title.setFont(title_font)
             title.setTextWidth(title_width)
-            title.setPos(x + 18.0, y + 12.0)
+            title_option = title.document().defaultTextOption()
+            title_option.setAlignment(Qt.AlignmentFlag.AlignHCenter)
+            title.document().setDefaultTextOption(title_option)
+            body_height = title_height + detail_height + (4.0 if detail_text else 0.0)
+            body_y = max(50.0, (node_h + 18.0 - body_height) / 2.0)
+            title.setPos(x + (node_w - title_width) / 2.0, y + body_y)
             title.setToolTip(node.toolTip())
             title.setZValue(2)
-            chip_width = max(70.0, len(status) * 6.4 + 20.0)
+            chip_width = min(node_w - 36.0, max(70.0, len(status) * 6.4 + 20.0))
             chip_path = QPainterPath()
-            chip_path.addRoundedRect(QRectF(x + node_w - chip_width - 12.0, y + 12.0,
+            chip_x = x + (node_w - chip_width) / 2.0
+            chip_path.addRoundedRect(QRectF(chip_x, y + 22.0,
                                              chip_width, 20.0), 10.0, 10.0)
             chip = QGraphicsPathItem(chip_path)
             chip.setBrush(QBrush(border.lighter(175)))
@@ -288,20 +318,24 @@ class ModelPage(DataPage):
             chip_font.setBold(True)
             chip_font.setPointSize(7)
             chip_text.setFont(chip_font)
-            chip_text.setPos(x + node_w - chip_width - 12.0 + 8.0, y + 13.0)
+            chip_text.setPos(chip_x + 8.0, y + 23.0)
             chip_text.setZValue(3)
             if detail_text:
                 detail = self.graph_scene.addText(detail_text)
                 detail.setDefaultTextColor(_PALETTE["muted"])
                 detail.setFont(detail_font)
                 detail.setTextWidth(text_width)
-                detail.setPos(x + 18.0, title.y() + title.boundingRect().height() + 8.0)
+                detail_option = detail.document().defaultTextOption()
+                detail_option.setAlignment(Qt.AlignmentFlag.AlignHCenter)
+                detail.document().setDefaultTextOption(detail_option)
+                detail.setPos(x + 20.0, title.y() + title.boundingRect().height() + 4.0)
                 detail.setToolTip(node.toolTip())
                 detail.setZValue(2)
 
         self.graph_scene.setSceneRect(self.graph_scene.itemsBoundingRect().adjusted(-35, -35, 35, 35))
 
-    def _draw_edge(self, source_pos, target_pos, node_w, source_h, target_h, edge, index, count):
+    def _draw_edge(self, source_pos, target_pos, node_w, source_h, target_h, edge, index, count,
+                   source_terminal=False, target_terminal=False):
         source = QPointF(source_pos.x() + node_w / 2, source_pos.y() + source_h / 2)
         target = QPointF(target_pos.x() + node_w / 2, target_pos.y() + target_h / 2)
         color = _PALETTE["edge"]
@@ -310,20 +344,18 @@ class ModelPage(DataPage):
         path = QPainterPath()
         if source_pos == target_pos:
             offset = 16 + index * 12
-            path.moveTo(source.x() - 25, source.y() - source_h / 2 + 5)
-            path.cubicTo(source.x() - 45 - offset, source.y() - source_h / 2 - 46 - offset,
-                         source.x() + 45 + offset, source.y() - source_h / 2 - 46 - offset,
-                         source.x() + 25, source.y() - source_h / 2 + 5)
+            loop_y = source.y() - source_h / 2 - (9 if source_terminal else 2)
+            path.moveTo(source.x() - 25, loop_y)
+            path.cubicTo(source.x() - 45 - offset, loop_y - 46 - offset,
+                         source.x() + 45 + offset, loop_y - 46 - offset,
+                         source.x() + 25, loop_y)
             tip = path.pointAtPercent(1.0)
-            tangent = path.angleAtPercent(1.0)
         else:
             dx, dy = target.x() - source.x(), target.y() - source.y()
             length = max(math.hypot(dx, dy), 1.0)
             ux, uy = dx / length, dy / length
-            source_scale = min(node_w / (2 * abs(ux)) if ux else math.inf,
-                               source_h / (2 * abs(uy)) if uy else math.inf) - 2.0
-            target_scale = min(node_w / (2 * abs(ux)) if ux else math.inf,
-                               target_h / (2 * abs(uy)) if uy else math.inf) - 2.0
+            source_scale = min(node_w, source_h) / 2.0 + (8.0 if source_terminal else 0.0) - 2.0
+            target_scale = min(node_w, target_h) / 2.0 + (8.0 if target_terminal else 0.0) - 2.0
             start = QPointF(source.x() + ux * source_scale, source.y() + uy * source_scale)
             end = QPointF(target.x() - ux * target_scale, target.y() - uy * target_scale)
             bend = (index - (count - 1) / 2) * 24
@@ -332,7 +364,10 @@ class ModelPage(DataPage):
             path.moveTo(start)
             path.quadTo(control, end)
             tip = end
-            tangent = math.degrees(math.atan2(end.y() - control.y(), end.x() - control.x()))
+        # Use the path's screen-coordinate tangent so loops and ordinary edges
+        # get the same correctly oriented arrowhead.
+        before_tip = path.pointAtPercent(0.99)
+        tangent = math.degrees(math.atan2(tip.y() - before_tip.y(), tip.x() - before_tip.x()))
         line = QGraphicsPathItem(path)
         line.setPen(pen)
         line.setZValue(-2)
@@ -464,7 +499,8 @@ class ModelPage(DataPage):
             f"State: {len(states)} \u00b7 Transition: {len(transitions)} \u00b7 "
             f"T\u1edbi \u0111\u01b0\u1ee3c: {stats.get('reachable_state_count', len(output.get('reachable_state_ids', ())))} \u00b7 "
             f"Kh\u00f4ng t\u1edbi \u0111\u01b0\u1ee3c: {stats.get('unreachable_state_count', len(output.get('unreachable_state_ids', ())))} \u00b7 "
-            f"B\u1ebf t\u1eafc: {stats.get('deadlock_state_count', len(output.get('deadlock_state_ids', ())))}")
+            f"B\u1ebf t\u1eafc: {stats.get('deadlock_state_count', len(output.get('deadlock_state_ids', ())))} \u00b7 "
+            "Reachability tính trên graph từ initial state; không phải line/branch coverage khi chạy mã nguồn.")
         self.table.set_records(rows)
         self.fit_graph()
 

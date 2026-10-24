@@ -72,14 +72,20 @@ class VerificationController:
             self._log(str(stage["stage_id"]), str(stage["status"]), str(stage.get("reason") or "Stage finished"))
         return self.report
 
-    def load_run_history(self) -> tuple[dict[str, Any], ...]:
-        if self.workspace is None or not self.workspace.exists():
+    def load_run_history(self, workspace: str | Path | None = None) -> tuple[dict[str, Any], ...]:
+        selected_workspace = Path(workspace).expanduser() if workspace is not None else self.workspace
+        if selected_workspace is None or not selected_workspace.exists():
             return ()
         records = []
-        for manifest_path in sorted(self.workspace.glob("*/evidence/manifest/run-manifest.json"),
-                                    key=lambda path: path.stat().st_mtime, reverse=True):
+        workspace_root = selected_workspace.resolve()
+        manifests = []
+        for manifest_path in selected_workspace.glob("*/evidence/manifest/run-manifest.json"):
             try:
-                workspace_root = self.workspace.resolve()
+                manifests.append((manifest_path.stat().st_mtime, manifest_path))
+            except OSError:
+                continue
+        for _, manifest_path in sorted(manifests, key=lambda item: item[0], reverse=True):
+            try:
                 run_root = manifest_path.parents[2].resolve(strict=True)
                 selected_manifest = manifest_path.resolve(strict=True)
                 if not run_root.is_relative_to(workspace_root) or not selected_manifest.is_relative_to(run_root):
